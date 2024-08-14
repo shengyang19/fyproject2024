@@ -1,0 +1,49 @@
+.slider_bg_1{
+    background-image: url(../img/banner/banner.png);
+}
+.slider_bg_2{
+    background-image: url(../img/banner/banner2.png);
+}
+.slider_area{
+    .single_slider{
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .slider_text{
+            h3{
+             color: #ffffff;
+             font-family: $font1;
+             font-size: 100px;
+             text-transform: capitalize;
+             letter-spacing: 2px;
+             font-weight: 400;
+             margin-bottom: 4px;
+             @media #{$mobile_device} {
+               font-size: 33px;
+               letter-spacing: 3px;
+            }
+             @media #{$tablet_device} {
+               font-size: 30px;
+            }
+             @media #{$mid_device} {
+               font-size: 35px;
+               letter-spacing: 3px;
+            }
+            }
+            p{
+                font-size: 24px;
+                font-weight: 400;
+                color: #ffffff;
+                margin-bottom: 0;
+                margin-top: 0;
+             @media #{$mid_device} {
+                font-size: 16px;
+             }
+             @media #{$mobile_device} {
+                font-size: 16px;
+             }
+            }
+        }
+    } 
+}
