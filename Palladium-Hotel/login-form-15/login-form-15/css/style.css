@@ -57,10 +57,15 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff; }
+  background-color: #000000; }
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
 
 hr {
   -webkit-box-sizing: content-box;
@@ -8138,7 +8143,7 @@ body {
   line-height: 1.8;
   font-weight: normal;
   background: #f8f9fd;
-  color: black; }
+  color: gray; }
 
 a {
   -webkit-transition: .3s all ease;
@@ -8176,7 +8181,7 @@ h1, h2, h3, h4, h5,
 
 .heading-section {
   font-size: 28px;
-  color: #000; }
+  color: #e9ecef; }
 
 .img {
   background-size: cover;
