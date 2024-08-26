@@ -18,7 +18,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
 					<div class="logo-img">
-						<a href="LoginV2.html">
+						<a href="/fyproject2024/Palladium-Hotel/index.html">
 							<img src="images/logo.png" alt="" width="100" height="100">
 						</a>
 					</div>
@@ -35,23 +35,23 @@
 			      			<h3 class="mb-4">Sign Up</h3>
 			      		</div>
 			      	</div>
-					  		<form action="#" class="signin-form">
+					  		<form action="adduser.php" method="POST" class="signin-form">
 						<div class="form-group mt-3">
-							<input type="text" class="form-control" required>
+							<input type="text" name="firstname" class="form-control" required>
 							<label class="form-control-placeholder" for="username">First Name</label>
 						</div>
 						<form action="#" class="signin-form">
 							<div class="form-group mt-3">
-								<input type="int" class="form-control" required>
+								<input type="int" name="phone" class="form-control" required>
 								<label class="form-control-placeholder" for="phonenum">Phone Number</label>
 							</div>
 							<div class="form-group">
-								<input type="email" id="email" class="form-control" required>
+								<input type="email" name="signupemail" id="email" class="form-control" required>
 								<label class="form-control-placeholder" for="email">Email</label>
 								<span id="email-error" style="color: red;"></span>
 							  </div>
 		            <div class="form-group">
-		              <input id="password-field" type="password" class="form-control" required>
+		              <input id="password-field" name="signupkey" type="password" class="form-control" required>
 		              <label class="form-control-placeholder" for="password">Password</label>
 		              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 		            </div>
@@ -61,7 +61,7 @@
 						<span toggle="#repeat-password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 					  </div>
 		            <div class="button-container">
-		            	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+		            	<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 							Sign Up
 						  </button>
 		            </div>
