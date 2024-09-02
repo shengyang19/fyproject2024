@@ -24,5 +24,5 @@ function checkCookie(cname) {
         document.getElementById("profile-btn").hidden=false;
         document.getElementById("acc_name").innerHTML=user;
     }
-    else document.getElementById("profile-btn").hidden=true;   
+    else document.getElementById("profile-btn").hidden=false;   
 }
