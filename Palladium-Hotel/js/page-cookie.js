@@ -21,8 +21,9 @@ function deleteCookie(cname) {
 function checkCookie(cname) {
     let user = getCookie("user");
     if (user != "") {//if cookie exist
-        document.getElementById("profile-btn").hidden=false;
-        document.getElementById("acc_name").innerHTML=user;
+        //document.getElementById("profile-btn").hidden=false;
+        document.getElementById("profile-btn").href="profile.html"; 
+        //document.getElementById("acc_name").innerHTML=user;
     }
-    else document.getElementById("profile-btn").hidden=false;   
+    else document.getElementById("profile-btn").href="profilelogin.html";   
 }
