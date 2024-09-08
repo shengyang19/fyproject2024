@@ -1,5 +1,52 @@
 <!doctype html>
 <html lang="en">
+    
+<?php
+if(isset($_POST["confirm"])){
+//session_start();
+$email=$_COOKIE["email"];
+$savedpass="-";
+$oldpass=$_POST["oldpass"];
+$newpass=$_POST["newpass"];
+$newpassrepeat=$_POST["newpassrepeat"];
+if($newpass==$newpassrepeat){
+    $cred=json_encode($newpass);
+    //echo ("corect repeat password");
+    $con = mysqli_connect('localhost','root','','phmsdb');
+    if (mysqli_connect_errno())
+    {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
+    $sql="SELECT email,cred FROM staff_account WHERE email='$email'";
+    $row = mysqli_fetch_array(mysqli_query($con,$sql));
+    if($row!=null){
+        $savedpass=$row['cred'];
+    }
+    else{
+        echo ("<script>alert('$email')</script>");
+    }
+    if($savedpass==$oldpass){
+    $sql="UPDATE account SET cred='$cred' WHERE email='$email'";
+    $qry = mysqli_query($con,$sql);
+    mysqli_close($con);
+    // echo $sql; // to display sql
+    if(!$qry){
+        //return false; // error new user record was not added
+        //header("Location: register.php");
+    }
+    else{
+        echo ("<script>alert('Password changed')</script>");
+        header("Location: /fyproject2024/Palladium-Hotel/ADMIN-DASHBOARD/index.html");
+        exit;
+    }
+
+} else echo ("<script>alert('Incorrect current password')</script>");
+}
+else echo ("<script>alert('incorect repeat password')</script>");
+}
+
+?>
+
   <head>
   	<title>Change Password - Palladium Hotel</title>
     <meta charset="utf-8">
@@ -35,28 +82,28 @@
 			      			<h3 class="mb-4">Change Password</h3>
 			      		</div>
 					</div>
-					<form action="#" class="signin-form">
+					<form action="staff_changepass.php" class="signin-form" method="POST">
 						<div class="form-group">
-                            <input id="current-password-field" type="password" class="form-control" required>
+                            <input id="current-password-field" name="oldpass" type="password" class="form-control" required>
 							<label class="form-control-placeholder" for="password">Current Password</label>
 							<span toggle="#current-password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 						</div>
 		            <div class="form-group">
-		              <input id="password-field" type="password" class="form-control" required>
+		              <input id="password-field" name="newpass" type="password" class="form-control" required>
 		              <label class="form-control-placeholder" for="password">New Password</label>
 		              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 		            </div>
 					<div class="form-group">
-						<input id="repeat-password-field" type="password" class="form-control" required>
+						<input id="repeat-password-field" name="newpassrepeat" type="password" class="form-control" required>
 						<label class="form-control-placeholder" for="repeat-password">Repeat Password</label>
 						<span toggle="#repeat-password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 					  </div>
 		            <div class="form-group">
-		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Confirm</button>
+		            	<button name="confirm" type="submit" class="form-control btn btn-primary rounded submit px-3">Confirm</button>
 		            </div>
 		          </form>
 		          <div class="form-group">
-					  <a class="btn btn-secondary" href="\fyproject2024\Palladium-Hotel\profile.html">Cancel</a></p>
+					  <a class="btn btn-secondary" href="/fyproject2024/Palladium-Hotel/ADMIN-DASHBOARD/index.html">Cancel</a></p>
 					</div>
 		        </div>
 		      </div>

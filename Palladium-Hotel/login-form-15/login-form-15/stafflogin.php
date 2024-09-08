@@ -1,5 +1,34 @@
 <!doctype html>
 <html lang="en">
+<?php
+if(isset($_POST["signin"])){
+session_start();
+$cookie_name = "user";
+$email1 = $_POST['loginemail'];
+$email=strval($email1);
+$key1 = $_POST['loginkey'];
+$key=JSON.stringify($key1);
+
+$con = mysqli_connect('localhost','root','','phmsdb');
+if (mysqli_connect_errno())
+{
+echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+$sql="SELECT username,email,cred FROM staff_account WHERE email='$email' AND cred='$key'";
+$row = mysqli_fetch_array(mysqli_query($con,$sql));
+if($row!=null){
+    $_SESSION["temp"]=$row['username'];
+	//echo ("alert('success')");
+    /*setcookie($cookie_name, $row['username'], time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie("phone", $row['phone'], time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie("email", $email, time() + (86400 * 30), "/"); // 86400 = 1 day*/
+    header("Location: /fyproject2024/Palladium-Hotel/ADMIN-DASHBOARD/index.html");
+	exit;
+}
+}
+
+
+?>
   <head>
   	<title>Login - Palladium Hotel</title>
     <meta charset="utf-8">
@@ -18,9 +47,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
 					<div class="logo-img">
-						<a href="/fyproject2024/Palladium-Hotel/index.html">
-							<img src="images/logo.png" alt="" width="100" height="100">
-						</a>
+						<img src="images/logo.png" alt="" width="100" height="100">
 					</div>
 					<h2 class="heading-section">Welcome to Palladium Hotel</h2>
 				</div>
@@ -35,7 +62,7 @@
 			      			<h3 class="mb-4">Sign In</h3>
 			      		</div>
 			      	</div>
-							<form action="auth.php"  method="POST" class="signin-form">
+							<form action="stafflogin.php"  method="POST" class="signin-form">
 								<div class="form-group">
 									<input type="email" name="loginemail" id="email" class="form-control" required>
 									<label class="form-control-placeholder" for="email">Email</label>
@@ -47,16 +74,15 @@
 		              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 		            </div>
 		            <div class="form-group">
-		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+		            	<button type="submit" name="signin" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
 		            </div>
 		            <div class="form-group d-md-flex">
 									<div class="w-50  text-center">
-										<a href="forgotpass.php" onclick="event.preventDefault(); window.location.href='forgotpass.php';">Forgot Password</a>
+										<a href="staff_forgotpass.php" onclick="event.preventDefault(); window.location.href='staff_forgotpass.php';">Forgot Password</a>
 									</div>
 		            </div>
 		          </form>
-		          <p class="text-center">Not a member? <a data-toggle="tab" href="SignUpV2.html" onclick="event.preventDefault(); window.location.href='SignUpV2.html';">Sign Up</a></p>
-		          <p class="text-center">Continue as guest: <a href="\fyproject2024\Palladium-Hotel\index.html">Home</a></p>
+				  <!-- <p class="text-center">Not a member? <a data-toggle="tab" href="SignUpV2.html" onclick="event.preventDefault(); window.location.href='SignUpV2.html';">Sign Up</a></p> -->
 		        </div>
 		      </div>
 				</div>

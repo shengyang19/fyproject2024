@@ -18,5 +18,6 @@ if($row!=null){
     header("Location: /fyproject2024/Palladium-Hotel/index.html");
 }
 mysqli_close($con);
+header("Location: /fyproject2024/Palladium-Hotel/login-form-15/login-form-15/LoginV2.html");
 exit;
 ?>
