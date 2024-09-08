@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Montana</title>
+    <title>Contact - Palladium Hotel</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,7 +27,7 @@
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
-<body onload="checkCookie('user')">
+<body onload="setupPage('user')">
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -45,53 +45,32 @@
                                         <li><a href="index.html">home</a></li>
                                         <li><a href="rooms.html">rooms</a></li>
                                         <li><a href="about.html">About</a></li>
-                                        <!--li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="elements.html">elements</a></li>
-                                            </ul>
-                                        </li-->
                                         <li><a class="active" href="contact.html">Contact</a></li>
-                                        <li><a id="profile-btn" href="profile.html">Profile</a></li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-2">
+                        <div class="col-xl-1 col-lg-2">
                             <div class="logo-img">
-                                <a href="index.html">
-                                    <img src="img/logo.png" alt="" width="100" height="100">
-                                </a>
+                                <img src="img/logo.png" alt="" width="100">
                             </div>
                         </div>
-                        <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+                        <div class="col-xl-5 col-lg-2">
                             <div class="book_room">
-                                <div class="socail_links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-facebook-square"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
                                 <div class="book_btn d-none d-lg-block">
                                     <a class="popup-with-form" href="#test-form">Book A Room</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2">
+                            <div class="main-menu">
+                                <div class="btn-group">
+                                    <button type="button" class="btn rounded-circle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-user"></i>
+                                    </button>
+                                    <div id="profile-menu" class="dropdown-menu">
+                                        <a id="profile-menu-1" href="login-form-15/login-form-15/LoginV2.html" class="dropdown-item" type="button">Log In</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -1,7 +1,6 @@
 <?php
 //CREATE NEW USER
-$firstname=$_POST['firstname'];
-$lastname=$_POST['lastname'];
+$username=$_POST['username'];
 $phone=$_POST['phone'];
 $mail=$_POST['signupemail'];
 $cred=$_POST['signupkey'];
@@ -11,7 +10,7 @@ if (mysqli_connect_errno())
 {
 echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$sql="INSERT INTO account(firstname, phone, email, cred)VALUES ('$firstname', '$lastname', '$phone', '$mail', '$cred')";
+$sql="INSERT INTO account(username, phone, email, cred)VALUES ('$username', '$phone', '$mail', '$cred')";
 $qry = mysqli_query($con,$sql);
 mysqli_close($con);
 // echo $sql; // to display sql

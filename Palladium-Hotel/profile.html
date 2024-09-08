@@ -30,7 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body onload="checkCookie('user')">
+<body onload="setupProfile()">
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -48,53 +48,33 @@
                                         <li><a href="index.html">home</a></li>
                                         <li><a href="rooms.html">rooms</a></li>
                                         <li><a href="about.html">About</a></li>
-                                        <!--li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="elements.html">elements</a></li>
-                                            </ul>
-                                        </li-->
                                         <li><a href="contact.html">Contact</a></li>
-                                        <li><a id="profile-btn" class="active" href="profile.html">Profile</a></li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-2">
+                        <div class="col-xl-1 col-lg-2">
                             <div class="logo-img">
-                                <a href="index.html">
-                                    <img src="img/logo.png" alt="" width="100" height="100">
-                                </a>
+                                <img src="img/logo.png" alt="" width="100">
                             </div>
                         </div>
-                        <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+                        <div class="col-xl-5 col-lg-2">
                             <div class="book_room">
-                                <div class="socail_links">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-facebook-square"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
                                 <div class="book_btn d-none d-lg-block">
                                     <a class="popup-with-form" href="#test-form">Book A Room</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2">
+                            <div class="main-menu">
+                                <div class="btn-group">
+                                    <button type="button" class="btn rounded-circle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-user"></i>
+                                    </button>
+                                    <div id="profile-menu" class="dropdown-menu">
+                                        <a id="profile-menu-1" href="" class="dropdown-item" type="button">View profile</a>
+                                        <a id="profile-menu-2" href="index.html" class="dropdown-item" type="button">Logout</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -126,8 +106,8 @@
               <a href="#">
                   <img src="C:\xampp\htdocs\fyproject2024\Palladium-Hotel\img\profile\F2nKUhSaEAETiWK.jpeg" alt="">
               </a>
-              <h1>Azib Fikri</h1>
-              <p>azibfikri27@gmail.com</p>
+              <h1 id="titlename">Azib Fikri</h1>
+              <p id="titleemail">azibfikri27@gmail.com</p>
           </div>
 
           <ul class="nav nav-pills nav-stacked">
@@ -141,10 +121,7 @@
               <h1>Your Profile</h1>
               <div class="row">
                   <div class="bio-row">
-                      <p><span>First Name </span>: Azib</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Last Name </span>: Fikri</p>
+                      <p id="username" value="Azib"><span>Name </span>: Azib Fikri</p>
                   </div>
                   <div class="bio-row">
                       <p><span>Country </span>: Malaysia</p>
@@ -156,10 +133,10 @@
                       <p><span>Occupation </span>: Software Developer</p>
                   </div>
                   <div class="bio-row">
-                      <p><span>Email </span>: <i class="fa fa-envelope"></i> azibfikri27@gmail.com</p>
+                      <p id="email"><span>Email </span>: <i class="fa fa-envelope"></i> azibfikri27@gmail.com</p>
                   </div>
                   <div class="bio-row">
-                      <p><span>Mobile </span>: 010-209 4362</p>
+                      <p id="phone"><span>Mobile </span>: 010-209 4362</p>
                   </div>
                   <div class="bio-row">
                       <p><span>Phone </span>: - </p>
