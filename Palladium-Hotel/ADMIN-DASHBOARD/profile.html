@@ -9,16 +9,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Blank</title>
+    <title>PALLADIUM HOTEL - Profile</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
@@ -32,17 +36,17 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon">
+                    <img src="img/logoblack.png" alt="logo" style="width: 90px; height: 90;">
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">PALLADIUM HOTEL</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -55,6 +59,65 @@
             <div class="sidebar-heading">
                 Interface
             </div>
+
+            
+            <!-- Nav Item - Hotel -->
+            <li class="nav-item">
+                <a class="nav-link" href="hotel.html">
+                    <i class="fa-solid fa-hotel"></i>
+                    <span>Hotel</span></a>
+            </li>
+
+            <!-- Nav Item - MAIN Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHotel"
+                    aria-expanded="true" aria-controls="collapseHotel">
+                    <i class="fa-solid fa-bed"></i>
+                    <span>Room Book</span>
+                </a>
+                <div id="collapseHotel" class="collapse" aria-labelledby="headingHotel" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Room / Booking Details:</h6>
+                        <a class="collapse-item" href="buttons.html">Booking list</a>
+                        <a class="collapse-item" href="cards.html">Room Status</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Room Facilities -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFaci"
+                    aria-expanded="true" aria-controls="collapseFaci">
+                    <i class="fa-solid fa-tv"></i>
+                    <span>Room Facilities</span>
+                </a>
+                <div id="collapseFaci" class="collapse" aria-labelledby="headingFaci" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Facilities:</h6>
+                        <a class="collapse-item" href="buttons.html">Facilities List</a>
+                        <a class="collapse-item" href="cards.html">Facilities Details</a>
+                        <a class="collapse-item" href="cards.html">Room Size</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - House Keeping -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKeep"
+                    aria-expanded="true" aria-controls="collapseKeep">
+                    <i class="fa-solid fa-tv"></i>
+                    <span>House Keeping</span>
+                </a>
+                <div id="collapseKeep" class="collapse" aria-labelledby="headingKeep" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">House Keeping :</h6>
+                        <a class="collapse-item" href="buttons.html">Assign Room</a>
+                        <a class="collapse-item" href="cards.html">Room Cleaning</a>
+                        <a class="collapse-item" href="cards.html">Checklist</a>
+                        <a class="collapse-item" href="cards.html">Cleaning Report</a>
+                    </div>
+                </div>
+            </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -100,14 +163,13 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
-                    aria-controls="collapsePages">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Pages</span>
                 </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
                         <a class="collapse-item" href="login.html">Login</a>
@@ -116,7 +178,7 @@
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
                         <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item active" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="blank.html">Blank Page</a>
                     </div>
                 </div>
             </li>
@@ -141,6 +203,13 @@
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            <!-- Sidebar Message -->
+            <div class="sidebar-card d-none d-lg-flex">
+                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
+                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
+                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
             </div>
 
         </ul>
@@ -324,9 +393,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Shishiro Botan</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                    src="img/Shishiro_Botan_Portrait.png">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -360,110 +429,162 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <main>
-                        <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
-                            <div class="container-xl px-4">
-                                <div class="page-header-content">
-                                    <div class="row align-items-center justify-content-between pt-3">
-                                        <div class="col-auto mb-3">
-                                            <h1 class="page-header-title">
-                                                <div class="page-header-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
-                                                Account Settings - Profile
-                                            </h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </header>
-                        <!-- Main page content-->
-                        <div class="container-xl px-4 mt-4">
-                            <!-- Account page navigation-->
-                            <nav class="nav nav-borders">
-                                <a class="nav-link active ms-0" href="account-profile.html">Profile</a>
-                                <a class="nav-link" href="account-billing.html">Billing</a>
-                                <a class="nav-link" href="account-security.html">Security</a>
-                                <a class="nav-link" href="account-notifications.html">Notifications</a>
-                            </nav>
-                            <hr class="mt-0 mb-4">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Profile</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    </div>
+
+                    <div class="container emp-profile">
+                        <form method="post">
                             <div class="row">
-                                <div class="col-xl-4">
-                                    <!-- Profile picture card-->
-                                    <div class="card mb-4 mb-xl-0">
-                                        <div class="card-header">Profile Picture</div>
-                                        <div class="card-body text-center">
-                                            <!-- Profile picture image-->
-                                            <img class="img-account-profile rounded-circle mb-2" src="assets/img/illustrations/profiles/profile-1.png" alt="">
-                                            <!-- Profile picture help block-->
-                                            <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                                            <!-- Profile picture upload button-->
-                                            <button class="btn btn-primary" type="button">Upload new image</button>
+                                <div class="col-md-4">
+                                    <div class="profile-img">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                                        <div class="file btn btn-lg btn-primary">
+                                            Change Photo
+                                            <input type="file" name="file"/>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-8">
-                                    <!-- Account details card-->
-                                    <div class="card mb-4">
-                                        <div class="card-header">Account Details</div>
-                                        <div class="card-body">
-                                            <form>
-                                                <!-- Form Group (username)-->
-                                                <div class="mb-3">
-                                                    <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
-                                                    <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username">
+                                <div class="col-md-6">
+                                    <div class="profile-head">
+                                                <h5>
+                                                    Kshiti Ghelani
+                                                </h5>
+                                                <h6>
+                                                    Web Developer and Designer
+                                                </h6>
+                                                <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                                </div>
+                                <div class="col-md-2"></div>
+                                    <a class="btn" href="../login-form-15/login-form-15/staff_changepass.php" name="btnAddMore">Change Password</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="profile-work">
+                                        <p>WORK LINK</p>
+                                        <a href="">Website Link</a><br/>
+                                        <a href="">Bootsnipp Profile</a><br/>
+                                        <a href="">Bootply Profile</a>
+                                        <p>SKILLS</p>
+                                        <a href="">Web Designer</a><br/>
+                                        <a href="">Web Developer</a><br/>
+                                        <a href="">WordPress</a><br/>
+                                        <a href="">WooCommerce</a><br/>
+                                        <a href="">PHP, .Net</a><br/>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="tab-content profile-tab" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>User Id</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>Kshiti123</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Name</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>Kshiti Ghelani</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Email</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>kshitighelani@gmail.com</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Phone</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>123 456 7890</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Profession</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>Web Developer and Designer</p>
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Experience</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>Expert</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Hourly Rate</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>10$/hr</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Total Projects</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>230</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>English Level</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>Expert</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Availability</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>6 months</p>
+                                                        </div>
+                                                    </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label>Your Bio</label><br/>
+                                                    <p>Your detail description</p>
                                                 </div>
-                                                <!-- Form Row-->
-                                                <div class="row gx-3 mb-3">
-                                                    <!-- Form Group (first name)-->
-                                                    <div class="col-md-6">
-                                                        <label class="small mb-1" for="inputFirstName">First name</label>
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Valerie">
-                                                    </div>
-                                                    <!-- Form Group (last name)-->
-                                                    <div class="col-md-6">
-                                                        <label class="small mb-1" for="inputLastName">Last name</label>
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Luna">
-                                                    </div>
-                                                </div>
-                                                <!-- Form Row        -->
-                                                <div class="row gx-3 mb-3">
-                                                    <!-- Form Group (organization name)-->
-                                                    <div class="col-md-6">
-                                                        <label class="small mb-1" for="inputOrgName">Organization name</label>
-                                                        <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap">
-                                                    </div>
-                                                    <!-- Form Group (location)-->
-                                                    <div class="col-md-6">
-                                                        <label class="small mb-1" for="inputLocation">Location</label>
-                                                        <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA">
-                                                    </div>
-                                                </div>
-                                                <!-- Form Group (email address)-->
-                                                <div class="mb-3">
-                                                    <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                                    <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
-                                                </div>
-                                                <!-- Form Row-->
-                                                <div class="row gx-3 mb-3">
-                                                    <!-- Form Group (phone number)-->
-                                                    <div class="col-md-6">
-                                                        <label class="small mb-1" for="inputPhone">Phone number</label>
-                                                        <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567">
-                                                    </div>
-                                                    <!-- Form Group (birthday)-->
-                                                    <div class="col-md-6">
-                                                        <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                                        <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
-                                                    </div>
-                                                </div>
-                                                <!-- Save changes button-->
-                                                <button class="btn btn-primary" type="button">Save changes</button>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </main>
+                        </form>           
+                    </div>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -475,7 +596,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; Your Website 2021</span>
                     </div>
                 </div>
             </footer>
@@ -521,6 +642,13 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 
