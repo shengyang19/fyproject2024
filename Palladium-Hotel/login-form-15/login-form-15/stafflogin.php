@@ -17,7 +17,9 @@ echo "Failed to connect to MySQL: " . mysqli_connect_error();
 $sql="SELECT username,email,cred FROM staff_account WHERE email='$email' AND cred='$key'";
 $row = mysqli_fetch_array(mysqli_query($con,$sql));
 if($row!=null){
-    $_SESSION["temp"]=$row['username'];
+    $_COOKIE["tempname"]=$row['username'];
+    $_COOKIE["tempmail"]=$row['email'];
+
 	//echo ("alert('success')");
     /*setcookie($cookie_name, $row['username'], time() + (86400 * 30), "/"); // 86400 = 1 day
     setcookie("phone", $row['phone'], time() + (86400 * 30), "/"); // 86400 = 1 day

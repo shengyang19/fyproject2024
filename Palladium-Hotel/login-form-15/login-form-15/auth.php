@@ -16,6 +16,7 @@ if($row!=null){
     setcookie("phone", $row['phone'], time() + (86400 * 30), "/"); // 86400 = 1 day
     setcookie("email", $email, time() + (86400 * 30), "/"); // 86400 = 1 day
     header("Location: /fyproject2024/Palladium-Hotel/index.html");
+    exit;
 }
 mysqli_close($con);
 header("Location: /fyproject2024/Palladium-Hotel/login-form-15/login-form-15/LoginV2.html");
