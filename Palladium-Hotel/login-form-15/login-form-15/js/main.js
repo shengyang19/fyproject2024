@@ -61,7 +61,8 @@ function getCookie(cname) {
 function validateForm() {
  if(emailError.textContent!=""){
     return false;
-  }if(emailError.textContent!=""){
+  }
+  if(phoneError.textContent!=""){
     return false;
   }
 }
@@ -72,13 +73,28 @@ function displayModal(){
     $('.my-modal').modal('toggle');
     document.cookie = "error=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }
+  else if(errormessage=="samepassword"){
+    $('.modal-body').html("<p>New password same as current password.</p><p>Please enter different new password.</p>");
+    $('.my-modal').modal('toggle');
+    document.cookie = "error=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
   else if(errormessage=="difpassword"){
-    $('.modal-body').html("<p>Password not matches</p>");
+    $('.modal-body').html("<p>Repeat password not matches</p>");
     $('.my-modal').modal('toggle');
     document.cookie = "error=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }
   else if(errormessage=="passlength"){
     $('.modal-body').html("<p>Password length must be atleast 6</p>");
+    $('.my-modal').modal('toggle');
+    document.cookie = "error=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
+  else if(errormessage=="insertfail"){
+    $('.modal-body').html("<p>Failed to register account.</p><p>Please try again.</p>");
+    $('.my-modal').modal('toggle');
+    document.cookie = "error=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
+  else if(errormessage=="changepassfail"){
+    $('.modal-body').html("<p>Failed to reset password.</p><p>Please try again.</p>");
     $('.my-modal').modal('toggle');
     document.cookie = "error=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }

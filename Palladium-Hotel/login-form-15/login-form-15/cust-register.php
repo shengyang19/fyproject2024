@@ -25,7 +25,7 @@ if(isset($_POST["signin"])){
             $con=mysqli_connect('localhost', 'root', '','phmsdb');
         
             if(!$con)
-                echo ("failed to connect to database");
+                //echo ("failed to connect to database");
             $sql = "SELECT email,username, cred FROM account WHERE email='$email'";
             $result = $con->query($sql);
             mysqli_close($con);
@@ -101,9 +101,7 @@ if(isset($_POST["signin"])){
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
 					<div class="logo-img">
-						<a href="/fyproject2024/Palladium-Hotel/index.html">
-							<img src="images/logo.png" alt="" width="100" height="100">
-						</a>
+                        <img src="images/logo.png" alt="" width="100" height="100">
 					</div>
 					<h2 class="heading-section">Welcome to Palladium Hotel</h2>
 				</div>
@@ -143,10 +141,8 @@ if(isset($_POST["signin"])){
                                     <label class="form-control-placeholder" for="repeat-password">Repeat Password</label>
                                     <span toggle="#repeat-password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                 </div>
-                                <div class="button-container">
-                                    <button name="signin" type="submit" class="btn btn-primary">
-                                        Sign Up
-                                    </button>
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn btn-primary rounded submit px-3">Confirm</button>
                                 </div>
                             </form>
 		                    <p class="text-center">Already a member? <a data-toggle="tab" href="cust-login.php" onclick="event.preventDefault(); window.location.href='cust-login.php';">Sign In</a></p>

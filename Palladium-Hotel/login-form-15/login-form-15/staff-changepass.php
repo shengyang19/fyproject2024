@@ -2,47 +2,49 @@
 <html lang="en">
     
 <?php
+session_start();
 if(isset($_POST["confirm"])){
-//session_start();
-$email=$_COOKIE["email"];
+$email=$_SESSION["email"];
 $savedpass="-";
 $oldpass=$_POST["oldpass"];
 $newpass=$_POST["newpass"];
 $newpassrepeat=$_POST["newpassrepeat"];
-if($newpass==$newpassrepeat){
-    $cred=json_encode($newpass);
-    //echo ("corect repeat password");
-    $con = mysqli_connect('localhost','root','','phmsdb');
-    if (mysqli_connect_errno())
-    {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
-    $sql="SELECT email,cred FROM staff_account WHERE email='$email'";
-    $row = mysqli_fetch_array(mysqli_query($con,$sql));
-    if($row!=null){
-        $savedpass=$row['cred'];
-    }
-    else{
-        echo ("<script>alert('$email')</script>");
-    }
-    if($savedpass==$oldpass){
-    $sql="UPDATE account SET cred='$cred' WHERE email='$email'";
-    $qry = mysqli_query($con,$sql);
-    mysqli_close($con);
-    // echo $sql; // to display sql
-    if(!$qry){
-        //return false; // error new user record was not added
-        //header("Location: register.php");
-    }
-    else{
-        echo ("<script>alert('Password changed')</script>");
-        header("Location: /fyproject2024/Palladium-Hotel/ADMIN-DASHBOARD/index.html");
-        exit;
-    }
 
-} else echo ("<script>alert('Incorrect current password')</script>");
-}
-else echo ("<script>alert('incorect repeat password')</script>");
+if(strlen($newpass)>5){
+if($newpass==$newpassrepeat){
+	if($oldpass!=$newpass){
+		$con = mysqli_connect('localhost','root','','phmsdb');
+		if (mysqli_connect_errno())
+		{	echo "Failed to connect to MySQL: " . mysqli_connect_error();	}
+		$sql="SELECT email,cred FROM staff_account WHERE email='$email'";
+		$row = mysqli_fetch_array(mysqli_query($con,$sql));
+		if($row!=null){
+			$savedpass=json_decode($row['cred']);
+			if($savedpass==$oldpass){
+				$sql="UPDATE account SET cred='$newpass' WHERE email='$email'";
+				$qry = mysqli_query($con,$sql);
+				mysqli_close($con);
+				if(!$qry){
+					setcookie("error","changepassfail", time() + (30 * 30), "/");
+				}
+				else{
+					//echo ("<script>alert('Password changed')</script>");
+					header("Location: /fyproject2024/Palladium-Hotel/ADMIN-DASHBOARD/index.html");
+					exit;
+				}
+			}
+			else{
+				setcookie("error","default", time() + (30 * 30), "/");
+			}
+		}
+		else{
+			//setcookie("error","changepassfail", time() + (30 * 30), "/");
+			//header("Location: /fyproject2024/Palladium-Hotel/profile.html");
+			//exit;
+		}
+	} else {		setcookie("error","samepassword", time() + (30 * 30), "/");	}
+} else {	setcookie("error","difpassword", time() + (30 * 30), "/");}
+} else {	setcookie("error","passlength", time() + (30 * 30), "/");}
 }
 
 ?>
@@ -59,7 +61,7 @@ else echo ("<script>alert('incorect repeat password')</script>");
 	<link rel="stylesheet" href="css/style.css">
 
 	</head>
-	<body style="background-image: url('images/background.png'); background-size: cover; background-color: #000;">
+	<body onload="displayModal()" style="background-image: url('images/background.png'); background-size: cover; background-color: #000;">
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -80,7 +82,7 @@ else echo ("<script>alert('incorect repeat password')</script>");
 			      			<h3 class="mb-4">Change Password</h3>
 			      		</div>
 					</div>
-					<form action="staff_changepass.php" class="signin-form" method="POST">
+					<form action="staff-changepass.php" class="signin-form" method="POST">
 						<div class="form-group">
                             <input id="current-password-field" name="oldpass" type="password" class="form-control" required>
 							<label class="form-control-placeholder" for="password">Current Password</label>
@@ -99,9 +101,29 @@ else echo ("<script>alert('incorect repeat password')</script>");
 		            <div class="form-group">
 		            	<button name="confirm" type="submit" class="form-control btn btn-primary rounded submit px-3">Confirm</button>
 		            </div>
+		            <div class="form-group">
+		            	<a href="/fyproject2024/Palladium-Hotel/ADMIN-DASHBOARD/index.html" class="form-control btn btn-secondary rounded submit px-3">Cancel</a>
+		            </div>
 		          </form>
-		          <div class="form-group">
-					  <a class="btn btn-secondary" href="/fyproject2024/Palladium-Hotel/ADMIN-DASHBOARD/index.html">Cancel</a></p>
+				  <div class="modal fade my-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-sm">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Error</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p>Current password is incorrect.</p>
+									<p>Please enter correct password.</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+									<!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+								</div>
+							</div>
+						</div>
 					</div>
 		        </div>
 		      </div>

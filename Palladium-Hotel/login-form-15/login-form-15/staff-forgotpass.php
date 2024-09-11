@@ -6,8 +6,9 @@ session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
-if($_SERVER["REQUEST_METHOD"]=="POST"){
+$email="";
+if(isset($_POST["confirm"])){
+    $debugmail=false;
     $con=mysqli_connect('localhost',
         'root',
         '','phmsdb');
@@ -19,11 +20,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $email1=$_POST['email'];
     $email=strval($email1);
     if($password!=$repassword){
-        echo("<script>alert('password not matches')</script>");
+        setcookie("error","difpassword", time() + (10 * 30), "/");
+        //echo("<script>alert('password not matches')</script>");
     }
     else{
-        if(strlen($password)<3){
-            echo("<script>alert('password length must be atleast 8')</script>");
+        if(strlen($password)<6){
+            setcookie("error","passlength", time() + (10 * 30), "/");
+            //echo("<script>alert('password length must be atleast 8')</script>");
         }
         else{
 
@@ -44,47 +47,47 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             // echo($ok);
             if($email_already_exist==true){
                 $otp=rand(100000,999999);
+                if(!$debugmail){
 
-                require 'phpmailer/src/Exception.php';
-                require 'phpmailer/src/PHPMailer.php';
-                require 'phpmailer/src/SMTP.php';
-
-                $mail = new PHPMailer(true);
-
-                $mail->isSMTP();
-                $mail->Host='smtp.gmail.com';
-                $mail->SMTPAuth=true;
-                $mail->Username='mypalladiumhotel@gmail.com';
-                $mail->Password='jqabtnpxssakrlvw';
-                $mail->SMTPSecure='ssl';
-                $mail->Port=465;
-
-                $mail->setFrom('mypalladiumhotel@gmail.com');
-
-                $mail->addAddress($email);
-
-                $mail->isHTML(true);
-
-                $mail->Subject='Email confirmation code';
-                $mail->Body=$otp;
-
-                //$mail->send();
-
-                //if(mail($to,$subject,$message,$headers)){
-                if($mail->send()){
-                    $_SESSION["OTP"]=$otp;
-                    $_SESSION["Email"]=$email;
-                    $_SESSION["Password"]=$password;
-                    $_SESSION["registration-going-on"]="1";
-                    header("Location:staff_verifyforgot.php");
+                    require 'phpmailer/src/Exception.php';
+                    require 'phpmailer/src/PHPMailer.php';
+                    require 'phpmailer/src/SMTP.php';
+                    
+                    $mail = new PHPMailer(true);
+                    
+                    $mail->isSMTP();
+                    $mail->Host='smtp.gmail.com';
+                    $mail->SMTPAuth=true;
+                    $mail->Username='mypalladiumhotel@gmail.com';
+                    $mail->Password='jqabtnpxssakrlvw';
+                    $mail->SMTPSecure='ssl';
+                    $mail->Port=465;
+                    
+                    $mail->setFrom('mypalladiumhotel@gmail.com');
+                    
+                    $mail->addAddress($email);
+                    
+                    $mail->isHTML(true);
+                    
+                    $mail->Subject='Email confirmation code';
+                    $mail->Body=$otp;
+                    
+                    $mail->send();
                 }
-                else 
-                    echo("mail send failed");
+                $_SESSION["OTP"]=$otp;
+                $_SESSION["Email"]=$email;
+                $_SESSION["Password"]=$password;
+                $_SESSION["registration-going-on"]="1";
+                header("Location:staff-verifyforgot.php");
+                exit;
+                //else 
+                //echo("mail send failed");
             }
             else{
-                echo $email;
+                setcookie("error","default", time() + (30 * 30), "/");
+                //echo $email;
                 //echo("<script>alert('wrong email address')</script>");
-                echo("wrong email address");
+                //echo("wrong email address");
             }
         }
     }
@@ -103,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	<link rel="stylesheet" href="css/style.css">
 
 	</head>
-	<body style="background-image: url('images/background.png'); background-size: cover; background-color: #000;">
+	<body onload="displayModal()" style="background-image: url('images/background.png'); background-size: cover; background-color: #000;">
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -124,9 +127,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			      			<h3 class="mb-4">Forgot Password</h3>
 			      		</div>
 			      	</div>
-                      <form action="staff_forgotpass.php" class="signin-form" method="POST">
+                      <form action="staff-forgotpass.php" class="signin-form" method="POST">
 					  <div class="form-group">
-						<input type="email" name="email" id="email" class="form-control" required>
+						<input type="email" name="email" id="email" value="<?php echo $email;?>" class="form-control" required>
 						<label class="form-control-placeholder" for="email">Email</label>
 						<span id="email-error" style="color: red;"></span>
 					  </div>
@@ -141,10 +144,29 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 						<span toggle="#repeat-password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 					  </div>
 		            <div class="form-group">
-		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+		            	<button name="confirm" type="submit" class="form-control btn btn-primary rounded submit px-3">Confirm</button>
 		            </div>
 		          </form>
-		          <p class="text-center">Already a member? <a data-toggle="tab" href="stafflogin.php">Sign In</a></p>
+                  <div class="modal fade my-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-sm">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Error</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p>Account not exist.</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+									<!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+								</div>
+							</div>
+						</div>
+					</div>
+		          <p class="text-center">Already a member? <a href="staff-login.php">Sign In</a></p>
 		        </div>
 		      </div>
 				</div>

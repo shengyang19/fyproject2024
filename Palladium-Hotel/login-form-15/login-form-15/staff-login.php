@@ -27,7 +27,7 @@ if($row!=null){
 	exit;
 }
 else{
-	setcookie("error","incorrect", time() + (30 * 30), "/");
+	setcookie("error","default", time() + (30 * 30), "/");
 }
 }
 
@@ -82,7 +82,7 @@ else{
 		            </div>
 		            <div class="form-group d-md-flex">
 									<div class="w-50  text-center">
-										<a href="staff_forgotpass.php" onclick="event.preventDefault(); window.location.href='staff_forgotpass.php';">Forgot Password</a>
+										<a href="staff-forgotpass.php" onclick="event.preventDefault(); window.location.href='staff-forgotpass.php';">Forgot Password</a>
 									</div>
 		            </div>
 		          </form>

@@ -49,9 +49,7 @@ else{
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
 					<div class="logo-img">
-						<a href="/fyproject2024/Palladium-Hotel/index.html">
-							<img src="images/logo.png" alt="" width="100" height="100">
-						</a>
+						<img src="images/logo.png" alt="" width="100" height="100">
 					</div>
 					<h2 class="heading-section">Welcome to Palladium Hotel</h2>
 				</div>
@@ -103,7 +101,7 @@ else{
 					</div>
 		            <div class="form-group d-md-flex">
 									<div class="w-50  text-center">
-										<a href="forgotpass.php" onclick="event.preventDefault(); window.location.href='forgotpass.php';">Forgot Password</a>
+										<a href="cust-forgotpass.php" onclick="event.preventDefault(); window.location.href='cust-forgotpass.php';">Forgot Password</a>
 									</div>
 								</div>
 		          <p class="text-center">Not a member? <a data-toggle="tab" href="cust-register.php" onclick="event.preventDefault(); window.location.href='cust-register.php';">Sign Up</a></p>

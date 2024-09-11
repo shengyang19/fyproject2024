@@ -4,34 +4,34 @@
 session_start();
 
 if(isset($_POST["verify"])){
+$_SESSION["OTP"]="123456";
 $otp_entered=$_POST["verification"];
 if($otp_entered==$_SESSION["OTP"]){
-    $email=$_SESSION["Email"];
-    $cred=json_encode($_SESSION["Password"]);
+//if(isset($_SESSION["OTP"])){
+    $username=$_SESSION["username"];
+    $phone=$_SESSION["Phone"];
+    $mail=$_SESSION["Email"];
+    $cred=$_SESSION["Password"];
 
     $con = mysqli_connect('localhost','root','','phmsdb');
     if (mysqli_connect_errno())
-    {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
-    $sql="UPDATE staff_account SET cred='$cred' WHERE email='$email'";
+    {    echo "Failed to connect to MySQL: " . mysqli_connect_error();    }
+    $sql="INSERT INTO account(username, phone, email, cred)VALUES ('$username', '$phone', '$mail', '$cred')";
     $qry = mysqli_query($con,$sql);
     mysqli_close($con);
     // echo $sql; // to display sql
     if(!$qry){
         //return false; // error new user record was not added
-        //header("Location: register.php");
+        setcookie("error","insertfail", time() + (30 * 30), "/");
+        header("Location: cust-register.php");
+        exit;
     }
     else{
-        header("Location: stafflogin.php");
+        header("Location: cust-login.php");
         exit;
     }
 }
-else{
-    echo ("<script>alert('wrong otp')</script>");
-    //echo("wrong otp");
-    //echo ("no otp session");
-}
+setcookie("error","default", time() + (30 * 30), "/");
 }
 ?>
 
@@ -47,13 +47,15 @@ else{
 <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body style="background-image: url('images/background.png'); background-size: cover; background-color: #000;">
+<body onload="displayModal()" style="background-image: url('images/background.png'); background-size: cover; background-color: #000;">
 <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
                 <div class="logo-img">
-                    <img src="images/logo.png" alt="" width="100" height="100">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="" width="100" height="100">
+                    </a>
                 </div>
                 <h2 class="heading-section">Welcome to Palladium Hotel</h2>
             </div>
@@ -69,7 +71,7 @@ else{
                         <p>We've sent a code to verify your email.</p>
                     </div>
                 </div>
-            <form action="staff_verifyforgot.php" class="signin-form" method="POST">
+            <form action="cust-verify.php" class="signin-form" method="POST">
                     <div class="form-group">
                         <label class="form-label" for="verification">Code</label>
                         <input name="verification" type="text" class="form-control" required>
@@ -78,7 +80,26 @@ else{
                     <button type="submit" name="verify" class="form-control btn btn-primary rounded submit px-3">Verify</button>
                 </div>
                 </form>
-            </div>
+                <div class="modal fade my-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-sm">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Verification Error</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p>Incorrect code.</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+									<!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
             </div>
             </div>
         </div>
