@@ -25,7 +25,7 @@ function checkCookie(cname) {
         document.getElementById("profile-btn").href="profile.html"; 
         //document.getElementById("acc_name").innerHTML=user;
     }
-    else document.getElementById("profile-btn").href="profilelogin.html";   
+    else document.getElementById("profile-btn").href="cust-login.php";   
 }
 
 function setupPage(cname){
