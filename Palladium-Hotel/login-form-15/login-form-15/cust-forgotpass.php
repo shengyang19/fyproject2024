@@ -140,7 +140,7 @@ if(isset($_POST["confirm"])){
 		            </div>
 					<div class="form-group">
 						<input id="repeat-password-field" name="repass" type="password" class="form-control" required>
-						<label class="form-control-placeholder" for="repeat-password">Repeat Password</label>
+						<label class="form-control-placeholder" for="repeat-password">Confirm Password</label>
 						<span toggle="#repeat-password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 					  </div>
 		            <div class="form-group">

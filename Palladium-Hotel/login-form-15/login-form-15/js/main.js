@@ -99,6 +99,7 @@ function displayModal(){
     document.cookie = "error=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }
   else if(errormessage=="resetpasssuccess"){
+    $('.modal-title').html("Success!");
     $('.modal-body').html("<p>Reset password successful.</p><p>good boy</p>");
     $('.my-modal').modal('toggle');
     document.cookie = "error=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
