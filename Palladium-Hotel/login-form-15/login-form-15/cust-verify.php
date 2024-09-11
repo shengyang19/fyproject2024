@@ -4,7 +4,7 @@
 session_start();
 
 if(isset($_POST["verify"])){
-$_SESSION["OTP"]="123456";
+//$_SESSION["OTP"]="123456";
 $otp_entered=$_POST["verification"];
 if($otp_entered==$_SESSION["OTP"]){
 //if(isset($_SESSION["OTP"])){
@@ -53,9 +53,7 @@ setcookie("error","default", time() + (30 * 30), "/");
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
                 <div class="logo-img">
-                    <a href="index.html">
-                        <img src="images/logo.png" alt="" width="100" height="100">
-                    </a>
+                    <img src="images/logo.png" alt="" width="100" height="100">
                 </div>
                 <h2 class="heading-section">Welcome to Palladium Hotel</h2>
             </div>

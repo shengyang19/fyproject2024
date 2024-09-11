@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 $username="";
 $phone="";
 $email="";
-if(isset($_POST["signin"])){
+if(isset($_POST["confirm"])){
     $username=$_POST['username'];
     $phone=$_POST['phone'];
     $password=$_POST['signupkey'];
@@ -25,7 +25,7 @@ if(isset($_POST["signin"])){
             $con=mysqli_connect('localhost', 'root', '','phmsdb');
         
             if(!$con)
-                //echo ("failed to connect to database");
+                echo ("failed to connect to database");
             $sql = "SELECT email,username, cred FROM account WHERE email='$email'";
             $result = $con->query($sql);
             mysqli_close($con);
@@ -73,7 +73,8 @@ if(isset($_POST["signin"])){
                     $_SESSION["Email"]=$email;
                     $_SESSION["Password"]=$password;
                     $_SESSION["registration-going-on"]="1";
-                    header("Location:verify.php");
+                    header("Location:cust-verify.php");
+                    exit;
                 }
                 else echo("mail send failed");
             }
@@ -142,7 +143,7 @@ if(isset($_POST["signin"])){
                                     <span toggle="#repeat-password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="form-control btn btn-primary rounded submit px-3">Confirm</button>
+                                    <button name="confirm" type="submit" class="form-control btn btn-primary rounded submit px-3">Confirm</button>
                                 </div>
                             </form>
 		                    <p class="text-center">Already a member? <a data-toggle="tab" href="cust-login.php" onclick="event.preventDefault(); window.location.href='cust-login.php';">Sign In</a></p>
