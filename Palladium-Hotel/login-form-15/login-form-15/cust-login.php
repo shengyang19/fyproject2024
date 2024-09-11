@@ -21,6 +21,17 @@ if($row!=null){
     setcookie($cookie_name, $row['username'], time() + (86400 * 30), "/"); // 86400 = 1 day
     setcookie("phone", $row['phone'], time() + (86400 * 30), "/"); // 86400 = 1 day
     setcookie("email", $email, time() + (86400 * 30), "/"); // 86400 = 1 day
+	$data = [
+		"name" => $row['username'],
+		"phone" => $row['phone'],
+		"email" => $email
+	];
+	
+	$file = '/fyproject2024/Palladium-Hotel/js/data.json';
+	
+	// Convert PHP array to JSON and save it to a file
+	file_put_contents($file, json_encode($data));
+
     header("Location: /fyproject2024/Palladium-Hotel/index.html");
     exit;
 }

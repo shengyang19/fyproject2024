@@ -57,6 +57,23 @@ function setupProfile(){
         document.getElementById('email').innerHTML ="<span>Email </span>:  <i class=\"fa fa-envelope\"></i> "+mail;
         document.getElementById('titleemail').innerHTML =mail;
         document.getElementById('phone').innerHTML ="<span>Mobile </span>: "+getCookie('phone');
+
+        // Fetch the JSON data from the PHP script
+        fetch('getData.php')
+            .then(response => response.json()) // Parse the JSON from the response
+            .then(data => {
+                console.log(data); // Log the data for debugging
+
+                // Display the JSON data on the webpage
+                /*document.getElementById('output').innerHTML = `
+                    <p>Name: ${data.name}</p>
+                    <p>Role: ${data.role}</p>
+                    <p>Security Level: ${data.securityLevel}</p>
+                `;*/
+            })
+            .catch(error => {
+                console.error('Error fetching JSON data:', error);
+            });
     }
     //else window.location.href="index.html";
 }

@@ -22,6 +22,7 @@ if($otp_entered==$_SESSION["OTP"]){
         exit;
     }
     else{
+        setcookie("error","resetpasssuccess", time() + (30 * 30), "/");
         header("Location: cust-login.php");
         exit;
     }

@@ -4,14 +4,14 @@ $message=$_POST['message'];
 $name=$_POST['name'];
 $email=$_POST['email'];
 $subject=$_POST['subject'];
-$feedback=date('Y-m-d'). $message.$name.$email.$subject;
+$date=date('Y-m-d');
 //update database
 $con = mysqli_connect('localhost','root','','phmsdb');
 if (mysqli_connect_errno())
 {
 echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$sql="INSERT INTO feedback(details)VALUES ('$feedback')";
+$sql="INSERT INTO feedback(data,message,name,email,subject)VALUES ('$date','$message','$name','$email')";
 $qry = mysqli_query($con,$sql);
 mysqli_close($con);
 // echo $sql; // to display sql
