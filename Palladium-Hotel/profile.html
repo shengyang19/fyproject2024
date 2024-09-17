@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="css/responsive.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body onload="setupProfile()">
@@ -89,7 +92,7 @@
     <!-- header-end -->
 
     <!-- bradcam_area_start -->
-    <div class="bradcam_area breadcam_bg_2">
+    <div class="bradcam_area breadcam_bg">
         <h3 id="acc_name">Account Profile</h3>
     </div>
 
@@ -97,62 +100,153 @@
     <!-- bradcam_area_end -->
 
     <!-- ================ profile section start ================= -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container bootstrap snippets bootdey">
-<div class="row">
-  <div class="profile-nav col-md-3">
-      <div class="panel">
-          <div class="user-heading round">
-              <a href="#">
-                  <img src="C:\xampp\htdocs\fyproject2024\Palladium-Hotel\img\profile\F2nKUhSaEAETiWK.jpeg" alt="">
-              </a>
-              <h1 id="titlename">Azib Fikri</h1>
-              <p id="titleemail">azibfikri27@gmail.com</p>
-          </div>
-
-          <ul class="nav nav-pills nav-stacked">
-              <li><a href="#"> <i class="fa fa-edit"></i> Edit profile</a></li>
-          </ul>
-      </div>
-  </div>
-  <div class="profile-info col-md-9">
-      <div class="panel">
-          <div class="panel-body bio-graph-info">
-              <h1>Your Profile</h1>
-              <div class="row">
-                  <div class="bio-row">
-                      <p id="username" value="Azib"><span>Name </span>: Azib Fikri</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Country </span>: Malaysia</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Birthday</span>: 21 March 2004</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Occupation </span>: Software Developer</p>
-                  </div>
-                  <div class="bio-row">
-                      <p id="email"><span>Email </span>: <i class="fa fa-envelope"></i> azibfikri27@gmail.com</p>
-                  </div>
-                  <div class="bio-row">
-                      <p id="phone"><span>Mobile </span>: 010-209 4362</p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Phone </span>: - </p>
-                  </div>
-                  <div class="div d-inline-block">
-                    <a href="login-form-15\login-form-15\changepass.php" class="btn btn-primary">Change Password</a>
-                  </div>
-                  <div class="div d-inline-block">
-                    <a onclick="deleteCookie('user')" href="index.html" class="btn btn-primary">Logout</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-</div>
+    <div class="container emp-profile">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src="img/profile/F2nKUhSaEAETiWK.jpeg" alt=""/>
+                        <div class="file btn btn-lg btn-primary">
+                            Change Photo
+                            <input type="file" name="file"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                                <h5>
+                                    Azib Fikri
+                                </h5>
+                                <h6>
+                                    Web Developer and Designer
+                                </h6>
+                                <p class="proile-rating">RANTING : <span>10/10</span></p>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-work">
+                        <p>WORK LINK</p>
+                        <a href="">Website Link</a><br/>
+                        <a href="">Bootsnipp Profile</a><br/>
+                        <a href="">Bootply Profile</a>
+                        <p>SKILLS</p>
+                        <a href="">Web Designer</a><br/>
+                        <a href="">Web Developer</a><br/>
+                        <a href="">WordPress</a><br/>
+                        <a href="">WooCommerce</a><br/>
+                        <a href="">PHP, .Net</a><br/>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>User Id</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>azibfikri27</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Name</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Azib Fikri</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Email</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>azibfikri27@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Phone</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>+60 10-209 4362</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Profession</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Web Developer and Designer</p>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Experience</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Expert</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Hourly Rate</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>RM500/hr</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Total Projects</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>230</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>English Level</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Expert</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Availability</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>6 months</p>
+                                        </div>
+                                    </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Your Bio</label><br/>
+                                    <p>Your detail description</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>           
+    </div>
     <!-- ================ profile section end ================= -->
     
     <!-- footer -->
