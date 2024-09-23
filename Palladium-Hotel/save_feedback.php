@@ -11,7 +11,7 @@ if (mysqli_connect_errno())
 {
 echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$sql="INSERT INTO feedback(date,message,name,email,subject)VALUES ('$date','$message','$name','$email',$subject')";
+$sql="INSERT INTO feedback(date,message,name,email,subject)VALUES ('$date','$message','$name','$email','$subject')";
 $qry = mysqli_query($con,$sql);
 mysqli_close($con);
 // echo $sql; // to display sql
