@@ -46,14 +46,25 @@
 <body>
     <iframe src="customer/index.html" height="auto" width="auto" name="iframe_a" title="Iframe Example"></iframe>
     <ul>
-        <li><a class="xampp" href="http://localhost/PALLADIUM%20HOTEL/customer" target="_blank">Hotel Website</a></li>
-        <li><a class="xampp" href="http://localhost/PALLADIUM%20HOTEL/ADMIN-DASHBOARD/index.html" target="_blank">Dashboard Website</a></li>
+        <li><a class="xampp" href="customer/index.html" target="iframe_a">Hotel Website</a></li>
+        <li><a class="xampp" href="ADMIN-DASHBOARD/index.html" target="iframe_a">Dashboard Website</a></li>
+        <li><a class="xampp" href="accountTable.php" target="iframe_a">Account</a></li>
         <li><a href="customer/index.html" target="iframe_a">Hotel Design</a></li>
         <li><a href="customer/profile.html" target="iframe_a">Profile Design</a></li>
         <li><a href="ADMIN-DASHBOARD/index.html" target="iframe_a">Dashboard Design</a></li>
-        <li><a href="http://localhost/PALLADIUM%20HOTEL/accountTable.php" target="iframe_a">Account</a></li>
         <li><a class="sprint" href="C:\Users\user\Desktop\sprint2.png" target="iframe_a">Sprint 2</a></li>
     </ul>
+    <script>
+        const collection = document.getElementsByClassName("xampp");
+        for(let item of collection){
+            item.setAttribute('href',LocalhostPath(item.href));
+        }
 
+        function LocalhostPath(url){
+            const index = url.indexOf('htdocs')+6;
+            return path = "http://localhost" + url.substring(index);
+
+        }
+    </script>
 </body>
 </html>

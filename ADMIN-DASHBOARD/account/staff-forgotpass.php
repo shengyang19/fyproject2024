@@ -3,18 +3,10 @@
     
 <?php
 session_start();
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 $email="";
 if(isset($_POST["confirm"])){
     $debugmail=false;
-    $con=mysqli_connect('localhost',
-        'root',
-        '','phmsdb');
-
-    if(!$con) echo ("failed to connect to database");
-
+    
     $password=$_POST['pass'];
     $repassword=$_POST['repass'];
     $email1=$_POST['email'];
@@ -24,71 +16,28 @@ if(isset($_POST["confirm"])){
         //echo("<script>alert('password not matches')</script>");
     }
     else{
+        $con=mysqli_connect('localhost','root','','phmsdb');
+        if(!$con) echo ("failed to connect to database");
+    
         if(strlen($password)<6){
             setcookie("error","passlength", time() + (10 * 30), "/");
             //echo("<script>alert('password length must be atleast 8')</script>");
         }
+        
         else{
-
-            $sql = "SELECT email FROM staff_account";
-            $result = $con->query($sql);
-            $email_already_exist=false;
-
+            $sql = "SELECT email FROM staff_account WHERE email='$email'";
+            $row = mysqli_fetch_array(mysqli_query($con,$sql));
             // Checking if user already exist
-            if(($result->num_rows)> 0){
-                while($row = $result->fetch_assoc()) {
-
-                    if($row["email"]==$email){    
-                        $email_already_exist=true;
-                    }
-                }
+            if($row!=null){
+                $sql="UPDATE account SET cred='$password' WHERE email='$email'";
+                $qry = mysqli_query($con,$sql);
+                mysqli_close($con);
+                header("Location: ../index.html");
+                exit();
             }
-
-            // echo($ok);
-            if($email_already_exist==true){
-                $otp=rand(100000,999999);
-                if(!$debugmail){
-
-                    require 'phpmailer/src/Exception.php';
-                    require 'phpmailer/src/PHPMailer.php';
-                    require 'phpmailer/src/SMTP.php';
-                    
-                    $mail = new PHPMailer(true);
-                    
-                    $mail->isSMTP();
-                    $mail->Host='smtp.gmail.com';
-                    $mail->SMTPAuth=true;
-                    $mail->Username='mypalladiumhotel@gmail.com';
-                    $mail->Password='jqabtnpxssakrlvw';
-                    $mail->SMTPSecure='ssl';
-                    $mail->Port=465;
-                    
-                    $mail->setFrom('mypalladiumhotel@gmail.com');
-                    
-                    $mail->addAddress($email);
-                    
-                    $mail->isHTML(true);
-                    
-                    $mail->Subject='Email confirmation code';
-                    $mail->Body=$otp;
-                    
-                    $mail->send();
-                }
-                $_SESSION["OTP"]=$otp;
-                $_SESSION["Email"]=$email;
-                $_SESSION["Password"]=$password;
-                $_SESSION["registration-going-on"]="1";
-                header("Location:staff-verifyforgot.php");
-                exit;
-                //else 
-                //echo("mail send failed");
-            }
-            else{
-                setcookie("error","default", time() + (30 * 30), "/");
-                //echo $email;
-                //echo("<script>alert('wrong email address')</script>");
-                //echo("wrong email address");
-            }
+            mysqli_close($con);
+            setcookie("error","default", time() + (30 * 30), "/");
+            $email="";
         }
     }
 }
