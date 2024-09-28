@@ -1,8 +1,13 @@
 function loadFeedback(){
     // Fetch the JSON data from the PHP script
     // console.log("test");
-    fetch('getFeedback.php')
-    .then(response => response.json()) // Parse the JSON from the response
+    fetch('feedback.json')
+    .then(response => {
+        if(!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();  // Parsing the JSON data
+    })
     .then(data => {
         // Get a reference to the table body where you want to insert rows
         const tableBody = document.getElementById('feedbackTableBody'); // Make sure this ID matches your HTML

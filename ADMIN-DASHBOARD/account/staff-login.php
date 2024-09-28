@@ -11,17 +11,20 @@ $key1 = $_POST['loginkey'];
 $key=json_encode($key1);
 
 $con = mysqli_connect('localhost','root','','phmsdb');
-if (mysqli_connect_errno())
-{	echo "Failed to connect to MySQL: " . mysqli_connect_error();}
+if (mysqli_connect_errno()){echo "Failed to connect to MySQL: " . mysqli_connect_error();}
 
-$sql="SELECT username,email,cred FROM staff_account WHERE email='$email' AND cred='$key'";
+$sql="SELECT staff_no,username,email,cred FROM staff_account WHERE email='$email' AND cred='$key'";
 $row = mysqli_fetch_array(mysqli_query($con,$sql));
 mysqli_close($con);
 if($row!=null){
-	$_SESSION["user"]=$row['username'];
-	$_SESSION["email"]=$email;
+	$_SESSION["user"]=$row['staff_no']; // for role & edit profile
 
-	//* Store user data in JSON file *
+	//* Store user data in JSON file * // for view profile
+	$data = [
+		"staff_no" => $row['staff_no'],
+		"staff_no" => $row['username'],
+		"staff_no" => $row['email']
+	];
 
     header("Location: ../home.html");
 	exit;
