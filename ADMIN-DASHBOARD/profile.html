@@ -2,36 +2,32 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PALLADIUM HOTEL - Profile</title>
+    <title>PALLADIUM HOTEL - Admin Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!--For profile use-->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-
+    <style>
+        #wrapper{
+            background-color: black;
+        }
+    </style>
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="setupProfile()">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -41,8 +37,8 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon">
-                    <img src="img/logoblack.png" alt="logo" style="width: 90px; height: 90;">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">PALLADIUM HOTEL</div>
             </a>
@@ -65,12 +61,29 @@
                 Interface
             </div>
 
-            
             <!-- Nav Item - Hotel -->
-            <li class="nav-item">
-                <a class="nav-link" href="hotel.html">
+            <li class="nav-item"><a class="nav-link" href="hotel.html">
                     <i class="fa-solid fa-hotel"></i>
-                    <span>Hotel</span></a>
+                    <span>Hotel</span>
+            </a></li>
+
+            <!-- Nav Item - Customers -->
+            <li class="nav-item"><a class="nav-link" href="hotelcustomers.html">
+                    <i class="fa-solid fa-elevator"></i>
+                    <span>Customers</span>
+            </a></li>
+
+            <!-- Nav Item - Staffs -->
+            <li id="staffcontrol" class="nav-item" hidden><a class="nav-link" href="hotelstaff.html">
+                    <i class="fa-solid fa-suitcase"></i>
+                    <span>Staffs</span>
+            </a></li>
+                
+            <!-- Nav Item - Feedback -->
+            <li class="nav-item">
+                <a class="nav-link" href="load_feedback.php">
+                <i class="fa-solid fa-comments"></i>
+                <span>Feedback</span></a>
             </li>
 
             <!-- Nav Item - MAIN Menu -->
@@ -398,18 +411,18 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Shishiro Botan</span>
+                                <span id="username" class="mr-2 d-none d-lg-inline text-gray-600 small">Shishiro Botan</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/Shishiro_Botan_Portrait.png">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="profile.html">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="/fyproject2024/Palladium-Hotel/login-form-15/login-form-15/staff_changepass.php">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
                                 </a>
@@ -431,154 +444,163 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <!-- ================ profile section start ================= -->
-                <div class="container emp-profile">
-                    <form method="post">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="profile-img">
-                                    <img src="img/Shishiro_Botan_Portrait.png" alt=""/>
-                                    <div class="file btn btn-lg btn-primary">
-                                        Change Photo
-                                        <input type="file" name="file"/>
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Profile</h1>
+                    </div>
+
+                    <!-- Begin Profile Content -->
+                    <div class="container emp-profile">
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="profile-img">
+                                        <img src="img/Shishiro_Botan_Portrait.png" alt=""/>
+                                        <div class="file btn btn-lg btn-primary">
+                                            Change Photo
+                                            <input type="file" name="file"/>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="profile-head">
-                                            <h5>
-                                                Azib Fikri
-                                            </h5>
-                                            <h6>
-                                                Web Developer and Designer
-                                            </h6>
-                                            <p class="proile-rating">RATING : <span>10/10</span></p>
-                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="profile-work">
-                                    <p>WORK LINK</p>
-                                    <a href="">Website Link</a><br/>
-                                    <a href="">Bootsnipp Profile</a><br/>
-                                    <a href="">Bootply Profile</a>
-                                    <p>SKILLS</p>
-                                    <a href="">Web Designer</a><br/>
-                                    <a href="">Web Developer</a><br/>
-                                    <a href="">WordPress</a><br/>
-                                    <a href="">WooCommerce</a><br/>
-                                    <a href="">PHP, .Net</a><br/>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="tab-content profile-tab" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>User Id</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>azibfikri27</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Name</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>Azib Fikri</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Email</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>azibfikri27@gmail.com</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Phone</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>+60 10-209 4362</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Profession</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>Web Developer and Designer</p>
-                                                    </div>
-                                                </div>
+                                <div class="col-md-6">
+                                    <div class="profile-head">
+                                                <h5 class="username">
+                                                    Azib Fikri
+                                                </h5>
+                                                <h6>
+                                                    Web Developer and Designer
+                                                </h6>
+                                                <p class="proile-rating">RATING : <span>10/10</span></p>
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Experience</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="profile-work">
+                                        <p>WORK LINK</p>
+                                        <a href="">Website Link</a><br/>
+                                        <a href="">Bootsnipp Profile</a><br/>
+                                        <a href="">Bootply Profile</a>
+                                        <p>SKILLS</p>
+                                        <a href="">Web Designer</a><br/>
+                                        <a href="">Web Developer</a><br/>
+                                        <a href="">WordPress</a><br/>
+                                        <a href="">WooCommerce</a><br/>
+                                        <a href="">PHP, .Net</a><br/>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="tab-content profile-tab" id="myTabContent">
+                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>User Id</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p id="staff_id">azibfikri27</p>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-6">
-                                                        <p>Expert</p>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Name</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p class="username">Azib Fikri</p>
+                                                        </div>
                                                     </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Email</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p id="email">azibfikri27@gmail.com</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Phone</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>+60 10-209 4362</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Profession</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>Web Developer and Designer</p>
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Experience</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>Expert</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Hourly Rate</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>RM500/hr</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Total Projects</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>230</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>English Level</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>Expert</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Availability</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <p>6 months</p>
+                                                        </div>
+                                                    </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label>Your Bio</label><br/>
+                                                    <p>Your detail description</p>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Hourly Rate</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>RM500/hr</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Total Projects</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>230</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>English Level</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>Expert</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label>Availability</label>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <p>6 months</p>
-                                                    </div>
-                                                </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <label>Your Bio</label><br/>
-                                                <p>Your detail description</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>           
-                </div>
+                        </form>           
+                    </div>
+
+            </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->
@@ -616,7 +638,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="account/staff-login.php">Logout</a>
                 </div>
             </div>
         </div>
@@ -638,7 +660,8 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-
+    
+    <script src="js/page-content.js"></script>
 </body>
 
 </html>

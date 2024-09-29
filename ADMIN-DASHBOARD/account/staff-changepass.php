@@ -4,52 +4,33 @@
 <?php
 session_start();
 if(isset($_POST["confirm"])){
-$email=$_SESSION["email"];
-$savedpass="-";
-$oldpass=$_POST["oldpass"];
+$user=$_SESSION["user"];
 $newpass=$_POST["newpass"];
 $newpassrepeat=$_POST["newpassrepeat"];
 
 if(strlen($newpass)>5){
 if($newpass==$newpassrepeat){
-	if($oldpass!=$newpass){
-		$con = mysqli_connect('localhost','root','','phmsdb');
-		if (mysqli_connect_errno())
-		{	echo "Failed to connect to MySQL: " . mysqli_connect_error();	}
-		$sql="SELECT email,cred FROM staff_account WHERE email='$email'";
-		$row = mysqli_fetch_array(mysqli_query($con,$sql));
-		if($row!=null){
-			$savedpass=json_decode($row['cred']);
-			if($savedpass==$oldpass){
-				$sql="UPDATE account SET cred='$newpass' WHERE email='$email'";
-				$qry = mysqli_query($con,$sql);
-				mysqli_close($con);
-				if(!$qry){
-					setcookie("error","changepassfail", time() + (30 * 30), "/");
-				}
-				else{
-					//echo ("<script>alert('Password changed')</script>");
-					header("Location: /fyproject2024/Palladium-Hotel/ADMIN-DASHBOARD/index.html");
-					exit;
-				}
-			}
-			else{
-				setcookie("error","default", time() + (30 * 30), "/");
-			}
-		}
-		else{
-			//setcookie("error","changepassfail", time() + (30 * 30), "/");
-			//header("Location: /fyproject2024/Palladium-Hotel/profile.html");
-			//exit;
-		}
-	} else {		setcookie("error","samepassword", time() + (30 * 30), "/");	}
-} else {	setcookie("error","difpassword", time() + (30 * 30), "/");}
-} else {	setcookie("error","passlength", time() + (30 * 30), "/");}
+	$newpass = json_encode($newpass);
+	$con = mysqli_connect('localhost','root','','phmsdb');
+	if (mysqli_connect_errno())
+	{	echo "Failed to connect to MySQL: " . mysqli_connect_error();	}
+	$sql="UPDATE staff_account SET cred='$newpass' WHERE staff_id='$user'";
+	$qry = mysqli_query($con,$sql);
+	mysqli_close($con);
+	if(!$qry){
+		setcookie("error","changepassfail", time() + (30 * 30), "/");
+	}
+	else{
+		header("Location: ../index.html");
+		exit;
+	}
+} else {setcookie("error","difpassword", time() + (30 * 30), "/");}
+} else {setcookie("error","passlength", time() + (30 * 30), "/");}
 }
 
 ?>
 
-  <head>
+<head>
   	<title>Change Password - Palladium Hotel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -83,11 +64,6 @@ if($newpass==$newpassrepeat){
 			      		</div>
 					</div>
 					<form action="staff-changepass.php" class="signin-form" method="POST">
-						<div class="form-group">
-                            <input id="current-password-field" name="oldpass" type="password" class="form-control" required>
-							<label class="form-control-placeholder" for="password">Current Password</label>
-							<span toggle="#current-password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-						</div>
 		            <div class="form-group">
 		              <input id="password-field" name="newpass" type="password" class="form-control" required>
 		              <label class="form-control-placeholder" for="password">New Password</label>
@@ -95,14 +71,14 @@ if($newpass==$newpassrepeat){
 		            </div>
 					<div class="form-group">
 						<input id="repeat-password-field" name="newpassrepeat" type="password" class="form-control" required>
-						<label class="form-control-placeholder" for="repeat-password">Repeat Password</label>
+						<label class="form-control-placeholder" for="repeat-password">Confirm Password</label>
 						<span toggle="#repeat-password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 					  </div>
 		            <div class="form-group">
 		            	<button name="confirm" type="submit" class="form-control btn btn-primary rounded submit px-3">Confirm</button>
 		            </div>
 		            <div class="form-group">
-		            	<a href="/fyproject2024/Palladium-Hotel/ADMIN-DASHBOARD/index.html" class="form-control btn btn-secondary rounded submit px-3">Cancel</a>
+		            	<a href=".." class="form-control btn btn-secondary rounded submit px-3">Cancel</a>
 		            </div>
 		          </form>
 				  <div class="modal fade my-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">

@@ -23,7 +23,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="setupPage()">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -59,21 +59,21 @@
 
             
             <!-- Nav Item - Hotel -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="hotel.html">
                     <i class="fa-solid fa-hotel"></i>
                     <span>Hotel</span></a>
             </li>
 
             <!-- Nav Item - Customers -->
-            <li class="nav-item"><a class="nav-link" href="hotelcustomers.html">
-                    <i class="fa-solid fa-hotel"></i>
+            <li class="nav-item active"><a class="nav-link" href="hotelcustomers.html">
+                    <i class="fa-solid fa-elevator"></i>
                     <span>Customers</span>
             </a></li>
 
             <!-- Nav Item - Staffs -->
-            <li class="nav-item" hidden><a class="nav-link" href="hotelstaff.html">
-                    <i class="fa-solid fa-hotel"></i>
+            <li id="staffcontrol" class="nav-item" hidden><a class="nav-link" href="hotelstaff.html">
+                    <i class="fa-solid fa-suitcase"></i>
                     <span>Staffs</span>
             </a></li>
                 
@@ -188,7 +188,7 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
+                        <a class="collapse-item" href="staff-login.php">Login</a>
                         <a class="collapse-item" href="register.html">Register</a>
                         <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                         <div class="collapse-divider"></div>
@@ -409,7 +409,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Shishiro Botan</span>
+                                <span id="username" class="mr-2 d-none d-lg-inline text-gray-600 small">Shishiro Botan</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/Shishiro_Botan_Portrait.png">
                             </a>
@@ -442,205 +442,7 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="px-xl-5 px-lg-4 px-3 py-3 page-body">
-                    <div class="row mb-3">
-                      <div class="col-sm-12">
-                        <div class="d-flex align-items-center justify-content-between flex-wrap">
-                          <h3 class="fw-bold mb-0">Hotels</h3>
-                        </div>
-                      </div>
-                    </div>
-                    <ul class="row g-2 list-unstyled li_animate row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 row-deck mb-lg-5 mb-4">
-                      <li class="col"><a class="card hr-arrow p-4" title="room-booking" href="/room-booking" style="--dynamic-color: var(--theme-color1);"><svg xmlns="http://www.w3.org/2000/svg" class="mb-3" width="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M14 12v.01"></path>
-                            <path d="M3 21h18"></path>
-                            <path d="M6 21v-16a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v16"></path>
-                          </svg>
-                          <h6 class="title mb-1">Room Book</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                      <li class="col"><a class="card hr-arrow p-4" title="room-list" href="/room-list" style="--dynamic-color: var(--theme-color2);"><svg xmlns="http://www.w3.org/2000/svg" class="mb-3" width="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M14 12v.01"></path>
-                            <path d="M3 21h18"></path>
-                            <path d="M6 21v-16a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v16"></path>
-                          </svg>
-                          <h6 class="title mb-1">Room List</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                      <li class="col"><a class="card hr-arrow p-4" title="room-status" href="/room-status" style="--dynamic-color: var(--theme-color3);"><svg xmlns="http://www.w3.org/2000/svg" class="mb-3" width="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M14 12v.01"></path>
-                            <path d="M3 21h18"></path>
-                            <path d="M6 21v-16a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v16"></path>
-                          </svg>
-                          <h6 class="title mb-1">Room Status</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                      <li class="col"><a class="card hr-arrow p-4" title="room-image" href="/room-image" style="--dynamic-color: var(--theme-color4);"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="mb-3">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M15 8h.01"></path>
-                            <path d="M11.5 21h-5.5a3 3 0 0 1 -3 -3v-12a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v7"></path>
-                            <path d="M3 16l5 -5c.928 -.893 2.072 -.893 3 0l4 4"></path>
-                            <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l.5 .5"></path>
-                            <path d="M15 19l2 2l4 -4"></path>
-                          </svg>
-                          <h6 class="title mb-1">Room Image</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                      <li class="col"><a class="card hr-arrow p-4" title="room-facilites-list" href="/room-facilites-list" style="--dynamic-color: var(--theme-color2);"><svg xmlns="http://www.w3.org/2000/svg" class="mb-3" width="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M12 10m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                            <path d="M7 3m0 2a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2z"></path>
-                            <path d="M12 3v2"></path>
-                            <path d="M10 15v.01"></path>
-                            <path d="M10 18v.01"></path>
-                            <path d="M14 18v.01"></path>
-                            <path d="M14 15v.01"></path>
-                          </svg>
-                          <h6 class="title mb-1">Room Facilites</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                      <li class="col"><a class="card hr-arrow p-4" title="housekeeping-assign-room" href="/housekeeping-assign-room" style="--dynamic-color: var(--theme-color3);"><svg xmlns="http://www.w3.org/2000/svg" class="mb-3" width="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M8.5 10a1.5 1.5 0 0 1 -1.5 -1.5a5.5 5.5 0 0 1 11 0v10.5a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2c0 -1.38 .71 -2.444 1.88 -3.175l4.424 -2.765c1.055 -.66 1.696 -1.316 1.696 -2.56a2.5 2.5 0 1 0 -5 0a1.5 1.5 0 0 1 -1.5 1.5z"></path>
-                          </svg>
-                          <h6 class="title mb-1">House keeping</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                      <li class="col"><a class="card hr-arrow p-4" title="cab-booking" href="/cab-booking" style="--dynamic-color: var(--theme-color5);"><svg xmlns="http://www.w3.org/2000/svg" class="mb-3" width="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                            <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                            <path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path>
-                          </svg>
-                          <h6 class="title mb-1">Cab Booking</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                      <li class="col"><a class="card hr-arrow p-4" title="cab-list" href="/cab-list" style="--dynamic-color: var(--theme-color2);"><svg xmlns="http://www.w3.org/2000/svg" class="mb-3" width="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                            <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                            <path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path>
-                          </svg>
-                          <h6 class="title mb-1">Cab List</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                      <li class="col"><a class="card hr-arrow p-4" title="items-list" href="/items-list" style="--dynamic-color: var(--theme-color6);"><svg xmlns="http://www.w3.org/2000/svg" class="mb-3" width="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M13 5h8"></path>
-                            <path d="M13 9h5"></path>
-                            <path d="M13 15h8"></path>
-                            <path d="M13 19h5"></path>
-                            <path d="M3 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
-                            <path d="M3 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
-                          </svg>
-                          <h6 class="title mb-1">Items Manage</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                      <li class="col"><a class="card hr-arrow p-4" title="personalised" href="/personalised" style="--dynamic-color: var(--theme-color4);"><svg xmlns="http://www.w3.org/2000/svg" class="mb-3" width="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M12 8m-5 0a5 5 0 1 0 10 0a5 5 0 1 0 -10 0"></path>
-                            <path d="M8 11a5 5 0 1 0 3.998 1.997"></path>
-                            <path d="M12.002 19.003a5 5 0 1 0 3.998 -8.003"></path>
-                          </svg>
-                          <h6 class="title mb-1">Personalised</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                      <li class="col"><a class="card hr-arrow p-4" title="promocode-list" href="/promocode-list" style="--dynamic-color: var(--theme-color2);"><svg xmlns="http://www.w3.org/2000/svg" class="mb-3" width="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M3 8v4.172a2 2 0 0 0 .586 1.414l5.71 5.71a2.41 2.41 0 0 0 3.408 0l3.592 -3.592a2.41 2.41 0 0 0 0 -3.408l-5.71 -5.71a2 2 0 0 0 -1.414 -.586h-4.172a2 2 0 0 0 -2 2z"></path>
-                            <path d="M18 19l1.592 -1.592a4.82 4.82 0 0 0 0 -6.816l-4.592 -4.592"></path>
-                            <path d="M7 10h-.01"></path>
-                          </svg>
-                          <h6 class="title mb-1">Promocode</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                      <li class="col"><a class="card hr-arrow p-4" title="booking-report" href="/booking-report" style="--dynamic-color: var(--theme-color1);"><svg xmlns="http://www.w3.org/2000/svg" class="mb-3" width="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M8 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h5.697"></path>
-                            <path d="M18 14v4h4"></path>
-                            <path d="M18 11v-4a2 2 0 0 0 -2 -2h-2"></path>
-                            <path d="M8 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"></path>
-                            <path d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
-                            <path d="M8 11h4"></path>
-                            <path d="M8 15h3"></path>
-                          </svg>
-                          <h6 class="title mb-1">Booking Report</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                      <li class="col"><a class="card hr-arrow p-4" title="purchase-report" href="/purchase-report" style="--dynamic-color: var(--theme-color3);"><svg xmlns="http://www.w3.org/2000/svg" class="mb-3" width="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M8 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h5.697"></path>
-                            <path d="M18 14v4h4"></path>
-                            <path d="M18 11v-4a2 2 0 0 0 -2 -2h-2"></path>
-                            <path d="M8 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"></path>
-                            <path d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
-                            <path d="M8 11h4"></path>
-                            <path d="M8 15h3"></path>
-                          </svg>
-                          <h6 class="title mb-1">Purchase Report</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                      <li class="col"><a class="card hr-arrow p-4" title="stock-report" href="/stock-report" style="--dynamic-color: var(--theme-color5);"><svg xmlns="http://www.w3.org/2000/svg" class="mb-3" width="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M8 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h5.697"></path>
-                            <path d="M18 14v4h4"></path>
-                            <path d="M18 11v-4a2 2 0 0 0 -2 -2h-2"></path>
-                            <path d="M8 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"></path>
-                            <path d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
-                            <path d="M8 11h4"></path>
-                            <path d="M8 15h3"></path>
-                          </svg>
-                          <h6 class="title mb-1">Stock Report</h6>
-                          <p class="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
-                          <div class="go-corner">
-                            <div class="go-arrow">→</div>
-                          </div>
-                        </a></li>
-                    </ul>
-                  </div>
-                <!-- /.container-fluid -->
+                
 
             </div>
             <!-- End of Main Content -->
@@ -680,7 +482,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="account/staff-login.php">Logout</a>
                 </div>
             </div>
         </div>
@@ -703,6 +505,7 @@
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
 
+    <script src="js/page-content.js"></script>
 </body>
 
 </html>

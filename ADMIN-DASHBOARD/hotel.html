@@ -23,7 +23,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="setupPage()">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -67,13 +67,13 @@
 
             <!-- Nav Item - Customers -->
             <li class="nav-item"><a class="nav-link" href="hotelcustomers.html">
-                    <i class="fa-solid fa-hotel"></i>
+                    <i class="fa-solid fa-elevator"></i>
                     <span>Customers</span>
             </a></li>
 
             <!-- Nav Item - Staffs -->
-            <li class="nav-item" hidden><a class="nav-link" href="hotelstaff.html">
-                    <i class="fa-solid fa-hotel"></i>
+            <li id="staffcontrol" class="nav-item" hidden><a class="nav-link" href="hotelstaff.html">
+                    <i class="fa-solid fa-suitcase"></i>
                     <span>Staffs</span>
             </a></li>
                 
@@ -409,7 +409,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Shishiro Botan</span>
+                                <span id="username" class="mr-2 d-none d-lg-inline text-gray-600 small">Shishiro Botan</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/Shishiro_Botan_Portrait.png">
                             </a>
@@ -680,7 +680,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="account/staff-login.php">Logout</a>
                 </div>
             </div>
         </div>
@@ -702,7 +702,8 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-
+    
+    <script src="js/page-content.js"></script>
 </body>
 
 </html>
