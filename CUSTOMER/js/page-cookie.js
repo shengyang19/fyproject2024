@@ -58,6 +58,7 @@ function setupProfile(){
                 //console.log(data); // Log the data for debugging
 
                 // edit profile info
+                document.getElementById('custTitle').innerHTML=data.name;
                 document.getElementById('custNAME').innerHTML=data.name;
                 document.getElementById('custEMAIL').innerHTML=data.email;
                 document.getElementById('custPHONE').innerHTML=data.phone;
@@ -88,6 +89,7 @@ function setupEditProfile(){
                 //console.log(data); // Log the data for debugging
 
                 // edit profile info
+                document.getElementById('custTitle').value=data.name;
                 document.getElementById('custNAME').value=data.name;
                 document.getElementById('custEMAIL').innerHTML=data.email;
                 document.getElementById('custPHONE').value=data.phone;
