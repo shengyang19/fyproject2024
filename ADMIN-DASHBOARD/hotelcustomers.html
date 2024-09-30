@@ -23,7 +23,7 @@
 
 </head>
 
-<body id="page-top" onload="setupPage()">
+<body id="page-top" onload="setupCustomer()">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -66,13 +66,13 @@
             </li>
 
             <!-- Nav Item - Customers -->
-            <li class="nav-item active"><a class="nav-link" href="hotelcustomers.html">
+            <li class="nav-item active"><a class="nav-link" href="customer.php">
                     <i class="fa-solid fa-elevator"></i>
                     <span>Customers</span>
             </a></li>
 
             <!-- Nav Item - Staffs -->
-            <li id="staffcontrol" class="nav-item" hidden><a class="nav-link" href="hotelstaff.html">
+            <li id="staffcontrol" class="nav-item" hidden><a class="nav-link" href="staffs.php">
                     <i class="fa-solid fa-suitcase"></i>
                     <span>Staffs</span>
             </a></li>
@@ -442,7 +442,37 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                
+                <div class="px-xl-5 px-lg-4 px-3 py-3 page-body">
+                    <div class="row mb-3">
+                      <div class="col-sm-12">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap">
+                            <h3 class="fw-bold mb-0">Customers</h3>
+                            <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">New Staff</a> -->
+                        </div>
+                      </div>
+                    </div>
+                    <div id="cards" class="row">
+
+                        <!-- Customer Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">UZUMAKI NARUTO</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- End Page Content -->
 
             </div>
             <!-- End of Main Content -->
