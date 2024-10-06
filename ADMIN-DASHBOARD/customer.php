@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Query to fetch data
-$sql = "SELECT username, email FROM account";
+$sql = "SELECT username, customer_id, email FROM account";
 $result = $conn->query($sql);
 
 // Close connection
@@ -28,6 +28,8 @@ if ($result->num_rows > 0) {
         // Append each row's data to the array
         $data[] = [
             "name" => $row['username'],
+            "id" => $row['customer_id'],
+            "phone" => $row['phone'],
             "email" => $row['email']
         ];
     }

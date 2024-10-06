@@ -1,6 +1,9 @@
-function setupCustomer(){
+//  #reuse method to setup customer & setup staff
+
+function setupList(list){
     setupPage();
-    fetch('customers.json')
+    const listname=list+".json";
+    fetch(listname)
     .then(response => {
         if(!response.ok) {
             throw new Error('Network response was not ok');
@@ -16,46 +19,34 @@ function setupCustomer(){
 
         // Loop through the fetched data and create a table row for each entry
         data.forEach(item => {
-            const custemail = item.email.toLowerCase();
-            const custname = item.name.toUpperCase();
+            let top;
+            if(list=="customers"){
+                top = item.email.toUpperCase();
+            }
+            else if(list=="staffs"){
+                top = item.role.toUpperCase();
+            }
+            const name = item.name.toUpperCase();
+            const id = item.id;
 
             const div1 = document.createElement('div');
             div1.setAttribute("class","col-xl-3 col-md-6 mb-4");
-
-            const div2 = document.createElement('div');
-            div2.setAttribute("class","card border-left-primary shadow py-2");
-            div1.appendChild(div2);
-
-            const div3 = document.createElement('div');
-            div3.setAttribute("class","card-body");
-            div2.appendChild(div3);
-
-            const div4 = document.createElement('div');
-            div4.setAttribute("class","row no-gutters align-items-center");
-            div3.appendChild(div4);
-
-            const div5 = document.createElement('div');
-            div5.setAttribute("class","col mr-2");
-            div4.appendChild(div5);
-
-            const div9 = document.createElement('div');
-            div9.setAttribute("class","text-xs font-weight-bold text-primary text-uppercase mb-1");
-            div9.textContent = custemail;
-            div5.appendChild(div9);
-
-            const div6 = document.createElement('div');
-            div6.setAttribute("class","h5 mb-0 font-weight-bold text-gray-800");
-            div6.textContent = custname;
-            div5.appendChild(div6);
-
-            const div7 = document.createElement('div');
-            div7.setAttribute("class","col-auto");
-            div4.appendChild(div7);
-
-            const div8 = document.createElement('a');
-            div8.setAttribute("class","d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm");
-            div8.textContent = "Edit";
-            div7.appendChild(div8);
+            div1.innerHTML=`<div class="card border-left-primary shadow py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">`+top+`</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">`+name+`</div>
+                                        </div>
+                                        <div class="col-2">
+                                            <a href="#" class="d-block d-sm-inline-block btn btn-primary shadow-sm">Edit</a>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button class="d-block d-sm-inline-block btn btn-danger shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="`+id+`"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
 
             // Append the new row to the table body
             tableBody.appendChild(div1);
@@ -67,75 +58,16 @@ function setupCustomer(){
     });
 }
 
-function setupStaff(){
-    setupPage();
-    fetch('staffs.json')
-    .then(response => {
-        if(!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();  // Parsing the JSON data
-    })
-    .then(data => {
-        // Get a reference to the table body where you want to insert rows
-        const tableBody = document.getElementById('cards'); // Make sure this ID matches your HTML
+// Set the ID of the name to delete in the modal
+$('#confirmDelete').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Button that triggered the modal
+    var id = button.data('id'); // Extract info from data-* attributes
+    var modal = $(this);
+    modal.find('#deleteId').val(id); // Set the value of the hidden input
+});
 
-        // Clear any existing rows
-        tableBody.innerHTML = "";
+// ##############################################
 
-        // Loop through the fetched data and create a table row for each entry
-        data.forEach(item => {
-            const staffname = item.name.toUpperCase();
-            const role = item.role.toLowerCase();
-            staffrole=role[0].toUpperCase()+role.slice(1);
-
-            const div1 = document.createElement('div');
-            div1.setAttribute("class","col-xl-3 col-md-6 mb-4");
-
-            const div2 = document.createElement('div');
-            div2.setAttribute("class","card border-left-primary shadow py-2");
-            div1.appendChild(div2);
-
-            const div3 = document.createElement('div');
-            div3.setAttribute("class","card-body");
-            div2.appendChild(div3);
-
-            const div4 = document.createElement('div');
-            div4.setAttribute("class","row no-gutters align-items-center");
-            div3.appendChild(div4);
-
-            const div5 = document.createElement('div');
-            div5.setAttribute("class","col mr-2");
-            div4.appendChild(div5);
-
-            const div9 = document.createElement('div');
-            div9.setAttribute("class","text-xs font-weight-bold text-primary text-uppercase mb-1");
-            div9.textContent = staffrole;
-            div5.appendChild(div9);
-
-            const div6 = document.createElement('div');
-            div6.setAttribute("class","h5 mb-0 font-weight-bold text-gray-800");
-            div6.textContent = staffname;
-            div5.appendChild(div6);
-
-            const div7 = document.createElement('div');
-            div7.setAttribute("class","col-auto");
-            div4.appendChild(div7);
-
-            const div8 = document.createElement('a');
-            div8.setAttribute("class","d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm");
-            div8.textContent = "Edit";
-            div7.appendChild(div8);
-
-            // Append the new row to the table body
-            tableBody.appendChild(div1);
-
-        });
-    })
-    .catch(error => {
-        console.error('Error fetching JSON data:', error);
-    });
-}
 
 function setupPage(){
     fetch('data.json')
@@ -148,7 +80,8 @@ function setupPage(){
     .then(data => {
         //Edit page content
         document.getElementById('username').innerHTML=data.username;
-        document.getElementById('staffcontrol').removeAttribute("hidden");
+        if(data.role=="admin")
+            document.getElementById('staffcontrol').removeAttribute("hidden");
         
     })
     .catch(error => {
