@@ -551,7 +551,12 @@ if ($result->num_rows > 0) {
                         </div>
                     </div>
                     <div class="row pt-3 mx-auto">
+                        <div class="col">
+                            <a href="hotelcustomers.html" class="btn btn-secondary">Cancel</a>
+                        </div>
+                        <div class="col">
                             <input class="btn btn-success" type="submit" name="save" value="Save">
+                        </div>
                     </div>
                     </form>
 
