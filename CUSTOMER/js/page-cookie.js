@@ -52,7 +52,7 @@ function setupProfile(){
     if (user!="") {//if cookie exist
         // Fetch the JSON data from the PHP script
         // console.log("test");
-        fetch('js/getData.php')
+        fetch('js/data.json')
             .then(response => response.json()) // Parse the JSON from the response
             .then(data => {
                 //console.log(data); // Log the data for debugging
@@ -62,9 +62,12 @@ function setupProfile(){
                 document.getElementById('custNAME').innerHTML=data.name;
                 document.getElementById('custEMAIL').innerHTML=data.email;
                 document.getElementById('custPHONE').innerHTML=data.phone;
+                document.getElementById('custMEMBER').innerHTML=data.membership;
                 document.getElementById('custNAME').value=data.name;
                 // document.getElementById('custEMAIL').innerHTML=data.email;
                 document.getElementById('custPHONE').value=data.phone;
+                document.getElementById('birthday').value=data.birthday;
+                document.getElementById('birthday').innerHTML=data.birthday;
                 // document.getElementById('output').innerHTML = `
                 //     <p>Name: ${data.name}</p>
                 //     <p>Role: ${data.role}</p>
@@ -83,7 +86,7 @@ function setupEditProfile(){
     if (user!="") {//if cookie exist
         // Fetch the JSON data from the PHP script
         // console.log("test");
-        fetch('js/getData.php')
+        fetch('js/data.json')
             .then(response => response.json()) // Parse the JSON from the response
             .then(data => {
                 //console.log(data); // Log the data for debugging

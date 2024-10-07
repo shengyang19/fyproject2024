@@ -1,8 +1,62 @@
+<?php
+$id = $_POST['edit'];
+// Database connection parameters
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "phmsdb";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if(isset($_POST['save'])){
+    $name=$_POST['custNAME'];
+    $phone=$_POST['custPHONE'];
+    $birthday=$_POST['birthday'];
+    $membership=$_POST['custMEMBER'];
+    $sql="UPDATE staff_account SET username='$name',phone='$phone' WHERE staff_id='$id'";
+    $result = $conn->query($sql);
+    $conn->close();
+    header("Location: staffs.php");
+    exit;
+}
+
+// Query to fetch data
+$sql = "SELECT username,phone,role, email FROM staff_account WHERE staff_id='$id'";
+$result = $conn->query($sql);
+
+// Close connection
+$conn->close();
+
+$data = [];
+if ($result->num_rows > 0) {
+
+    // Loop through each row in the result set
+    while ($row = $result->fetch_assoc()) {
+        $name = $row['username'];
+        $phone = $row['phone'];
+        $email = $row['email'];
+        $role = $row['role'];
+    }
+	
+}
+// file_put_contents('customers.json', json_encode($data));
+
+// header("Location: hotelcustomers.html");
+// exit;
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,15 +69,20 @@
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <style>
+        #wrapper{
+            background-color: black;
+        }
+    </style>
 </head>
 
-<body id="page-top" onload="setupList('staffs');">
+<body id="page-top" onload="setupPage()">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -43,7 +102,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -57,13 +116,11 @@
                 Interface
             </div>
 
-            
             <!-- Nav Item - Hotel -->
-            <li class="nav-item">
-                <a class="nav-link" href="hotel.html">
+            <li class="nav-item"><a class="nav-link" href="hotel.html">
                     <i class="fa-solid fa-hotel"></i>
-                    <span>Hotel</span></a>
-            </li>
+                    <span>Hotel</span>
+            </a></li>
 
             <!-- Nav Item - Customers -->
             <li class="nav-item"><a class="nav-link" href="customer.php">
@@ -72,7 +129,7 @@
             </a></li>
 
             <!-- Nav Item - Staffs -->
-            <li id="staffcontrol" class="nav-item active"><a class="nav-link" href="staffs.php">
+            <li id="staffcontrol" class="nav-item" hidden><a class="nav-link" href="staffs.php">
                     <i class="fa-solid fa-suitcase"></i>
                     <span>Staffs</span>
             </a></li>
@@ -188,7 +245,7 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="staff-login.php">Login</a>
+                        <a class="collapse-item" href="login.html">Login</a>
                         <a class="collapse-item" href="register.html">Register</a>
                         <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                         <div class="collapse-divider"></div>
@@ -416,11 +473,11 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="profile.html">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="/fyproject2024/Palladium-Hotel/login-form-15/login-form-15/staff_changepass.php">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
                                 </a>
@@ -442,86 +499,66 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="px-xl-5 px-lg-4 px-3 py-3 page-body">
-                    <div class="row mb-3">
-                      <div class="col-sm-12">
-                        <div class="d-flex align-items-center justify-content-between flex-wrap">
-                            <h3 class="fw-bold mb-0">Staffs</h3>
-                            <a href="account/staff-addstaff.php" class="d-none d-sm-inline-block btn btn-success shadow-sm">New Staff</a>
-                        </div>
-                      </div>
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Edit</h1>
                     </div>
-                    <!-- <form action="update-staff.php"> -->
-                    <div id="cards" class="row">
-
-                        <!-- Staff Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Admin</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">NICOLAS CAGE</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Edit</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    
+                    <!-- ================ profile section start ================= -->
+                    <form action="edit-staff.php" method="post">
+                    <input type="hidden" name="edit" value="<?php echo $id; ?>"`>   
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Name</label>
                         </div>
-
-                        <!-- Staff Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Staff</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">VAN DIESEL</div>
-                                        </div>
-                                        <div class="col-2">
-                                            <a href="#" class="d-block d-sm-inline-block btn btn-primary shadow-sm">Edit</a>
-                                        </div>
-                                        <div class="col-auto">
-                                            <button class="d-block d-sm-inline-block btn btn-danger shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="2"><i class="fas fa-trash"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- </form> -->
-
-                  </div>
-                <!-- /.container-fluid -->
-
-                <!-- Modal Confirm Delete -->
-                <div class="modal fade" id="confirmDelete" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="confirmDeleteLabel">Confirm Delete</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Are you sure you want to delete this name?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <form action="delete-account.php" id="deleteForm" method="GET" style="display: inline;">
-                                    <input type="hidden" name="delete" id="deleteId">
-                                    <input type="hidden" name="category" value="staffs">
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-                            </div>
+                        <div class="col-md-6">
+                            <input type="text" id="custNAME" name="custNAME" value="<?php echo $name; ?>">
                         </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Email</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p id="custEMAIL"><?php echo $email; ?></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Phone</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" id="custPHONE" name="custPHONE" value="<?php echo $phone; ?>">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Role</label>
+                        </div>
+                        <div class="col-md-6">
+                            <p id="role" name="role"><?php echo $role; ?></p>
+                            <!-- <input type="date" name="birthday" id="birthday" value="21 March 2004"> -->
+                            <!-- <p id="custBD" name="custBD">21 March 2004</p> -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Staff ID</label>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- <input type="text" name="custMEMBER" id="custMEMBER" value="00000001"> -->
+                            <p name="staffid" id="staffid"><?php echo $id; ?></p>
+                        </div>
+                    </div>
+                    <div class="row pt-3 mx-auto">
+                            <input class="btn btn-success" type="submit" name="save" value="Save">
+                    </div>
+                    </form>
+
+                </div><!-- /.container-fluid -->
+                <!-- End Page Content -->
 
             </div>
             <!-- End of Main Content -->
@@ -548,7 +585,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -567,10 +604,6 @@
         </div>
     </div>
 
-    <script>
-        document.getElementById("editform").setAttribute("action","edit-staff.php");
-    </script>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -587,12 +620,8 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-
+    
     <script src="js/page-content.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>

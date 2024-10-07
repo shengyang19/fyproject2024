@@ -1,34 +1,28 @@
 <?php
-$email=$_COOKIE["email"];
+session_start();
+$user=$_SESSION["user"];
 //Process Input
-$name=$_POST["custNAME"];
-$phone=$_POST['custPHONE'];
-$birthday=$_POST['birthday'];
-$membership=$_POST['custMEMBER'];
-if(isset($_POST['cancel'])){
-	header("Location: profile.html");
-	exit;
-}
-// echo $name;
+$name=$_POST["nameInput"];
+$phone=$_POST['phoneInput'];
 //update database
 $con = mysqli_connect('localhost','root','','phmsdb');
 if (mysqli_connect_errno())
 {
 echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$sql="SELECT email FROM account WHERE email='$email'";
+$sql="SELECT email,staff_id,role FROM staff_account WHERE staff_id='$user'";
 $row = mysqli_fetch_array(mysqli_query($con,$sql));
 if($row!=null){
-    $sql="UPDATE account SET username='$name',phone='$phone',birthday='$birthday' WHERE email='$email'";
+    $sql="UPDATE staff_account SET username='$name',phone='$phone' WHERE staff_id='$user'";
     $data = [
-		"name" => $name,
+		"staff_id" => $row['staff_id'],
+		"username" => $name,
+		"email" => $row['email'],
 		"phone" => $phone,
-		"birthday" => $birthday,
-		"membership" => $membership,
-		"email" => $email
+		"role" => $row['role']
 	];
 	
-	$file = 'js/data.json';
+	$file = 'data.json';
 	
 	// Convert PHP array to JSON and save it to a file
 	file_put_contents($file, json_encode($data));

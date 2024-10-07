@@ -20,11 +20,14 @@ function setupList(list){
         // Loop through the fetched data and create a table row for each entry
         data.forEach(item => {
             let top;
+            let formaction;
             if(list=="customers"){
                 top = item.email.toUpperCase();
+                formaction=`<form action="edit-customer.php" method="POST">`
             }
             else if(list=="staffs"){
                 top = item.role.toUpperCase();
+                formaction=`<form action="edit-staff.php" method="POST">`
             }
             const name = item.name.toUpperCase();
             const id = item.id;
@@ -38,11 +41,14 @@ function setupList(list){
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">`+top+`</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">`+name+`</div>
                                         </div>
-                                        <div class="col-2">
-                                            <a href="#" class="d-block d-sm-inline-block btn btn-primary shadow-sm">Edit</a>
-                                        </div>
-                                        <div class="col-auto">
+                                        `+formaction+`
+                                        <div class="col-auto d-inline">
+                                            <input type="hidden" name="edit" value=`+id+`>
+                                            <input type="submit" class="d-block d-sm-inline-block btn btn-primary shadow-sm" value="Edit">
                                             <button class="d-block d-sm-inline-block btn btn-danger shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="`+id+`"><i class="fas fa-trash"></i></button>
+                                        </div>
+                                        </form>
+                                        <div class="col-auto">
                                         </div>
                                     </div>
                                 </div>
@@ -101,11 +107,22 @@ function setupProfile(){
     })
     .then(data => {
         //Edit page content
-        document.getElementById('username').innerHTML=data.username;
+        // document.getElementById('username').innerHTML=data.username;
+        // document.getElementById('nameLabel').innerHTML=data.username;
+        // document.getElementById('nameInput').value=data.username;
+        document.getElementById('phone').innerHTML=data.phone;
+        document.getElementById('phone').value=data.phone;
         const nametag = document.getElementsByClassName('username');
+        var elements = document.querySelectorAll('.username');
+            
+            // Iterate through each element and change the innerHTML
+            elements.forEach(function(element) {
+                element.innerHTML = data.username;
+                element.value=data.username;
+            });
         document.getElementById('staff_id').innerHTML=data.staff_id;
         document.getElementById('email').innerHTML=data.email;
-        document.getElementById('staffcontrol').removeAttribute("hidden");
+        document.getElementById('email').value=data.email;
 
     })
     .catch(error => {

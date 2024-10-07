@@ -13,7 +13,7 @@ $key=json_encode($key1);
 $con = mysqli_connect('localhost','root','','phmsdb');
 if (mysqli_connect_errno()){echo "Failed to connect to MySQL: " . mysqli_connect_error();}
 
-$sql="SELECT staff_id,username,email,role FROM staff_account WHERE email='$email' AND cred='$key'";
+$sql="SELECT staff_id,username,email,role,phone FROM staff_account WHERE email='$email' AND cred='$key'";
 $row = mysqli_fetch_array(mysqli_query($con,$sql));
 mysqli_close($con);
 if($row!=null){
@@ -24,6 +24,7 @@ if($row!=null){
 		"staff_id" => $row['staff_id'],
 		"username" => $row['username'],
 		"email" => $row['email'],
+		"phone" => $row['phone'],
 		"role" => $row['role']
 	];
 	file_put_contents('../data.json', json_encode($data));

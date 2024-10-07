@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Query to fetch data
-$sql = "SELECT username, customer_id, email FROM account";
+$sql = "SELECT username, customer_id,phone, email FROM account";
 $result = $conn->query($sql);
 
 // Close connection

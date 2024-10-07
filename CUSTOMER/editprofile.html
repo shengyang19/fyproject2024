@@ -112,7 +112,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="profile-head">
                                 <h5 id="custTitle">
                                     Azib Fikri
@@ -131,7 +131,14 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Save" style="color: white;background-color: steelblue;">
+                    <div class="d-inline">
+                        <input type="submit" class="profile-edit-btn" name="cancel" value="Cancel" style="color: white;display: inline;">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="d-inline">
+                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Save" style="color: white;background-color: steelblue;display: inline;">
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -177,7 +184,8 @@
                                             <label>Birth date</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p id="custBD" name="custBD">21 March 2004</p>
+                                            <input type="date" name="birthday" id="birthday">
+                                            <!-- <p id="custBD" name="custBD">21 March 2004</p> -->
                                         </div>
                                     </div>
                                     <div class="row">
@@ -185,7 +193,7 @@
                                             <label>Membership no.</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p id="custMEMBER">00000001</p>
+                                            <p name="custMEMBER" id="custMEMBER">00000001</p>
                                         </div>
                                     </div>
                         </div>
