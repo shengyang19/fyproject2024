@@ -15,12 +15,12 @@ if($newpass==$newpassrepeat){
 		$con = mysqli_connect('localhost','root','','phmsdb');
 		if (mysqli_connect_errno())
 		{	echo "Failed to connect to MySQL: " . mysqli_connect_error();	}
-		$sql="SELECT email,cred FROM account WHERE email='$email'";
+		$sql="SELECT email,cred FROM customer_account WHERE email='$email'";
 		$row = mysqli_fetch_array(mysqli_query($con,$sql));
 		if($row!=null){
 			$savedpass=$row['cred'];
 			if($savedpass==$oldpass){
-				$sql="UPDATE account SET cred='$newpass' WHERE email='$email'";
+				$sql="UPDATE customer_account SET cred='$newpass' WHERE email='$email'";
 				$qry = mysqli_query($con,$sql);
 				mysqli_close($con);
 				if(!$qry){

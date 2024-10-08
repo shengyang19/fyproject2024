@@ -30,7 +30,7 @@ if(isset($_POST["confirm"])){
         }
         else{
 
-            $sql = "SELECT email FROM account";
+            $sql = "SELECT email FROM customer_account";
             $result = $con->query($sql);
             $email_already_exist=false;
 
@@ -157,7 +157,7 @@ if(isset($_POST["confirm"])){
 									</button>
 								</div>
 								<div class="modal-body">
-									<p>Account not exist.</p>
+									<p>customer_account not exist.</p>
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>

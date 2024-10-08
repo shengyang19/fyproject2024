@@ -18,7 +18,7 @@ if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $category = $_GET['category'];
     if($category=="customer")
-        $stmt = $pdo->prepare("DELETE FROM account WHERE customer_id = ?");
+        $stmt = $pdo->prepare("DELETE FROM customer_account WHERE customer_id = ?");
     else
         $stmt = $pdo->prepare("DELETE FROM staff_account WHERE staff_id = ?");
     $stmt->execute([$id]);

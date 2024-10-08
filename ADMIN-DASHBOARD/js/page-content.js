@@ -19,6 +19,9 @@ function setupList(list){
 
         // Loop through the fetched data and create a table row for each entry
         data.forEach(item => {
+            const name = item.name.toUpperCase();
+            const id = item.id;
+            const phone = item.phone;
             let top;
             let formaction;
             if(list=="customers"){
@@ -29,23 +32,26 @@ function setupList(list){
                 top = item.role.toUpperCase();
                 formaction=`<form action="edit-staff.php" method="POST">`
             }
-            const name = item.name.toUpperCase();
-            const id = item.id;
 
             const div1 = document.createElement('div');
-            div1.setAttribute("class","col-xl-3 col-md-6 mb-4");
-            div1.innerHTML=`<div class="card border-left-primary shadow py-2">
+            div1.setAttribute("class","mb-3");
+            div1.innerHTML=`<div class="card border-left-primary shadow py-2" style="max-width: 600px">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">`+top+`</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">`+name+`</div>
+                                            <div>
+                                                <div class="h5 mb-1 font-weight-bold text-gray-800">`+name+`</div>
+                                            </div>
+                                            <div style="height: 1rem;">
+                                                <div class="h5 mb-1 text-gray-800">`+phone+`</div>
+                                            </div>
                                         </div>
                                         `+formaction+`
                                         <div class="col-auto d-inline">
                                             <input type="hidden" name="edit" value=`+id+`>
-                                            <input type="submit" class="d-block d-sm-inline-block btn btn-primary shadow-sm" value="Edit">
-                                            <button class="d-block d-sm-inline-block btn btn-danger shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="`+id+`"><i class="fas fa-trash"></i></button>
+                                            <input type="submit" class="d-inline btn btn-primary btn-lg shadow-sm" value="Edit">
+                                            <button class="d-inline btn btn-danger btn-lg shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="`+id+`"><i class="fas fa-trash"></i></button>
                                         </div>
                                         </form>
                                         <div class="col-auto">
@@ -88,6 +94,8 @@ function setupPage(){
         document.getElementById('username').innerHTML=data.username;
         if(data.role=="admin")
             document.getElementById('staffcontrol').removeAttribute("hidden");
+        const role = document.getElementById("role").innerText;
+        document.getElementById(role).selected=true;
         
     })
     .catch(error => {
@@ -112,7 +120,6 @@ function setupProfile(){
         // document.getElementById('nameInput').value=data.username;
         document.getElementById('phone').innerHTML=data.phone;
         document.getElementById('phone').value=data.phone;
-        const nametag = document.getElementsByClassName('username');
         var elements = document.querySelectorAll('.username');
             
             // Iterate through each element and change the innerHTML
@@ -123,6 +130,8 @@ function setupProfile(){
         document.getElementById('staff_id').innerHTML=data.staff_id;
         document.getElementById('email').innerHTML=data.email;
         document.getElementById('email').value=data.email;
+        if(data.role=="admin")
+            document.getElementById('staffcontrol').removeAttribute("hidden");
 
     })
     .catch(error => {

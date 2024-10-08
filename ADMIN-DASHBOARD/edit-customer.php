@@ -19,7 +19,7 @@ if(isset($_POST['save'])){
     $phone=$_POST['custPHONE'];
     $birthday=$_POST['birthday'];
     $membership=$_POST['custMEMBER'];
-    $sql="UPDATE account SET username='$name',phone='$phone' WHERE customer_id='$id'";
+    $sql="UPDATE customer_account SET username='$name',phone='$phone' WHERE customer_id='$id'";
     $result = $conn->query($sql);
     $conn->close();
     header("Location: customer.php");
@@ -27,7 +27,7 @@ if(isset($_POST['save'])){
 }
 
 // Query to fetch data
-$sql = "SELECT username,phone, email FROM account WHERE customer_id='$id'";
+$sql = "SELECT username,phone,birthday,membership, email FROM customer_account WHERE customer_id='$id'";
 $result = $conn->query($sql);
 
 // Close connection
@@ -41,6 +41,8 @@ if ($result->num_rows > 0) {
         $name = $row['username'];
         $phone = $row['phone'];
         $email = $row['email'];
+        $membership = $row['membership'];
+        $birthday = $row['birthday'];
     }
 	
 }
@@ -537,7 +539,7 @@ if ($result->num_rows > 0) {
                             <label>Birth date</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="date" name="birthday" id="birthday" value="21 March 2004">
+                            <input type="date" name="birthday" id="birthday" value="<?php echo $birthday; ?>">
                             <!-- <p id="custBD" name="custBD">21 March 2004</p> -->
                         </div>
                     </div>
@@ -546,7 +548,7 @@ if ($result->num_rows > 0) {
                             <label>Membership no.</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="custMEMBER" id="custMEMBER" value="00000001">
+                            <input type="text" name="custMEMBER" id="custMEMBER" value="<?php echo $membership; ?>">
                             <!-- <p name="custMEMBER" id="custMEMBER">00000001</p> -->
                         </div>
                     </div>

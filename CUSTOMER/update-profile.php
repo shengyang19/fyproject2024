@@ -16,10 +16,10 @@ if (mysqli_connect_errno())
 {
 echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$sql="SELECT email FROM account WHERE email='$email'";
+$sql="SELECT email FROM customer_account WHERE email='$email'";
 $row = mysqli_fetch_array(mysqli_query($con,$sql));
 if($row!=null){
-    $sql="UPDATE account SET username='$name',phone='$phone',birthday='$birthday' WHERE email='$email'";
+    $sql="UPDATE customer_account SET username='$name',phone='$phone',birthday='$birthday' WHERE email='$email'";
     $data = [
 		"name" => $name,
 		"phone" => $phone,

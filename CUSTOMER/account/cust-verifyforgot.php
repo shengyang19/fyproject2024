@@ -13,7 +13,7 @@ if($otp_entered==$_SESSION["OTP"]){
     $con = mysqli_connect('localhost','root','','phmsdb');
     if (mysqli_connect_errno())
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    $sql="UPDATE account SET cred='$cred' WHERE email='$email'";
+    $sql="UPDATE customer_account SET cred='$cred' WHERE email='$email'";
     $qry = mysqli_query($con,$sql);
     mysqli_close($con);
     if(!$qry){

@@ -19,7 +19,8 @@ if(isset($_POST['save'])){
     $phone=$_POST['custPHONE'];
     $birthday=$_POST['birthday'];
     $membership=$_POST['custMEMBER'];
-    $sql="UPDATE staff_account SET username='$name',phone='$phone' WHERE staff_id='$id'";
+    $role = filter_input(INPUT_POST, 'role', FILTER_SANITIZE_STRING);
+    $sql="UPDATE staff_account SET username='$name',phone='$phone',role='$role' WHERE staff_id='$id'";
     $result = $conn->query($sql);
     $conn->close();
     header("Location: staffs.php");
@@ -538,7 +539,11 @@ if ($result->num_rows > 0) {
                             <label>Role</label>
                         </div>
                         <div class="col-md-6">
-                            <p id="role" name="role"><?php echo $role; ?></p>
+                            <select name="role">
+                                <option value="admin" id="admin">Admin</option>
+                                <option value="staff" id="staff">Staff</option>
+                            </select>
+                            <p id="role" name="role" hidden><?php echo $role; ?></p>
                             <!-- <input type="date" name="birthday" id="birthday" value="21 March 2004"> -->
                             <!-- <p id="custBD" name="custBD">21 March 2004</p> -->
                         </div>

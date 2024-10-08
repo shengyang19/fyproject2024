@@ -26,7 +26,7 @@ if(isset($_POST["confirm"])){
         
             if(!$con)
                 echo ("failed to connect to database");
-            $sql = "SELECT email,username, cred FROM account WHERE email='$email'";
+            $sql = "SELECT email,username, cred FROM customer_account WHERE email='$email'";
             $result = $con->query($sql);
             mysqli_close($con);
             $email_already_exist=false;

@@ -80,7 +80,7 @@ if(isset($_POST["confirm"])){
                                 <div class="form-group mt-3">
                                     <select name="role" id="staffrole" class="form-control" required>
                                         <option value="admin">Admin</option>
-                                        <option value="staff">Staff</option>
+                                        <option value="staff" selected>Staff</option>
                                     </select>
                                     <label class="form-control-placeholder" for="staffrole">Role</label>
                                 </div>
