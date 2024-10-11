@@ -50,8 +50,8 @@ function setupList(list){
                                         `+formaction+`
                                         <div class="col-auto d-inline">
                                             <input type="hidden" name="edit" value=`+id+`>
-                                            <input type="submit" class="d-inline btn btn-primary btn-lg shadow-sm" value="Edit">
-                                            <button class="d-inline btn btn-danger btn-lg shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="`+id+`"><i class="fas fa-trash"></i></button>
+                                            <input type="submit" class="d-inline btn btn-primary btn-lg shadow-sm" value="Edit"/>
+                                            <button type="button" class="d-inline btn btn-danger btn-lg shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="`+id+`"><i class="fas fa-trash"></i></button>
                                         </div>
                                         </form>
                                         <div class="col-auto">
