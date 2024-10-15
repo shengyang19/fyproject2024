@@ -14,7 +14,7 @@ if($newpass==$newpassrepeat){
 	$con = mysqli_connect('localhost','root','','phmsdb');
 	if (mysqli_connect_errno())
 	{	echo "Failed to connect to MySQL: " . mysqli_connect_error();	}
-	$sql="UPDATE staff_account SET cred='$newpass' WHERE staff_id='$user'";
+	$sql="UPDATE staff_account SET cred='$newpass' WHERE id='$user'";
 	$qry = mysqli_query($con,$sql);
 	mysqli_close($con);
 	if(!$qry){

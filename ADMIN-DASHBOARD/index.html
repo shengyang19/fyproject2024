@@ -27,7 +27,7 @@
     </style>
 </head>
 
-<body id="page-top" onload="setupPage()">
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -48,7 +48,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.html" onclick="return false;">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -68,20 +68,20 @@
             </a></li>
 
             <!-- Nav Item - Customers -->
-            <li class="nav-item"><a class="nav-link" href="customer.php">
+            <li class="nav-item"><a class="nav-link" href="hotelcustomer.html">
                     <i class="fa-solid fa-elevator"></i>
                     <span>Customers</span>
             </a></li>
 
             <!-- Nav Item - Staffs -->
-            <li id="staffcontrol" class="nav-item" hidden><a class="nav-link" href="staffs.php">
+            <li id="staffcontrol" class="nav-item" hidden><a class="nav-link" href="hotelstaff.html">
                     <i class="fa-solid fa-suitcase"></i>
                     <span>Staffs</span>
             </a></li>
                 
             <!-- Nav Item - Feedback -->
             <li class="nav-item">
-                <a class="nav-link" href="load_feedback.php">
+                <a class="nav-link" href="feedback.html">
                 <i class="fa-solid fa-comments"></i>
                 <span>Feedback</span></a>
             </li>
@@ -391,7 +391,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                        <img class="rounded-circle" src=""
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -825,6 +825,7 @@
     <script src="js/demo/chart-pie-demo.js"></script>
     
     <script src="js/page-content.js"></script>
+    <script>setupPage();</script>
 </body>
 
 </html>

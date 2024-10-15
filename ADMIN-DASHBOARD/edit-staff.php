@@ -540,10 +540,9 @@ if ($result->num_rows > 0) {
                         </div>
                         <div class="col-md-6">
                             <select name="role">
-                                <option value="admin" id="admin">Admin</option>
-                                <option value="staff" id="staff">Staff</option>
+                                <option value="admin" <?php if ($role === 'admin') echo 'selected'; ?>>Admin</option>
+                                <option value="staff" <?php if ($role === 'staff') echo 'selected'; ?>>Staff</option>
                             </select>
-                            <p id="role" name="role" hidden><?php echo $role; ?></p>
                             <!-- <input type="date" name="birthday" id="birthday" value="21 March 2004"> -->
                             <!-- <p id="custBD" name="custBD">21 March 2004</p> -->
                         </div>

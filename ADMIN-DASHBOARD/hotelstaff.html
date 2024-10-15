@@ -20,10 +20,9 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
 </head>
 
-<body id="page-top" onload="setupList('staffs');">
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -66,20 +65,21 @@
             </li>
 
             <!-- Nav Item - Customers -->
-            <li class="nav-item"><a class="nav-link" href="customer.php">
+            <li class="nav-item"><a class="nav-link" href="hotelcustomer.html">
                     <i class="fa-solid fa-elevator"></i>
                     <span>Customers</span>
             </a></li>
 
             <!-- Nav Item - Staffs -->
-            <li id="staffcontrol" class="nav-item active"><a class="nav-link" href="staffs.php">
+            <li id="staffcontrol" class="nav-item active hotel-list" data-list="staff">
+                <a class="nav-link" href="" onclick="return false">
                     <i class="fa-solid fa-suitcase"></i>
                     <span>Staffs</span>
             </a></li>
                 
             <!-- Nav Item - Feedback -->
             <li class="nav-item">
-                <a class="nav-link" href="load_feedback.php">
+                <a class="nav-link" href="feedback.html">
                 <i class="fa-solid fa-comments"></i>
                 <span>Feedback</span></a>
             </li>
@@ -389,7 +389,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                        <img class="rounded-circle" src=""
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -445,59 +445,72 @@
                 <div class="px-xl-5 px-lg-4 px-3 py-3 page-body">
                     <div class="row mb-3">
                       <div class="col-sm-12">
-                        <div class="d-flex align-items-center justify-content-between flex-wrap">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap" style="max-width: 600px">
                             <h3 class="fw-bold mb-0">Staffs</h3>
-                            <a href="account/staff-addstaff.php" class="d-none d-sm-inline-block btn btn-success shadow-sm">New Staff</a>
+                            <a href="account/staff-addstaff.php" class="d-inline-block btn btn-primary shadow-sm">Add Staff</a>
                         </div>
                       </div>
                     </div>
-                    <!-- <form action="update-staff.php"> -->
-                    <div id="cards">
+                    
+                    <div id="cards" style="max-width: 600px" class="d-block">
 
                         <!-- Staff Card Example -->
-                        <!-- <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Admin</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">NICOLAS CAGE</div>
+                        <div class="card border-left-primary shadow py-2 mb-3">
+                            <div class="card-body">
+                                <div class="d-flex no-gutters align-items-center flex-wrap">
+                                    <div class="mr-auto">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">`+top+`</div>
+                                        <div>
+                                            <div class="h5 mb-1 font-weight-bold text-gray-800">`+name+`</div>
                                         </div>
-                                        <div class="col-auto">
-                                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Edit</a>
+                                        <div style="height: 1rem;">
+                                            <div class="h5 mb-1 text-gray-800">`+phone+`</div>
                                         </div>
+                                    </div>
+                                    <div class="d-block">
+                                        <button type="button" class="btn btn-primary shadow-sm card-button" id="editBtn">Edit</button>
+                                        <button type="button" class="btn btn-danger shadow-sm card-button" data-toggle="modal" data-target="#confirmDelete" data-id="`+id+`">Delete</button>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
-
-                        <!-- Staff Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <!-- <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Staff</div> -->
-                                            <div class="h4 mb-0 font-weight-bold text-gray-800"></div>
-                                            <div class="h5 mb-0 text-gray-800" style="height: 1rem;"></div>
-                                        </div>
-                                        <!-- <div class="col-2">
-                                            <a href="#" class="d-block d-sm-inline-block btn btn-primary shadow-sm">Edit</a>
-                                        </div>
-                                        <div class="col-auto">
-                                            <button class="d-block d-sm-inline-block btn btn-danger shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="2"><i class="fas fa-trash"></i></button>
-                                        </div> -->
+                        </div>
+                    </div>
+                    <div id="editcard" style="max-width: 600px" class="d-none">            
+                        <!-- Edit Card Example -->
+                        <div class="card border-left-primary shadow py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div id="inputEmail" class="font-weight-bold text-primary text-uppercase mb-1">email@mail.com</div>
+                                        <form style="color: #000000;">
+                                            <div class="form-group">
+                                                <label for="inputFullname">Full Name</label>
+                                                <input type="text" class="form-control" id="inputFullname" aria-describedby="emailHelp" placeholder="Full name" value="myname">
+                                                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputPhone">Phone Number</label>
+                                                <input type="text" class="form-control" id="inputPhone" placeholder="Phone number">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputRole">Role</label>
+                                                <select class="form-control" name="role" id="inputRole">
+                                                    <option id="admin" value="admin">Admin</option>
+                                                    <option id="staff" value="staff">Staff</option>
+                                                </select>
+                                            </div>
+                                            <input type="hidden" name="edit" value=`+id+`>
+                                            <div class="mt-4 text-center">
+                                                <button type="button" class="btn btn-primary card-button" id="saveButton">Save</button>
+                                                <button type="button" class="btn btn-secondary card-button" id="cancelBtn">Cancel</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                                <!-- <div class="card-footer">
-                                    <div class="h5 mb-0 text-gray-800"></div>
-                                </div> -->
                             </div>
                         </div>
 
                     </div>
-                    <!-- </form> -->
 
                   </div>
                 <!-- /.container-fluid -->
@@ -519,7 +532,7 @@
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                 <form action="delete-account.php" id="deleteForm" method="GET" style="display: inline;">
                                     <input type="hidden" name="delete" id="deleteId">
-                                    <input type="hidden" name="category" value="staffs">
+                                    <input type="hidden" name="tablename" value="staff">
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             </div>
@@ -589,6 +602,8 @@
     <script src="js/demo/chart-pie-demo.js"></script>
 
     <script src="js/page-content.js"></script>
+    <script>setupPage();setupList('staff');</script>
+    
 
 </body>
 

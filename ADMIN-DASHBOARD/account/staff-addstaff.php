@@ -33,7 +33,7 @@ if(isset($_POST["confirm"])){
                 $sql="INSERT INTO staff_account(role, username, phone, email, cred)VALUES ('$role', '$username', '$phone', '$email', '$cred')";
                 $qry = mysqli_query($con,$sql);
                 mysqli_close($con);
-                header("Location: ../staffs.php");
+                header("Location: ../hotelstaff.html");
                 exit;
             }
         }

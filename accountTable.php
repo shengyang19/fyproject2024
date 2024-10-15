@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 }
 
 // Query to fetch data
-$sql = "SELECT customer_id, username, phone, email, cred FROM customer_account";
+$sql = "SELECT id, username, phone, email, cred FROM customer_account";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
     // Output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<tr>
-                <td>" . $row["customer_id"] . "</td>
+                <td>" . $row["id"] . "</td>
                 <td>" . $row["username"] . "</td>
                 <td>" . $row["phone"] . "</td>
                 <td>" . $row["email"] . "</td>

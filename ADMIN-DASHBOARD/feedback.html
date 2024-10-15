@@ -23,7 +23,7 @@
 
 </head>
 
-<body id="page-top" onload="loadFeedback()">
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -66,20 +66,20 @@
             </li>
 
             <!-- Nav Item - Customers -->
-            <li class="nav-item"><a class="nav-link" href="customer.php">
+            <li class="nav-item"><a class="nav-link" href="hotelcustomer.html">
                     <i class="fa-solid fa-elevator"></i>
                     <span>Customers</span>
             </a></li>
 
             <!-- Nav Item - Staffs -->
-            <li id="staffcontrol" class="nav-item" hidden><a class="nav-link" href="staffs.php">
+            <li id="staffcontrol" class="nav-item" hidden><a class="nav-link" href="hotelstaff.html">
                     <i class="fa-solid fa-suitcase"></i>
                     <span>Staffs</span>
             </a></li>
                 
             <!-- Nav Item - Feedback -->
-            <li class="nav-item active">
-                <a class="nav-link" href="load_feedback.php">
+            <li class="nav-item active" onclick="setupFeedback()">
+                <a class="nav-link" href="" onclick="return false;">
                 <i class="fa-solid fa-comments"></i>
                 <span>Feedback</span></a>
             </li>
@@ -389,7 +389,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                        <img class="rounded-circle" src=""
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -539,6 +539,7 @@
     <script src="js/demo/chart-pie-demo.js"></script>
     
     <script src="js/page-content.js"></script>
+    <script>setupPage();setupFeedback();</script>
 </body>
 
 </html>

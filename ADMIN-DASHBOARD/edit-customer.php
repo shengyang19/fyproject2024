@@ -1,5 +1,5 @@
 <?php
-$id = $_POST['edit'];
+$id = $_GET['edit'];
 // Database connection parameters
 $servername = "localhost";
 $username = "root";

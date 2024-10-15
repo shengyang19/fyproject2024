@@ -13,15 +13,15 @@ $key=json_encode($key1);
 $con = mysqli_connect('localhost','root','','phmsdb');
 if (mysqli_connect_errno()){echo "Failed to connect to MySQL: " . mysqli_connect_error();}
 
-$sql="SELECT staff_id,username,email,role,phone FROM staff_account WHERE email='$email' AND cred='$key'";
+$sql="SELECT id,username,email,role,phone FROM staff_account WHERE email='$email' AND cred='$key'";
 $row = mysqli_fetch_array(mysqli_query($con,$sql));
 mysqli_close($con);
 if($row!=null){
-	$_SESSION["user"]=$row['staff_id']; // for role & edit profile
+	$_SESSION["user"]=$row['id']; // for role & edit profile
 
 	//* Store user data in JSON file * // for view profile
 	$data = [
-		"staff_id" => $row['staff_id'],
+		"staff_id" => $row['id'],
 		"username" => $row['username'],
 		"email" => $row['email'],
 		"phone" => $row['phone'],
