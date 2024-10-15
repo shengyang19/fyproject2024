@@ -2,6 +2,8 @@ let l;
 
 // Function to fetch latest data using AJAX
 function fetchData(list) {
+    $('#editcard').hide();
+    $('#cards').show();
     let dbtable = list;
     if(list=='customer'||list=='staff') dbtable= list+"_account";
     
@@ -148,14 +150,12 @@ $('#confirmDelete').on('show.bs.modal', function (event) {
 
 $('.hotel-list').on('click',function(){
     fetchData($(this).data('list'));
-    $('#cards').attr('class','d-block');
-    $('#editcard').attr('class','d-none');
 });
 
 $('#cancelBtn').on('click',function(){
     // fetchData($('.hotel-list').data('list'));
-    $('#cards').attr('class','d-block');
-    $('#editcard').attr('class','d-none');
+    $('#editcard').hide();
+    $('#cards').show();
 });
 
 $('#cards').on('click','#editBtn',function(event){
@@ -171,8 +171,8 @@ $('#cards').on('click','#editBtn',function(event){
         // dataType: 'json', // Expect JSON response
         success: function(response) {            
             // Hide the list container
-            $('#cards').attr('class','d-none');
-            $('#editcard').attr('class','d-block');
+            $('#cards').hide();
+            $('#editcard').show(500);
             $('#saveButton').val(id);
             
             // Check for errors in the response

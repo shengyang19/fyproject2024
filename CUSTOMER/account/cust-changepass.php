@@ -1,6 +1,3 @@
-<!doctype html>
-<html lang="en">
-    
 <?php
 if(isset($_POST["confirm"])){
 //session_start();
@@ -28,7 +25,7 @@ if($newpass==$newpassrepeat){
 				}
 				else{
 					//echo ("<script>alert('Password changed')</script>");
-					header("Location: /fyproject2024/Palladium-Hotel/profile.html");
+					header("Location: ../profile.html");
 					exit;
 				}
 			}
@@ -45,12 +42,16 @@ if($newpass==$newpassrepeat){
 } else {	setcookie("error","difpassword", time() + (30 * 30), "/");}
 } else {	setcookie("error","passlength", time() + (30 * 30), "/");}
 }
-else {
-	header("Location: ../profile.html");
-	exit;
-}
+// else {
+// 	header("Location: ../profile.html");
+// 	exit;
+// }
 
 ?>
+
+<!doctype html>
+<html lang="en">
+    
 
   <head>
   	<title>Change Password - Palladium Hotel</title>

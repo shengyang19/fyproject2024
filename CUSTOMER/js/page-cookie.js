@@ -33,7 +33,7 @@ function setupPage(cname){
     if (user!="") {//if cookie exist
         //edit profile menu
         const menu1 = document.getElementById("profile-menu-1");
-        menu1.innerHTML="View profile";
+        menu1.innerHTML="Profile";
         menu1.setAttribute('href', 'profile.html');
         let newChild=menu1.cloneNode();
         document.getElementById("profile-menu").appendChild(newChild);
@@ -51,7 +51,6 @@ function setupProfile(){
     let user = getCookie("user");
     if (user!="") {//if cookie exist
         // Fetch the JSON data from the PHP script
-        // console.log("test");
         fetch('js/data.json')
             .then(response => response.json()) // Parse the JSON from the response
             .then(data => {

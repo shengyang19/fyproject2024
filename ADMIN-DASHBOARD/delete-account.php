@@ -26,3 +26,4 @@ if (isset($_GET['delete'])) {
     header("Location: hotel$tablename.html"); // Redirect to avoid resubmission
     exit;
 }
+?>
