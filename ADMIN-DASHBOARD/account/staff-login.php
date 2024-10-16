@@ -7,34 +7,72 @@ session_start();
 //$cookie_name = "user";
 $email1 = $_POST['loginemail'];
 $email=strval($email1);
-$key1 = $_POST['loginkey'];
-$key=json_encode($key1);
-
-$con = mysqli_connect('localhost','root','','phmsdb');
-if (mysqli_connect_errno()){echo "Failed to connect to MySQL: " . mysqli_connect_error();}
-
-$sql="SELECT id,username,email,role,phone FROM staff_account WHERE email='$email' AND cred='$key'";
-$row = mysqli_fetch_array(mysqli_query($con,$sql));
-mysqli_close($con);
-if($row!=null){
-	$_SESSION["user"]=$row['id']; // for role & edit profile
-
-	//* Store user data in JSON file * // for view profile
-	$data = [
-		"id" => $row['id'],
-		"username" => $row['username'],
-		"email" => $row['email'],
-		"phone" => $row['phone'],
-		"role" => $row['role']
-	];
-	// file_put_contents('../data.json', json_encode($data));
-	$_SESSION['info']=json_encode($data);
-    header("Location: ../index.html");
-	exit;
+$key = $_POST['loginkey'];
+//# start - auth
+$conn = new mysqli('localhost','root','','phmsdb');
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-else{
-	setcookie("error","default", time() + (30 * 30), "/");
+
+// Prepare and execute the SQL statement
+$stmt = $conn->prepare("SELECT pass FROM staff_account WHERE email = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$stmt->store_result();
+
+if ($stmt->num_rows > 0) {
+    // User exists, fetch the hashed password
+    $stmt->bind_result($hashedPassword);
+    $stmt->fetch();
+
+    // Verify the entered password
+    if (password_verify($key, $hashedPassword)) {
+        echo "Login successful!";
+        
+        // Fetch user data
+        $sql = "SELECT id, username, email, role, phone FROM staff_account WHERE email = ?";
+        $userStmt = $conn->prepare($sql);
+        $userStmt->bind_param("s", $email);
+        $userStmt->execute();
+        $result = $userStmt->get_result();
+        
+        if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+            $_SESSION["user"] = $row['id']; // for role & edit profile
+			
+            // Store user data in JSON format for profile view
+            $data = [
+				"id" => $row['id'],
+                "username" => $row['username'],
+                "email" => $row['email'],
+                "phone" => $row['phone'],
+                "role" => $row['role']
+            ];
+            $_SESSION['info'] = json_encode($data);
+
+			$userStmt->close();
+			$stmt->close();
+			$conn->close();
+            header("Location: ../index.html");
+            exit;
+        }
+        
+        $userStmt->close();
+
+    } else {
+        echo "Invalid password.";
+        setcookie("error", "default", time() + (30 * 30), "/");
+    }
+} else {
+    echo "User not found.";
+    setcookie("error", "default", time() + (30 * 30), "/");
 }
+
+$stmt->close();
+$conn->close();
+//# end - auth
+
 }
 
 
@@ -87,7 +125,7 @@ else{
 		            	<button type="submit" name="signin" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
 		            </div>
 		            <div class="form-group d-md-flex">
-									<div class="w-50  text-center">
+									<div class="text-center">
 										<a href="staff-forgotpass.php" onclick="event.preventDefault(); window.location.href='staff-forgotpass.php';">Forgot Password</a>
 									</div>
 		            </div>

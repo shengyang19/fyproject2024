@@ -29,7 +29,8 @@ if(isset($_POST["confirm"])){
             $row = mysqli_fetch_array(mysqli_query($con,$sql));
             // Checking if user already exist
             if($row!=null){
-                $sql="UPDATE account SET cred='$password' WHERE email='$email'";
+				$hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+                $sql="UPDATE staff_account SET cred='$password', pass='$hashedPassword' WHERE email='$email'";
                 $qry = mysqli_query($con,$sql);
                 mysqli_close($con);
                 header("Location: ../index.html");

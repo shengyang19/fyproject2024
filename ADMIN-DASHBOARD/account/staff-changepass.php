@@ -10,11 +10,12 @@ $newpassrepeat=$_POST["newpassrepeat"];
 
 if(strlen($newpass)>5){
 if($newpass==$newpassrepeat){
-	$newpass = json_encode($newpass);
+	// $newpass = json_encode($newpass);
+	$hashedPassword = password_hash($newpass, PASSWORD_BCRYPT);
 	$con = mysqli_connect('localhost','root','','phmsdb');
 	if (mysqli_connect_errno())
 	{	echo "Failed to connect to MySQL: " . mysqli_connect_error();	}
-	$sql="UPDATE staff_account SET cred='$newpass' WHERE id='$user'";
+	$sql="UPDATE staff_account SET cred='$newpass', pass='$hashedPassword', WHERE id='$user'";
 	$qry = mysqli_query($con,$sql);
 	mysqli_close($con);
 	if(!$qry){
