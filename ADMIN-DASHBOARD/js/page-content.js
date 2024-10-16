@@ -262,36 +262,25 @@ function setupPage(){
 
 
 function setupProfile(){
-    fetch('data.json')
-    .then(response => {
-        if(!response.ok) {
-            throw new Error('Network response was not ok');
+    $.ajax({
+        url: 'getUsername.php', // Replace with your API endpoint
+        method: 'GET',
+        success: function(response) {
+            let item =  JSON.parse(response);
+            for (const key in item) {
+                item[key]=item[key]==""?"-":item[key];
+            }
+            $('.username').html(item.username);
+            $('#phone').html(item.phone).val(item.phone);
+            $('#email').html(item.email).val(item.email);
+            $('#staff_id').html(item.id);
+            // document.getElementById('username').innerHTML=item.username;
+            if(item.role=="admin")
+                document.getElementById('staffcontrol').removeAttribute("hidden");
+        },
+        
+        error: function(jqXHR, textStatus, errorThrown) {
         }
-        return response.json();  // Parsing the JSON data
-    })
-    .then(data => {
-        //Edit page content
-        // document.getElementById('username').innerHTML=data.username;
-        // document.getElementById('nameLabel').innerHTML=data.username;
-        // document.getElementById('nameInput').value=data.username;
-        document.getElementById('phone').innerHTML=data.phone;
-        document.getElementById('phone').value=data.phone;
-        var elements = document.querySelectorAll('.username');
-            
-            // Iterate through each element and change the innerHTML
-            elements.forEach(function(element) {
-                element.innerHTML = data.username;
-                element.value=data.username;
-            });
-        document.getElementById('staff_id').innerHTML=data.staff_id;
-        document.getElementById('email').innerHTML=data.email;
-        document.getElementById('email').value=data.email;
-        if(data.role=="admin")
-            document.getElementById('staffcontrol').removeAttribute("hidden");
-
-    })
-    .catch(error => {
-        console.error('Error fetching JSON data:', error);
     });
 }
 

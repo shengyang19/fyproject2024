@@ -22,10 +22,11 @@ if($row!=null){
 		"role" => $row['role']
 	];
 	
-	$file = 'data.json';
+	$_SESSION['info']=json_encode($data);
+	// $file = 'data.json';
 	
 	// Convert PHP array to JSON and save it to a file
-	file_put_contents($file, json_encode($data));
+	// file_put_contents($file, json_encode($data));
     // echo "hi";
 }
 $qry = mysqli_query($con,$sql);

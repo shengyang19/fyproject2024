@@ -27,9 +27,8 @@ if($row!=null){
 		"phone" => $row['phone'],
 		"role" => $row['role']
 	];
-
-	file_put_contents('../data.json', json_encode($data));
-	$_SESSION['info']=$data;
+	// file_put_contents('../data.json', json_encode($data));
+	$_SESSION['info']=json_encode($data);
     header("Location: ../index.html");
 	exit;
 }
