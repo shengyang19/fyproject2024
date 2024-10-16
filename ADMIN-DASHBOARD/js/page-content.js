@@ -243,21 +243,20 @@ $(document).ready(function() {
 });
 
 function setupPage(){
-    fetch('data.json')
-    .then(response => {
-        if(!response.ok) {
-            throw new Error('Network response was not ok');
+    
+    $.ajax({
+        url: 'getUsername.php', // Replace with your API endpoint
+        method: 'GET',
+        success: function(response) {
+            let item =  JSON.parse(response);
+            document.getElementById('username').innerHTML=item.username;
+            if(item.role=="admin")
+                document.getElementById('staffcontrol').removeAttribute("hidden");
+        },
+        
+        error: function(jqXHR, textStatus, errorThrown) {
+            document.getElementById('username').innerHTML="";
         }
-        return response.json();  // Parsing the JSON data
-    })
-    .then(data => {
-        //Edit page content
-        document.getElementById('username').innerHTML=data.username;
-        if(data.role=="admin")
-            document.getElementById('staffcontrol').removeAttribute("hidden");        
-    })
-    .catch(error => {
-        console.error('Error fetching JSON data:', error);
     });
 }
 

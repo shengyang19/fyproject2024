@@ -21,14 +21,15 @@ if($row!=null){
 
 	//* Store user data in JSON file * // for view profile
 	$data = [
-		"staff_id" => $row['id'],
+		"id" => $row['id'],
 		"username" => $row['username'],
 		"email" => $row['email'],
 		"phone" => $row['phone'],
 		"role" => $row['role']
 	];
-	file_put_contents('../data.json', json_encode($data));
 
+	file_put_contents('../data.json', json_encode($data));
+	$_SESSION['info']=$data;
     header("Location: ../index.html");
 	exit;
 }
