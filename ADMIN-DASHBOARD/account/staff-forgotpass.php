@@ -33,7 +33,7 @@ if(isset($_POST["confirm"])){
                 $sql="UPDATE staff_account SET cred='$password', pass='$hashedPassword' WHERE email='$email'";
                 $qry = mysqli_query($con,$sql);
                 mysqli_close($con);
-                header("Location: ../index.html");
+                header("Location: staff-login.php");
                 exit();
             }
             mysqli_close($con);

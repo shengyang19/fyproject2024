@@ -1,0 +1,1228 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Palladium Hotel - Reservation</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/booking-form2.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body onload="setupProfile()" style="background-color:black;">
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-1 col-lg-2">
+                            <div class="logo-img">
+                                <img src="img/logo.png" alt="" width="100">
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="rooms.html">rooms</a></li>
+                                        <li><a href="facilities.html">facilities</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-2">
+                            <div class="book_room">
+                                <div class="book_btn d-none d-lg-block">
+                                    <a class="popup-with-form" href="#test-form">Book A Room</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2">
+                            <div class="main-menu">
+                                <div class="btn-group">
+                                    <button type="button" class="btn rounded-circle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-user"></i>
+                                    </button>
+                                    <div id="profile-menu" class="dropdown-menu">
+                                        <a id="profile-menu-1" href="" class="dropdown-item" type="button">View profile</a>
+                                        <a onclick="deleteCookie('user')" id="profile-menu-2" href="index.html" class="dropdown-item" type="button">Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- bradcam_area_start -->
+    <div class="bradcam_area breadcam_bg">
+        <h3 id="acc_name">Reservation</h3>
+    </div>
+
+    
+    <!-- bradcam_area_end -->
+
+    <!-- ================ profile section start ================= -->
+    <div class="style-0" data-stage="2">
+		<div data-capla-component-boundary="b-checkout-bp-accommodation/GlobalAlerts/BookingProcessPage" data-capla-hydration="0" class="style-1"></div>
+		<div class="style-2">
+			<div class="style-3">
+			</div>
+		</div>
+		<div class="style-34">
+			<aside class="style-35">
+				<div class="style-36">
+					<div class="style-37">
+						<div data-capla-component-boundary="b-checkout-bp-accommodation/PropertyDetails/v2/default-highlights" data-capla-hydration="0" class="style-38">
+							<div class="style-39">
+								<div class="style-40">
+									<div class="style-41">
+										<div class="style-42">
+											<div class="style-43">
+												<div class="style-44">
+													<div class="style-45">
+														<h1 class="style-46">Royal Suite</h1>
+													</div>
+													<div class="style-47">
+														<div class="style-48">
+															<div data-testid="property-details__metadata--property-type" class="style-49">
+																<div class="style-50">
+																	<div class="style-51">
+																		<div class="style-52">Rating</div>
+																		<div class="style-53" role="img"><span aria-hidden="true" class="style-54"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" class="style-55">
+																					<path d="M23.555 8.729a1.505 1.505 0 0 0-1.406-.98h-6.087a.5.5 0 0 1-.472-.334l-2.185-6.193a1.5 1.5 0 0 0-2.81 0l-.005.016-2.18 6.177a.5.5 0 0 1-.471.334H1.85A1.5 1.5 0 0 0 .887 10.4l5.184 4.3a.5.5 0 0 1 .155.543l-2.178 6.531a1.5 1.5 0 0 0 2.31 1.684l5.346-3.92a.5.5 0 0 1 .591 0l5.344 3.919a1.5 1.5 0 0 0 2.312-1.683l-2.178-6.535a.5.5 0 0 1 .155-.543l5.194-4.306a1.5 1.5 0 0 0 .433-1.661" class=""></path>
+																				</svg></span><span aria-hidden="true" class="style-56"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" class="style-57">
+																					<path d="M23.555 8.729a1.505 1.505 0 0 0-1.406-.98h-6.087a.5.5 0 0 1-.472-.334l-2.185-6.193a1.5 1.5 0 0 0-2.81 0l-.005.016-2.18 6.177a.5.5 0 0 1-.471.334H1.85A1.5 1.5 0 0 0 .887 10.4l5.184 4.3a.5.5 0 0 1 .155.543l-2.178 6.531a1.5 1.5 0 0 0 2.31 1.684l5.346-3.92a.5.5 0 0 1 .591 0l5.344 3.919a1.5 1.5 0 0 0 2.312-1.683l-2.178-6.535a.5.5 0 0 1 .155-.543l5.194-4.306a1.5 1.5 0 0 0 .433-1.661" class=""></path>
+																				</svg></span><span aria-hidden="true" class="style-58"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" class="style-59">
+																					<path d="M23.555 8.729a1.505 1.505 0 0 0-1.406-.98h-6.087a.5.5 0 0 1-.472-.334l-2.185-6.193a1.5 1.5 0 0 0-2.81 0l-.005.016-2.18 6.177a.5.5 0 0 1-.471.334H1.85A1.5 1.5 0 0 0 .887 10.4l5.184 4.3a.5.5 0 0 1 .155.543l-2.178 6.531a1.5 1.5 0 0 0 2.31 1.684l5.346-3.92a.5.5 0 0 1 .591 0l5.344 3.919a1.5 1.5 0 0 0 2.312-1.683l-2.178-6.535a.5.5 0 0 1 .155-.543l5.194-4.306a1.5 1.5 0 0 0 .433-1.661" class=""></path>
+																				</svg></span><span aria-hidden="true" class="style-60"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" class="style-61">
+																					<path d="M23.555 8.729a1.505 1.505 0 0 0-1.406-.98h-6.087a.5.5 0 0 1-.472-.334l-2.185-6.193a1.5 1.5 0 0 0-2.81 0l-.005.016-2.18 6.177a.5.5 0 0 1-.471.334H1.85A1.5 1.5 0 0 0 .887 10.4l5.184 4.3a.5.5 0 0 1 .155.543l-2.178 6.531a1.5 1.5 0 0 0 2.31 1.684l5.346-3.92a.5.5 0 0 1 .591 0l5.344 3.919a1.5 1.5 0 0 0 2.312-1.683l-2.178-6.535a.5.5 0 0 1 .155-.543l5.194-4.306a1.5 1.5 0 0 0 .433-1.661" class=""></path>
+																				</svg></span><span aria-hidden="true" class="style-60"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" class="style-61">
+																					<path d="M23.555 8.729a1.505 1.505 0 0 0-1.406-.98h-6.087a.5.5 0 0 1-.472-.334l-2.185-6.193a1.5 1.5 0 0 0-2.81 0l-.005.016-2.18 6.177a.5.5 0 0 1-.471.334H1.85A1.5 1.5 0 0 0 .887 10.4l5.184 4.3a.5.5 0 0 1 .155.543l-2.178 6.531a1.5 1.5 0 0 0 2.31 1.684l5.346-3.92a.5.5 0 0 1 .591 0l5.344 3.919a1.5 1.5 0 0 0 2.312-1.683l-2.178-6.535a.5.5 0 0 1 .155-.543l5.194-4.306a1.5 1.5 0 0 0 .433-1.661" class=""></path>
+																				</svg></span></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="style-62">
+													<div class="style-68">														
+													</div>
+													<div class="style-76">
+														<ul class="style-77" data-testid="property-details__facilities">
+															<li class="style-78"><span class="">
+																	<div data-testid="property-facility-badge-icon" class="style-79"><span data-testid="icon-with-text-icon" class="style-80" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" class="style-81">
+																				<path d="M14.25 18.75a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0m1.5 0a3.75 3.75 0 1 0-7.5 0 3.75 3.75 0 0 0 7.5 0m2.08-5.833a8.25 8.25 0 0 0-11.666 0 .75.75 0 0 0 1.06 1.06 6.75 6.75 0 0 1 9.546 0 .75.75 0 0 0 1.06-1.06m3.185-3.182c-4.979-4.98-13.051-4.98-18.03 0a.75.75 0 1 0 1.06 1.06c4.394-4.393 11.516-4.393 15.91 0a.75.75 0 1 0 1.06-1.06m2.746-3.603C17.136-.043 6.864-.043.24 6.132A.75.75 0 1 0 1.26 7.23c6.05-5.638 15.429-5.638 21.478 0a.75.75 0 0 0 1.022-1.098z" class=""></path>
+																			</svg></span><span class="style-82">Free WiFi</span></div>
+																</span></li>
+															<li class="style-83"><span class="">
+																	<div data-testid="property-facility-badge-icon" class="style-84"><span data-testid="icon-with-text-icon" class="style-85" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" class="style-86">
+																				<path d="M22.5 12c0 5.799-4.701 10.5-10.5 10.5S1.5 17.799 1.5 12 6.201 1.5 12 1.5 22.5 6.201 22.5 12m1.5 0c0-6.627-5.373-12-12-12S0 5.373 0 12s5.373 12 12 12 12-5.373 12-12m-9.75-1.5a1.5 1.5 0 0 1-1.5 1.5H10.5l.75.75v-4.5L10.5 9h2.25a1.5 1.5 0 0 1 1.5 1.5m1.5 0a3 3 0 0 0-3-3H10.5a.75.75 0 0 0-.75.75v4.5c0 .414.336.75.75.75h2.25a3 3 0 0 0 3-3m-4.5 6.75v-4.5a.75.75 0 0 0-1.5 0v4.5a.75.75 0 0 0 1.5 0" class=""></path>
+																			</svg></span><span class="style-87">Parking</span></div>
+																</span></li>
+															<li class="style-88"><span class="">
+																	<div data-testid="property-facility-badge-icon" class="style-89"><span data-testid="icon-with-text-icon" class="style-90" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" class="style-91">
+																				<path d="M5.999.75v22.5a.75.75 0 0 0 1.5 0V.75a.75.75 0 0 0-1.5 0m3 0V7.5a2.26 2.26 0 0 1-2.252 2.25 2.26 2.26 0 0 1-2.248-2.252V.75a.75.75 0 0 0-1.5 0V7.5a3.76 3.76 0 0 0 3.748 3.75 3.76 3.76 0 0 0 3.752-3.748V.75a.75.75 0 0 0-1.5 0m6.75 15.75h3c1.183.046 2.203-.9 2.25-2.111a2 2 0 0 0 0-.168c-.25-6.672-.828-9.78-3.231-13.533a1.508 1.508 0 0 0-2.77.81V23.25a.75.75 0 0 0 1.5 0V1.503c0 .003.001 0 .003 0l.008.002c2.21 3.45 2.75 6.354 2.99 12.773v.053a.696.696 0 0 1-.721.67L15.749 15a.75.75 0 0 0 0 1.5" class=""></path>
+																			</svg></span><span class="style-92">Restaurant</span></div>
+																</span></li>
+															<li class="style-93"><span class="">
+																	<div data-testid="property-facility-badge-icon" class="style-94"><span data-testid="icon-with-text-icon" class="style-95" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50px" class="style-96">
+																				<path d="M23.097 21.71c-.896.187-1.71-.114-2.442-.76a4.6 4.6 0 0 1-.74-.837.75.75 0 0 0-1.272-.004 3.56 3.56 0 0 1-2.925 1.661 2.98 2.98 0 0 1-2.559-1.608.75.75 0 0 0-1.26-.11 4.42 4.42 0 0 1-3.286 1.719c-1.121-.058-2.216-.68-2.876-1.677a.75.75 0 0 0-1.214-.05 6.2 6.2 0 0 1-1.125 1.033c-.833.588-1.677.85-2.49.675a.75.75 0 1 0-.315 1.466c1.285.276 2.526-.107 3.67-.915a7 7 0 0 0 1.438-1.33l-1.214-.05a5.26 5.26 0 0 0 4.126 2.346c1.807-.084 3.417-.926 4.476-2.303l-1.26-.11a4.49 4.49 0 0 0 3.892 2.414 5.07 5.07 0 0 0 4.192-2.361l-1.272-.004c.192.308.533.739 1.022 1.17 1.057.931 2.32 1.4 3.74 1.104a.75.75 0 0 0-.306-1.468zm0-4.5c-.896.187-1.71-.114-2.442-.76a4.6 4.6 0 0 1-.74-.837.75.75 0 0 0-1.272-.004 3.56 3.56 0 0 1-2.925 1.661 2.98 2.98 0 0 1-2.559-1.608.75.75 0 0 0-1.26-.11 4.42 4.42 0 0 1-3.286 1.719c-1.121-.058-2.216-.68-2.876-1.677a.75.75 0 0 0-1.214-.05 6.2 6.2 0 0 1-1.125 1.033c-.833.588-1.677.85-2.49.675a.75.75 0 1 0-.315 1.466c1.285.276 2.526-.107 3.67-.915a7 7 0 0 0 1.438-1.33l-1.214-.05a5.26 5.26 0 0 0 4.126 2.346c1.807-.084 3.417-.926 4.476-2.303l-1.26-.11a4.49 4.49 0 0 0 3.892 2.414 5.07 5.07 0 0 0 4.192-2.361l-1.272-.004c.192.308.533.739 1.022 1.17 1.057.931 2.32 1.4 3.74 1.104a.75.75 0 0 0-.306-1.468zm-1.722-8.64a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0m1.5 0a3.375 3.375 0 1 0-6.75 0 3.375 3.375 0 0 0 6.75 0M7.777 14.636l3.831-2.4a.75.75 0 0 0 .166-1.13L8.964 7.9a2.25 2.25 0 0 1 .687-3.494l4.264-2.135a.751.751 0 1 1 .686 1.333l-.01.006-3.405 1.702a1.502 1.502 0 0 0-.448 2.334l5.375 6.142a.75.75 0 1 0 1.128-.988l-5.377-6.145-.002-.003v-.001l3.394-1.697.027-.013A2.25 2.25 0 0 0 13.238.93L8.98 3.065a3.75 3.75 0 0 0-1.144 5.824l2.81 3.206.166-1.13-3.831 2.4a.75.75 0 0 0 .796 1.272z" class=""></path>
+																			</svg></span><span class="style-97">Swimming Pool</span></div>
+																</span></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<section class="style-98">
+						<div class="style-99">
+							<div class="style-100">
+								<h2 class="style-101">Your booking details</h2>
+							</div>
+							<div class="style-102">
+								<div class="style-103">
+									<div class="style-104">
+										<div class="style-105">
+											<div class="style-106">
+												<div class="style-107">Check-in</div> <time class="style-108" aria-describedby="bp-checkin-date__label">
+													<span class="style-109">Fri 18 Oct 2024</span> <span class="style-110">
+														From 15:00
+													</span> </time>
+											</div>
+											<div class="style-111">
+												<div class="style-112">Check-out</div> <time class="style-113" aria-describedby="bp-checkout-date__label">
+													<span class="style-114">Sat 19 Oct 2024</span> <span class="style-115">
+														Until 12:00
+													</span> </time>
+											</div>
+										</div>
+									</div>									
+								</div>
+								<hr class="style-119" />
+								<div class="style-120">
+									<div class="style-121">
+										<ul class="style-122" data-bui-component="Accordion">
+											<li class="style-123">
+												<button class="style-124" data-bui-ref="accordion-button" aria-controls="unit-selection-content" aria-expanded="false" type="button">
+													<div class="style-125">
+														<p class="style-126">You selected</p>
+														<h3 class="style-127">
+															1 room for
+															2 adults
+														</h3>
+													</div> <span role="presentation" class="style-128">
+														<svg class="style-129" height="24" width="24" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false">
+															<path d="M18 9.45c0 .2-.078.39-.22.53l-5 5a1.08 1.08 0 0 1-.78.32 1.1 1.1 0 0 1-.78-.32l-5-5a.75.75 0 0 1 0-1.06.74.74 0 0 1 1.06 0L12 13.64l4.72-4.72a.74.74 0 0 1 1.06 0 .73.73 0 0 1 .22.53zm-5.72 4.47zm-.57 0z" class=""></path>
+														</svg> </span>
+												</button>
+												<div class="style-130" role="region" aria-labelledby="unit-selection-label">
+													<ul class="style-131">
+														<li class="style-132">
+															<div class="style-133">
+																1 x Deluxe King Room
+															</div>
+														</li>
+													</ul>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="style-134">
+										<div class="style-135">
+											<div class="style-136">
+												<div class="style-137">
+													<a class="style-138" href="rooms.html">
+														<span class="style-139">Change your selection</span> </a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<div class="style-140" data-hotel-currency-code="MYR" data-user-currency-code="MYR" data-is-us-breakdown="false" data-component="bp/price-details">
+						<div class="style-141">
+							<section class="style-142">
+								<div class="style-143">
+									<div class="style-144">
+										<h2 class="style-145">
+											Your price summary
+										</h2>
+									</div>
+									<div class="style-146">
+										<div class="style-147">
+											<div class="style-148">
+												<div class="style-149">
+													<ul class="style-150">
+														<li class="style-151">
+															<div class="style-152">
+																<div class="style-153">
+																	Original price
+																</div>
+															</div>
+															<div class="style-154">
+																MYR&nbsp;631.89
+															</div>
+														</li>
+														<li class="style-155">															
+														</li>
+													</ul>
+												</div>
+												<div class="style-160">
+													<ul class="style-161" data-is-exclusive="0">
+														<li class="style-162" data-payment-timing="pay_now">
+															<ul class="style-163">
+																<li class="style-164" data-campaign-id="512636" data-ui-hide-row-when-inactive="">																	
+																</li>
+															</ul>
+														</li>
+														<li class="style-170" data-payment-timing="pay_later">
+															<ul class="style-171">
+																<li class="style-172" data-campaign-id="512636" data-ui-hide-row-when-inactive="">
+																	<div class="style-173">
+																		<div class="style-174">
+																			Booking.com pays
+																		</div>
+																		<div class="style-175">
+																		</div>
+																	</div>
+																	<div class="style-176">
+																		<span class="style-177">Savings of </span>
+																		−&nbsp;MYR&nbsp;38.10
+																	</div>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="style-178">
+										<div class="style-179">
+											<div class="style-180">
+												<div class="style-181">
+													<div class="style-182">
+														<div class="style-183">
+															<div class="style-184">
+																<div class="style-185">
+																	Price
+																</div>
+															</div>
+															<div class="style-186">
+																<!-- <div class="style-187" aria-hidden="true">
+																	MYR&nbsp;632
+																</div> -->
+																<div class="style-188" data-price="423.3663" data-currency-code="MYR" data-pd-total-usercurrency="">
+																	<span data-component="core/animate-price" class="style-189" data-value="423.3663" data-currency="MYR" data-precision="" data-animate-price-group-name="bp_user_total_price" data-animation-speed="0.7">MYR&nbsp;1850.00</span>
+																</div>
+															</div>
+														</div>
+														<div class="style-190">
+															<div class="style-191">
+																Additional charges may apply
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div data-component="bp/price-summary/discount-breakdown-details" class="style-192">
+										<div class="style-193">
+											<h2 class="style-194">
+												Price information
+											</h2>
+										</div>
+										<div class="style-195">
+											<div class="style-196">
+												<div class="style-197">
+													<div class="style-198">
+														<svg class="style-199" height="20" width="20" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false">
+															<path d="M4.125 8.25a.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5 1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5zm12.75 5.25a.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5 1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5zm2.625-3V15a.75.75 0 0 1-.75.75H2.25A.75.75 0 0 1 1.5 15V6a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 .75.75v4.5zm1.5 0V6a2.25 2.25 0 0 0-2.25-2.25H2.25A2.25 2.25 0 0 0 0 6v9a2.25 2.25 0 0 0 2.25 2.25h16.5A2.25 2.25 0 0 0 21 15v-4.5zm-8.25 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0zm1.5 0a3.75 3.75 0 1 0-7.5 0 3.75 3.75 0 0 0 7.5 0zM22.5 9v9a.75.75 0 0 1-.75.75H5.25a.75.75 0 0 0 0 1.5h16.5A2.25 2.25 0 0 0 24 18V9a.75.75 0 0 0-1.5 0z" class=""></path>
+														</svg>
+													</div>
+													<div class="style-200">
+														<div class="style-201">
+															<div class="style-202">
+																Includes taxes and charges
+															</div>
+															<div class="style-203">
+																<div class="style-204">
+																	<div class="style-205">
+																		<div class="style-206">
+																			<div class="style-207">
+																				8 % VAT
+																			</div>
+																			<div class="style-208" test-id="cityTaxValue">
+																				MYR&nbsp;-
+																			</div>
+																		</div>
+																	</div>
+																	<div class="style-209">
+																		<div class="style-210">
+																			<div class="style-211">
+																				10 % Property service charge
+																			</div>
+																			<div class="style-212" test-id="cityTaxValue">
+																				MYR&nbsp;-
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="style-213">
+												<div class="style-214">
+													<div class="style-215">
+														<svg class="style-216" height="20" width="20" viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false">
+															<path d="M14.25 15.75h-.75a.75.75 0 0 1-.75-.75v-3.75a1.5 1.5 0 0 0-1.5-1.5h-.75a.75.75 0 0 0 0 1.5h.75V15a2.25 2.25 0 0 0 2.25 2.25h.75a.75.75 0 0 0 0-1.5zM11.625 6a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25.75.75 0 0 0 0 1.5.375.375 0 1 1 0-.75.375.375 0 0 1 0 .75.75.75 0 0 0 0-1.5zM22.5 12c0 5.799-4.701 10.5-10.5 10.5S1.5 17.799 1.5 12 6.201 1.5 12 1.5 22.5 6.201 22.5 12zm1.5 0c0-6.627-5.373-12-12-12S0 5.373 0 12s5.373 12 12 12 12-5.373 12-12z" class=""></path>
+														</svg>
+													</div>
+													<div class="style-217">
+														Tourism Fee (if applicable) refers to the Malaysian Tourism Tax
+													</div>
+												</div>
+											</div>
+											<!-- <div class="style-218">
+												<button type="button" bui-button="" bui-button--tertiary="" bui-button--negative-inset-adjustment--top="" bui-button--negative-inset-adjustment--start="" bui-button--negative-inset-adjustment--bottom="" js-breakdown-details__toggle="" class="style-219">
+													<span class="style-220">Hide details</span> </button>
+											</div> -->
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+					<div class="style-231">
+						<div data-capla-component-boundary="b-checkout-bp-accommodation/GeniusWrapperAccommodationBookProcess" data-capla-hydration="0" class="style-232"></div>
+					</div>
+					<div data-et-view="BOeaYYfPNRYHNPMMNIRHcEFeLHYO:1" class="style-233"></div>
+				</div>
+			</aside>
+			<main class="style-240">
+				<div bp="" booking-process="" class="style-241"></div>
+				<div data-capla-component-boundary="b-checkout-bp-accommodation/ValidationBlock" data-capla-hydration="0" class="style-242"></div>
+				<div data-capla-component-boundary="b-checkout-bp-accommodation/Authentication" data-capla-hydration="0" class="style-243">
+				</div>
+				<form class="style-254" name="bookForm" action="book.html?aid=383725&amp;label=metatrivago-hotel-1584346_xqdz-086100_los-1_nrm-1_gstadt-2_gstkid-0_curr-myr_lang-en_mcid-50_dev-dsk_losb-1_bw-1_bwb-1_pg-0_dd-0_gsb-2_sl-0_w-0_tstar-0_trat-0_tprc-tprcd_tamnt-0_cod-1729165142_trvref-95cdc54c-a1d9-3d62-a227-087d211b1075_tamnt-0&amp;selected_currency=MYR&amp;lang=en-gb&amp;sid=2109a15a440e1ab86fb0b80228c543be&amp;checkin=2024-10-18&amp;checkout=2024-10-19&amp;property_timezone=Asia/Kuala_Lumpur&amp;basket_id=1fc8bef3-427e-403c-874f-ab8c05d3d628&amp;" method="post" data-is-exclusive="0" data-is-hybrid="1" data-has-schedule="0" data-stage="2" data-component="bp/main-form " novalidate=""><input type="hidden" name="bwcm" value="512636" class="style-255" /> <input type="hidden" name="bhc_csrf_token" value="tS8RZwAAAAA=uHoURRlkDe4sCJ62q5vjXDl_xICIy5-XXB-C88KAIOUAn_TUeVXn-576LKfo09Co6vsBcg9-_wTFaCbX2i0QRJrKgCYLLK7zSx7Fb_TXro2QakJnZH3IQ8x-unoYf_UZxsHpJtdBjoSaGFIwS111bEicxYWRIj2l0kFf6iSDg-sLU_W8YeoS_En7Fph5DnO_B2oarSDZin3VjLPR" class="style-256" /> <input type="hidden" name="aid" value="383725" class="style-257" /> <input type="hidden" name="label" value="metatrivago-hotel-1584346_xqdz-086100_los-1_nrm-1_gstadt-2_gstkid-0_curr-myr_lang-en_mcid-50_dev-dsk_losb-1_bw-1_bwb-1_pg-0_dd-0_gsb-2_sl-0_w-0_tstar-0_trat-0_tprc-tprcd_tamnt-0_cod-1729165142_trvref-95cdc54c-a1d9-3d62-a227-087d211b1075_tamnt-0" class="style-258" /> <input type="hidden" name="lang" value="en-gb" class="style-259" /> <input type="hidden" name="sid" value="2109a15a440e1ab86fb0b80228c543be" class="style-260" /> <input type="hidden" name="insurance_policy_holder_last_name" value="" class="style-261" /> <input type="hidden" name="insurance_policy_cover_start_date" value="" class="style-262" /> <input type="hidden" name="insurance_policy_holder_national_identification_number" value="" class="style-263" /> <input type="hidden" name="insurance_policy_holder_address_line1" value="" class="style-264" /> <input type="hidden" name="insurance_policy_guest_names" value="" class="style-265" /> <input type="hidden" name="insurance_policy_holder_is_travelling" value="" class="style-266" /> <input type="hidden" name="insurance_policy_holder_address_city" value="" class="style-267" /> <input type="hidden" name="insurance_policy_current_location" value="" class="style-268" /> <input type="hidden" name="insurance_policy_added" value="" class="style-269" /> <input type="hidden" name="insurance_policy_cover_end_date" value="" class="style-270" /> <input type="hidden" name="insurance_policy_holder_first_name" value="" class="style-271" /> <input type="hidden" name="insurance_policy_holder_email" value="" class="style-272" /> <input type="hidden" name="insurance_policy_holder_address_post_code" value="" class="style-273" /> <input type="hidden" name="bsb_discount_amount" value="38.10" class="style-274" /> <input type="hidden" name="remb" value="0" class="style-275" /> <input type="hidden" name="reub" value="0" class="style-276" /> <input type="hidden" name="rets" value="0" class="style-277" /> <input type="hidden" name="recp" value="0" class="style-278" /> <input type="hidden" name="cc_refp" value="" class="style-279" /> <input type="hidden" name="rt_num_rooms" value="6" class="style-280" /> <input type="hidden" name="checkout" value="2024-10-19" class="style-281" /> <input type="hidden" name="full_cost" value="0" class="style-282" /> <input type="hidden" name="emk_bp_redirect" value="0" class="style-283" /> <input type="hidden" name="bpid" value="B80ECBA9-AE05-4145-BB8F-4EF5AC38B433" class="style-284" /> <input type="hidden" name="srpvid" value="901251ec820800b1" class="style-285" /> <input type="hidden" name="ap_ref" value="0" class="style-286" /> <input type="hidden" name="allow_past" value="0" class="style-287" /> <input type="hidden" name="send_sms_confirmation_multi_lang_to_this_number" value="0" class="style-288" /> <input type="hidden" name="dc_issue_number" value="0" class="style-289" /> <input type="hidden" name="ap_available" value="0" class="style-290" /> <input type="hidden" name="tnc_checkbox" value="0" class="style-291" /> <input type="hidden" name="stage" value="2" class="style-292" /> <input type="hidden" name="rt_num_blocks_per_room" value="{&amp;quot;158434616&amp;quot;:2,&amp;quot;158434602&amp;quot;:2,&amp;quot;158434617&amp;quot;:2,&amp;quot;158434615&amp;quot;:2,&amp;quot;158434614&amp;quot;:2,&amp;quot;158434601&amp;quot;:2}" class="style-293" /> <input type="hidden" name="bp_nocc_compset" value="0" class="style-294" /> <input type="hidden" name="lphwd" value="0" class="style-295" /> <input type="hidden" name="is_single_room_group_recommendation" value="0" class="style-296" /> <input type="hidden" name="rt_pos_final" value="1.1" class="style-297" /> <input type="hidden" name="checkin" value="2024-10-18" class="style-298" /> <input type="hidden" name="room1" value="A,A" class="style-299" /> <input type="hidden" name="rt_pageview_id" value="3fbf51f09d4702ac" class="style-300" /> <input type="hidden" name="create_account" value="0" class="style-301" /> <input type="hidden" name="pay_now" value="0" class="style-302" /> <input type="hidden" name="hostname" value="www.booking.com" class="style-303" /> <input type="hidden" name="interval" value="1" class="style-304" /> <input type="hidden" name="is_24hr" value="0" class="style-305" /> <input type="hidden" name="from_ski_sr" value="0" class="style-306" /> <input type="hidden" name="rt_selected_block_position" value="1" class="style-307" /> <input type="hidden" name="total_cost" value="423.36" class="style-308" /> <input type="hidden" name="bp_from" value="standard" class="style-309" /> <input type="hidden" name="rt_relevance_metric_id" value="18f8e9c8-1fca-4643-b973-9fd2d7eab18a" class="style-310" /> <input type="hidden" name="sms_confirmation" value="0" class="style-311" /> <input type="hidden" name="seen_ft_rvw" value="0" class="style-312" /> <input type="hidden" name="hotel_id" value="1584346" class="style-313" /> <input type="hidden" name="prd_all_included" value="0" class="style-314" /> <input type="hidden" name="upgrade_to" value="0" class="style-315" /> <input type="hidden" name="from_beach_non_key_ufi_sr" value="0" class="style-316" /> <input type="hidden" name="send_sms_confirmation_to_this_number" value="0" class="style-317" /> <input type="hidden" name="rt_pos_selected_within_room" value="1" class="style-318" /> <input type="hidden" name="rt_selected_total_price" value="385" class="style-319" /> <input type="hidden" name="is_group_recommendation" value="0" class="style-320" /> <input type="hidden" name="promo" value="0" class="style-321" /> <input type="hidden" name="full_cost_plain" value="0" class="style-322" /> <input type="hidden" name="rt_cheapest_search_price" value="385" class="style-323" /> <input type="hidden" name="pset_discount_won" value="0" class="style-324" /> <input type="hidden" name="from_beach_key_ufi_sr" value="0" class="style-325" /> <input type="hidden" name="recommended_room_id" value="0" class="style-326" /> <input type="hidden" name="sms_checkin" value="0" class="style-327" /> <input type="hidden" name="rt_with_no_dimensions" value="0" class="style-328" /> <input type="hidden" name="ufi" value="-2403010" class="style-329" /> <input type="hidden" name="dotd_fb" value="0" class="style-330" /> <input type="hidden" name="send_whatsapp_confirmation" value="0" class="style-331" /> <input type="hidden" name="rt_selected_blocks_info" value="{&amp;quot;158434601_88635943_0_2_0&amp;quot;:{&amp;quot;rt_selected_block_position_in_rt&amp;quot;:1,&amp;quot;rt_selected_block_position_in_room_group&amp;quot;:0,&amp;quot;count&amp;quot;:1,&amp;quot;rt_room_symmetry_category&amp;quot;:&amp;quot;one_dimension&amp;quot;}}" class="style-332" /> <input type="hidden" name="emk_opt_in" value="0" class="style-333" /> <input type="hidden" name="nits_session_id" value="FA411705-0CD2-4678-A486-F514BD9E67EE" class="style-334" /> <input type="hidden" name="send_price_watch" value="0" class="style-335" /> <input type="hidden" name="rt_pos_selected" value="1" class="style-336" /> <input type="hidden" name="trips_promo" value="[]" class="style-337" /> <input type="hidden" name="rt_num_blocks" value="12" class="style-338" /> <input type="hidden" name="preferred_reward" value="" class="style-339" /> <input type="hidden" name="basket_id" value="1fc8bef3-427e-403c-874f-ab8c05d3d628" class="style-340" /> <input type="hidden" name="nr_rooms_158434601_88635943_0_2_0" value="1" class="style-341" /> <input type="hidden" name="final_booking_price" value="423.3663" class="style-342" /> <input type="hidden" name="basket_id" value="1fc8bef3-427e-403c-874f-ab8c05d3d628" class="style-343" /> <input type="hidden" name="pre_order_uuid" value="83e44d53-983a-4b60-a191-f251fab61614" class="style-344" /> <input type="hidden" name="mtv_last_sorter_used" value="" class="style-345" /> <input type="hidden" name="is_piyoc_supported" value="0" class="style-346" /> <input type="hidden" name="form_was_rendered" value="1" class="style-347" /> </form>
+				<section datacomponent="GuestDetails" data-component="GuestDetails" style="color:rgb(51, 51, 51);padding-bottom:12px;padding-top:12px;padding-left:16px;padding-right:16px;fill:rgb(0, 0, 0);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:0.666667px;border-radius:16px;flex-direction:column;display:flex;margin:4px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+					<div style="color:rgb(51, 51, 51);padding-bottom:8px;fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"></div>
+					<fieldset data-testid="guest-details-fieldset" style="color:rgb(51, 51, 51);padding:0px;fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);margin:0px;border:0px none rgb(51, 51, 51);box-sizing:border-box;touch-action:manipulation;">
+						<legend data-testid="guest-detail-title" style="font-weight: 600; font-size: clamp(20px, 18.359px + 0.512821vw, 24px); line-height: clamp(24px, 21.9487px + 0.641026vw, 29px);font-size:24px;line-height:29px;margin-bottom:8px;margin-top:8px;margin:8px 0px;box-sizing:border-box;touch-action:manipulation;">Who’s the lead guest?</legend>
+						<div data-element-name="GuestField_err_firstName" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+							<div aria-disabled="false" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;position:relative;touch-action:manipulation;">
+								<div style="color:rgb(51, 51, 51);padding-top:12px;fill:rgb(0, 0, 0);display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+									<fieldset style="color:rgb(51, 51, 51);padding-left:12px;padding:0px 0px 0px 12px;fill:rgb(0, 0, 0);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:0.666667px;border-radius:8px;margin:0px;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);border:0.666667px solid rgba(94, 107, 130, 0.32);box-sizing:border-box;inset:0px;transition:background 0.3s, border-color 0.3s;touch-action:manipulation;">
+										<legend style="box-sizing:border-box;height:25px;display:flex;-webkit-box-align:center;align-items:center;padding:0px;pointer-events:none;user-select:none;max-width:0.01px;overflow:visible;white-space:nowrap;visibility:hidden;transition:max-width 0.1s;touch-action:manipulation;"><span style="font-weight: 400; line-height: calc(14.98px); font-size: 12px; margin-top: calc(-0.98px); margin-bottom: calc(-0.98px);line-height:14.98px;font-size:12px;margin-top:-0.98px;margin-bottom:-0.98px;margin-left:4px;margin-right:4px;margin:-0.98px 4px;box-sizing:border-box;color:rgb(94, 107, 130);fill:rgb(94, 107, 130);opacity:0;visibility:visible;transition:opacity 0.3s, color 0.3s;touch-action:manipulation;">First name *</span></legend>
+									</fieldset><label style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);width: 100%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+										<div style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);align-items:stretch;flex-direction:column;flex:1 1 0%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+											<div style="color:rgb(51, 51, 51);padding-top:16px;padding-left:16px;fill:rgb(0, 0, 0);border-style:none;border-width:0px;overflow:hidden;width: 100%;height:47.8125px;display:flex;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;transition:opacity 0.3s;pointer-events:none;touch-action:manipulation;">
+												<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;color:rgb(94, 107, 130);fill:rgb(94, 107, 130);touch-action:manipulation;">First name *</p>
+											</div><span style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;width: 100%;height:47.8125px;touch-action:manipulation;"><input maxlength="64" autocomplete="given-name" name="firstName" required="" type="text" value="" style="color:rgb(36, 38, 44);padding-top:0px;padding-right:16px;padding-left:16px;padding-bottom:16px;fill:rgb(36, 38, 44);border-style:none;border-width:0px;width: 100%;margin-top:16px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);cursor:pointer;box-sizing:border-box;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;outline:rgb(36, 38, 44) none 0px;appearance:none;font-weight:400;font-size:14px;line-height:18.19px;font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-style:normal;letter-spacing:normal;word-spacing:0px;font-stretch:100%;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;touch-action:manipulation;" /></span>
+										</div>
+										<div style="color:rgb(51, 51, 51);padding-right:16px;padding-bottom:12px;padding-top:12px;fill:rgb(0, 0, 0);border-style:none;border-width:0px;white-space:nowrap;align-items:center;cursor:text;display:flex;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><button tabindex="-1" aria-label="Clear" aria-hidden="true" type="button" style="opacity: 0;color:rgb(51, 51, 51);padding:0px;fill:rgb(0, 0, 0);background:rgba(255, 255, 255, 0) none repeat scroll 0% 0% / auto padding-box border-box;border-style:none;border-width:0px;cursor:pointer;display:flex;pointer-events:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;touch-action:manipulation;"><svg role="img" aria-label="Clear" opacity="1" style="box-sizing:border-box;fill:rgb(36, 38, 44);min-width:16px;min-height:16px;max-width:16px;max-height:16px;touch-action:manipulation;">
+													<use href="#9523eea2" style="box-sizing:border-box;touch-action:manipulation;"></use>
+												</svg></button></div>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div data-element-name="GuestField_err_lastName" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+							<div aria-disabled="false" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;position:relative;touch-action:manipulation;">
+								<div style="color:rgb(51, 51, 51);padding-top:12px;fill:rgb(0, 0, 0);display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+									<fieldset style="color:rgb(51, 51, 51);padding-left:12px;padding:0px 0px 0px 12px;fill:rgb(0, 0, 0);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:0.666667px;border-radius:8px;margin:0px;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);border:0.666667px solid rgba(94, 107, 130, 0.32);box-sizing:border-box;inset:0px;transition:background 0.3s, border-color 0.3s;touch-action:manipulation;">
+										<legend style="box-sizing:border-box;height:25px;display:flex;-webkit-box-align:center;align-items:center;padding:0px;pointer-events:none;user-select:none;max-width:0.01px;overflow:visible;white-space:nowrap;visibility:hidden;transition:max-width 0.1s;touch-action:manipulation;"><span style="font-weight: 400; line-height: calc(14.98px); font-size: 12px; margin-top: calc(-0.98px); margin-bottom: calc(-0.98px);line-height:14.98px;font-size:12px;margin-top:-0.98px;margin-bottom:-0.98px;margin-left:4px;margin-right:4px;margin:-0.98px 4px;box-sizing:border-box;color:rgb(94, 107, 130);fill:rgb(94, 107, 130);opacity:0;visibility:visible;transition:opacity 0.3s, color 0.3s;touch-action:manipulation;">Last name *</span></legend>
+									</fieldset><label style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);width: 100%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+										<div style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);align-items:stretch;flex-direction:column;flex:1 1 0%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+											<div style="color:rgb(51, 51, 51);padding-top:16px;padding-left:16px;fill:rgb(0, 0, 0);border-style:none;border-width:0px;overflow:hidden;width: 100%;height:47.8125px;display:flex;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;transition:opacity 0.3s;pointer-events:none;touch-action:manipulation;">
+												<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;color:rgb(94, 107, 130);fill:rgb(94, 107, 130);touch-action:manipulation;">Last name *</p>
+											</div><span style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;width: 100%;height:47.8125px;touch-action:manipulation;"><input maxlength="64" autocomplete="family-name" name="lastName" required="" type="text" value="" style="color:rgb(36, 38, 44);padding-top:0px;padding-right:16px;padding-left:16px;padding-bottom:16px;fill:rgb(36, 38, 44);border-style:none;border-width:0px;width: 100%;margin-top:16px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);cursor:pointer;box-sizing:border-box;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;outline:rgb(36, 38, 44) none 0px;appearance:none;font-weight:400;font-size:14px;line-height:18.19px;font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-style:normal;letter-spacing:normal;word-spacing:0px;font-stretch:100%;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;touch-action:manipulation;" /></span>
+										</div>
+										<div style="color:rgb(51, 51, 51);padding-right:16px;padding-bottom:12px;padding-top:12px;fill:rgb(0, 0, 0);border-style:none;border-width:0px;white-space:nowrap;align-items:center;cursor:text;display:flex;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><button tabindex="-1" aria-label="Clear" aria-hidden="true" type="button" style="opacity: 0;color:rgb(51, 51, 51);padding:0px;fill:rgb(0, 0, 0);background:rgba(255, 255, 255, 0) none repeat scroll 0% 0% / auto padding-box border-box;border-style:none;border-width:0px;cursor:pointer;display:flex;pointer-events:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;touch-action:manipulation;"><svg role="img" aria-label="Clear" opacity="1" style="box-sizing:border-box;fill:rgb(36, 38, 44);min-width:16px;min-height:16px;max-width:16px;max-height:16px;touch-action:manipulation;">
+													<use href="#9523eea2" style="box-sizing:border-box;touch-action:manipulation;"></use>
+												</svg></button></div>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div data-element-name="GuestField_err_email" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+							<div aria-disabled="false" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;position:relative;touch-action:manipulation;">
+								<div style="color:rgb(51, 51, 51);padding-top:12px;fill:rgb(0, 0, 0);display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+									<fieldset style="color:rgb(51, 51, 51);padding-left:12px;padding:0px 0px 0px 12px;fill:rgb(0, 0, 0);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:0.666667px;border-radius:8px;margin:0px;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);border:0.666667px solid rgba(94, 107, 130, 0.32);box-sizing:border-box;inset:0px;transition:background 0.3s, border-color 0.3s;touch-action:manipulation;">
+										<legend style="box-sizing:border-box;height:25px;display:flex;-webkit-box-align:center;align-items:center;padding:0px;pointer-events:none;user-select:none;max-width:0.01px;overflow:visible;white-space:nowrap;visibility:hidden;transition:max-width 0.1s;touch-action:manipulation;"><span style="font-weight: 400; line-height: calc(14.98px); font-size: 12px; margin-top: calc(-0.98px); margin-bottom: calc(-0.98px);line-height:14.98px;font-size:12px;margin-top:-0.98px;margin-bottom:-0.98px;margin-left:4px;margin-right:4px;margin:-0.98px 4px;box-sizing:border-box;color:rgb(94, 107, 130);fill:rgb(94, 107, 130);opacity:0;visibility:visible;transition:opacity 0.3s, color 0.3s;touch-action:manipulation;">Email *</span></legend>
+									</fieldset><label style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);width: 100%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+										<div style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);align-items:stretch;flex-direction:column;flex:1 1 0%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+											<div style="color:rgb(51, 51, 51);padding-top:16px;padding-left:16px;fill:rgb(0, 0, 0);border-style:none;border-width:0px;overflow:hidden;width: 100%;height:47.8125px;display:flex;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;transition:opacity 0.3s;pointer-events:none;touch-action:manipulation;">
+												<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;color:rgb(94, 107, 130);fill:rgb(94, 107, 130);touch-action:manipulation;">Email *</p>
+											</div><span style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;width: 100%;height:47.8125px;touch-action:manipulation;"><input maxlength="254" autocomplete="email" name="email" required="" type="email" value="" style="color:rgb(36, 38, 44);padding-top:0px;padding-right:16px;padding-left:16px;padding-bottom:16px;fill:rgb(36, 38, 44);border-style:none;border-width:0px;width: 100%;margin-top:16px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);cursor:pointer;box-sizing:border-box;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;outline:rgb(36, 38, 44) none 0px;appearance:none;font-weight:400;font-size:14px;line-height:18.19px;font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-style:normal;letter-spacing:normal;word-spacing:0px;font-stretch:100%;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;touch-action:manipulation;" /></span>
+										</div>
+										<div style="color:rgb(51, 51, 51);padding-right:16px;padding-bottom:12px;padding-top:12px;fill:rgb(0, 0, 0);border-style:none;border-width:0px;white-space:nowrap;align-items:center;cursor:text;display:flex;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><button tabindex="-1" aria-label="Clear" aria-hidden="true" type="button" style="opacity: 0;color:rgb(51, 51, 51);padding:0px;fill:rgb(0, 0, 0);background:rgba(255, 255, 255, 0) none repeat scroll 0% 0% / auto padding-box border-box;border-style:none;border-width:0px;cursor:pointer;display:flex;pointer-events:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;touch-action:manipulation;"><svg role="img" aria-label="Clear" opacity="1" style="box-sizing:border-box;fill:rgb(36, 38, 44);min-width:16px;min-height:16px;max-width:16px;max-height:16px;touch-action:manipulation;">
+													<use href="#9523eea2" style="box-sizing:border-box;touch-action:manipulation;"></use>
+												</svg></button></div>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div data-component="marketing-disclaimer-component" data-element-name="booking-reminder-marketing-disclaimer-message" style="box-sizing:border-box;margin-top:12px;padding-right:12px;touch-action:manipulation;">If you enter your email address and do not complete your reservation, we may send you reminders to help you resume your booking.</div>
+						<div data-element-name="GuestField_err_phoneNumber" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+							<div aria-disabled="false" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;position:relative;touch-action:manipulation;">
+								<div style="color:rgb(51, 51, 51);padding-top:12px;fill:rgb(0, 0, 0);display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+									<fieldset style="color:rgb(51, 51, 51);padding-left:12px;padding:0px 0px 0px 12px;fill:rgb(0, 0, 0);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:0.666667px;border-radius:8px;margin:0px;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);border:0.666667px solid rgba(94, 107, 130, 0.32);box-sizing:border-box;inset:0px;transition:background 0.3s, border-color 0.3s;touch-action:manipulation;">
+										<legend style="box-sizing:border-box;height:25px;display:flex;-webkit-box-align:center;align-items:center;padding:0px;pointer-events:none;user-select:none;max-width:0.01px;overflow:visible;white-space:nowrap;visibility:hidden;transition:max-width 0.1s;touch-action:manipulation;"><span style="font-weight: 400; line-height: calc(14.98px); font-size: 12px; margin-top: calc(-0.98px); margin-bottom: calc(-0.98px);line-height:14.98px;font-size:12px;margin-top:-0.98px;margin-bottom:-0.98px;margin-left:4px;margin-right:4px;margin:-0.98px 4px;box-sizing:border-box;color:rgb(94, 107, 130);fill:rgb(94, 107, 130);opacity:0;visibility:visible;transition:opacity 0.3s, color 0.3s;touch-action:manipulation;">Phone number (optional)</span></legend>
+									</fieldset><label style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);width: 100%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+										<div style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);align-items:stretch;flex-direction:column;flex:1 1 0%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+											<div style="color:rgb(51, 51, 51);padding-top:16px;padding-left:16px;fill:rgb(0, 0, 0);border-style:none;border-width:0px;overflow:hidden;width: 100%;height:47.8125px;display:flex;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;transition:opacity 0.3s;pointer-events:none;touch-action:manipulation;">
+												<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;color:rgb(94, 107, 130);fill:rgb(94, 107, 130);touch-action:manipulation;">Phone number (optional)</p>
+											</div><span style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;width: 100%;height:47.8125px;touch-action:manipulation;"><input maxlength="16" autocomplete="tel" name="phoneNumber" type="tel" value="" style="color:rgb(36, 38, 44);padding-top:0px;padding-right:16px;padding-left:16px;padding-bottom:16px;fill:rgb(36, 38, 44);border-style:none;border-width:0px;width: 100%;margin-top:16px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);cursor:pointer;box-sizing:border-box;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;outline:rgb(36, 38, 44) none 0px;appearance:none;font-weight:400;font-size:14px;line-height:18.19px;font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-style:normal;letter-spacing:normal;word-spacing:0px;font-stretch:100%;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;touch-action:manipulation;" /></span>
+										</div>
+										<div style="color:rgb(51, 51, 51);padding-right:16px;padding-bottom:12px;padding-top:12px;fill:rgb(0, 0, 0);border-style:none;border-width:0px;white-space:nowrap;align-items:center;cursor:text;display:flex;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><button tabindex="-1" aria-label="Clear" aria-hidden="true" type="button" style="opacity: 0;color:rgb(51, 51, 51);padding:0px;fill:rgb(0, 0, 0);background:rgba(255, 255, 255, 0) none repeat scroll 0% 0% / auto padding-box border-box;border-style:none;border-width:0px;cursor:pointer;display:flex;pointer-events:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;touch-action:manipulation;"><svg role="img" aria-label="Clear" opacity="1" style="box-sizing:border-box;fill:rgb(36, 38, 44);min-width:16px;min-height:16px;max-width:16px;max-height:16px;touch-action:manipulation;">
+													<use href="#9523eea2" style="box-sizing:border-box;touch-action:manipulation;"></use>
+												</svg></button></div>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div style="box-sizing:border-box;touch-action:manipulation;">
+							<div style="box-sizing:border-box;padding-top:8px;padding-bottom:8px;-webkit-box-align:center;align-items:center;display:flex;touch-action:manipulation;"></div>
+							<div style="box-sizing:border-box;padding-top:8px;padding-bottom:8px;-webkit-box-align:center;align-items:center;display:flex;touch-action:manipulation;">
+								<div style="display: initial;box-sizing:border-box;touch-action:manipulation;"><label data-element-name="MYS_tax_guest_nationality" data-component="MYSTaxGuestNationality" style="color:rgb(32, 103, 218);fill:rgb(32, 103, 218);cursor:pointer;display:flex;margin-top:4px;margin-bottom:0px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+										<div style="width: 20px; min-width: 20px; height: 20px; min-height: 20px;min-width:20px;height:20px;min-height:20px;color:rgb(32, 103, 218);fill:rgb(32, 103, 218);cursor:pointer;margin-right:8px;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;user-select:none;touch-action:manipulation;">
+											<div style="color:rgb(32, 103, 218);fill:rgb(32, 103, 218);width: 100%;height:20px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><input type="checkbox" name="allGuestsSameNationality" style="cursor:pointer;font:300 14px / 21px BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;opacity:0;margin:0px;width: 100%;height:20px;position:absolute;top:0px;left:0px;z-index:1;touch-action:manipulation;" />
+												<div style="color:rgb(32, 103, 218);fill:rgb(32, 103, 218);background:rgb(32, 103, 218) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgba(94, 107, 130, 0.32);border-style:none;border-width:0px;border-radius:2px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;width: 100%;height:20px;display:flex;-webkit-box-pack:center;justify-content:center;-webkit-box-align:center;align-items:center;position:absolute;transition:background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;touch-action:manipulation;"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#fff" style="box-sizing:border-box;touch-action:manipulation;">
+														<path d="m21.453 4.487 1.094 1.026a.5.5 0 0 1 .023.707L10.412 19.188a1.25 1.25 0 0 1-1.692.122l-.104-.093-7.146-7.146a.5.5 0 0 1 0-.707l1.06-1.061a.5.5 0 0 1 .707 0l6.234 6.234L20.746 4.51a.5.5 0 0 1 .707-.023Z" style="box-sizing:border-box;touch-action:manipulation;"></path>
+													</svg></div>
+												<div style="color:rgb(32, 103, 218);fill:rgb(32, 103, 218);background:rgb(32, 103, 218) none repeat scroll 0% 0% / auto padding-box border-box;border-radius:999px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;opacity:0;position:absolute;width: 30px;height:30px;top:-5px;left:-5px;touch-action:manipulation;"></div>
+											</div>
+										</div>
+										<div style="margin-top: calc(1.5px); display: flex; flex-direction: row;display:flex;flex-direction:row;box-sizing:border-box;touch-action:manipulation;">
+											<p data-element-name="MYS_tourism_tax_message" data-component="MyTourismTaxMessage" style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;touch-action:manipulation;">I confirm that all guests are nationals or permanent residents of Malaysia and qualify for <button type="button" style="outline:rgba(0, 0, 0, 0) solid 2px;outline-offset:2px;color:rgb(32, 103, 218);text-align:start;padding:0px;fill:rgb(32, 103, 218);background:rgba(255, 255, 255, 0) none repeat scroll 0% 0% / auto padding-box border-box;border-style:none;border-width:0px;cursor:pointer;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;display:inline-flex;text-underline-offset:4px;outline-color:rgba(0, 0, 0, 0);border-radius:2px;touch-action:manipulation;"><span label="Malaysia tourism tax" style="font-weight: 600; text-underline-offset: 4px; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);text-underline-offset:4px;line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;text-decoration-line:none;display:flex;margin:-1.19px 0px;box-sizing:border-box;color:rgb(32, 103, 218);fill:rgb(32, 103, 218);-webkit-box-align:center;align-items:center;text-decoration:none solid rgb(32, 103, 218);touch-action:manipulation;">Malaysia tourism tax<svg role="img" aria-hidden="true" opacity="1" style="box-sizing:border-box;margin-left:4px;fill:rgb(32, 103, 218);min-width:16px;min-height:16px;max-width:16px;max-height:16px;touch-action:manipulation;">
+															<use href="#6d6a8f1d" style="box-sizing:border-box;touch-action:manipulation;"></use>
+														</svg></span></button> exemption</p>
+										</div>
+									</label></div>
+							</div>
+							<div style="box-sizing:border-box;-webkit-box-align:center;align-items:center;display:flex;touch-action:manipulation;"></div>
+						</div>
+					</fieldset>
+					<div data-component="expandable-wrapper" aria-hidden="true" style="transition: max-height 350ms; max-height: 0px;max-height:0px;color:rgb(51, 51, 51);fill:rgb(0, 0, 0);overflow:hidden;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+						<div data-component="expandable-content" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);display:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+							<section data-section="BookForSomeoneElse" style="margin:16px 0px 0px;box-sizing:border-box;border:0.666667px solid rgb(221, 221, 221);border-radius:2px;padding:16px;background-color:rgb(255, 255, 255);border-color:rgb(221, 221, 221);box-shadow:rgba(0, 0, 0, 0.15) 0px 2px 3px 0px;display:block;touch-action:manipulation;">
+								<div style="box-sizing:border-box;display:contents;touch-action:manipulation;"><span style="color:rgb(51, 51, 51);font-size:16px;font-weight:700;margin-bottom:4px;margin-top:4px;box-sizing:border-box;touch-action:manipulation;">Guest information</span></div>
+								<div role="group" aria-labelledby="book-for-someone-group-label-id" style="box-sizing:border-box;display:contents;touch-action:manipulation;">
+									<div data-element-name="GuestField_err_guestFirstName" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+										<div aria-disabled="false" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;position:relative;touch-action:manipulation;">
+											<div style="color:rgb(51, 51, 51);padding-top:12px;fill:rgb(0, 0, 0);display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+												<fieldset style="color:rgb(51, 51, 51);padding-left:12px;padding:0px 0px 0px 12px;fill:rgb(0, 0, 0);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:0.666667px;border-radius:8px;margin:0px;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);border:0.666667px solid rgba(94, 107, 130, 0.32);box-sizing:border-box;inset:0px;transition:background 0.3s, border-color 0.3s;touch-action:manipulation;">
+													<legend style="box-sizing:border-box;height:25px;display:flex;-webkit-box-align:center;align-items:center;padding:0px;pointer-events:none;user-select:none;max-width:0.01px;overflow:visible;white-space:nowrap;visibility:hidden;transition:max-width 0.1s;touch-action:manipulation;"><span style="font-weight: 400; line-height: calc(14.98px); font-size: 12px; margin-top: calc(-0.98px); margin-bottom: calc(-0.98px);line-height:14.98px;font-size:12px;margin-top:-0.98px;margin-bottom:-0.98px;margin-left:4px;margin-right:4px;margin:-0.98px 4px;box-sizing:border-box;color:rgb(94, 107, 130);fill:rgb(94, 107, 130);opacity:0;visibility:visible;transition:opacity 0.3s, color 0.3s;touch-action:manipulation;">First name *</span></legend>
+												</fieldset><label style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);width: 100%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+													<div style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);align-items:stretch;flex-direction:column;flex:1 1 0%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+														<div style="color:rgb(51, 51, 51);padding-top:16px;padding-left:16px;fill:rgb(0, 0, 0);border-style:none;border-width:0px;overflow:hidden;width: 100%;height:100%;display:flex;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;transition:opacity 0.3s;pointer-events:none;touch-action:manipulation;">
+															<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;color:rgb(94, 107, 130);fill:rgb(94, 107, 130);touch-action:manipulation;">First name *</p>
+														</div><span style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;width: 100%;height:100%;touch-action:manipulation;"><input maxlength="64" autocomplete="given-name" name="guestFirstName" required="" type="text" value="" style="color:rgb(36, 38, 44);padding-top:0px;padding-right:16px;padding-left:16px;padding-bottom:16px;fill:rgb(36, 38, 44);border-style:none;border-width:0px;width: 100%;margin-top:16px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);cursor:pointer;box-sizing:border-box;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;outline:rgb(36, 38, 44) none 0px;appearance:none;font-weight:400;font-size:14px;line-height:18.19px;font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-style:normal;letter-spacing:normal;word-spacing:0px;font-stretch:100%;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;touch-action:manipulation;" /></span>
+													</div>
+													<div style="color:rgb(51, 51, 51);padding-right:16px;padding-bottom:12px;padding-top:12px;fill:rgb(0, 0, 0);border-style:none;border-width:0px;white-space:nowrap;align-items:center;cursor:text;display:flex;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><button tabindex="-1" aria-label="Clear" aria-hidden="true" type="button" style="opacity: 0;color:rgb(51, 51, 51);padding:0px;fill:rgb(0, 0, 0);background:rgba(255, 255, 255, 0) none repeat scroll 0% 0% / auto padding-box border-box;border-style:none;border-width:0px;cursor:pointer;display:flex;pointer-events:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;touch-action:manipulation;"><svg role="img" aria-label="Clear" opacity="1" style="box-sizing:border-box;fill:rgb(36, 38, 44);min-width:16px;min-height:16px;max-width:16px;max-height:16px;touch-action:manipulation;">
+																<use href="#9523eea2" style="box-sizing:border-box;touch-action:manipulation;"></use>
+															</svg></button></div>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div data-element-name="GuestField_err_guestLastName" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+										<div aria-disabled="false" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;position:relative;touch-action:manipulation;">
+											<div style="color:rgb(51, 51, 51);padding-top:12px;fill:rgb(0, 0, 0);display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+												<fieldset style="color:rgb(51, 51, 51);padding-left:12px;padding:0px 0px 0px 12px;fill:rgb(0, 0, 0);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:0.666667px;border-radius:8px;margin:0px;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);border:0.666667px solid rgba(94, 107, 130, 0.32);box-sizing:border-box;inset:0px;transition:background 0.3s, border-color 0.3s;touch-action:manipulation;">
+													<legend style="box-sizing:border-box;height:25px;display:flex;-webkit-box-align:center;align-items:center;padding:0px;pointer-events:none;user-select:none;max-width:0.01px;overflow:visible;white-space:nowrap;visibility:hidden;transition:max-width 0.1s;touch-action:manipulation;"><span style="font-weight: 400; line-height: calc(14.98px); font-size: 12px; margin-top: calc(-0.98px); margin-bottom: calc(-0.98px);line-height:14.98px;font-size:12px;margin-top:-0.98px;margin-bottom:-0.98px;margin-left:4px;margin-right:4px;margin:-0.98px 4px;box-sizing:border-box;color:rgb(94, 107, 130);fill:rgb(94, 107, 130);opacity:0;visibility:visible;transition:opacity 0.3s, color 0.3s;touch-action:manipulation;">Last name *</span></legend>
+												</fieldset><label style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);width: 100%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+													<div style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);align-items:stretch;flex-direction:column;flex:1 1 0%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+														<div style="color:rgb(51, 51, 51);padding-top:16px;padding-left:16px;fill:rgb(0, 0, 0);border-style:none;border-width:0px;overflow:hidden;width: 100%;height:100%;display:flex;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;transition:opacity 0.3s;pointer-events:none;touch-action:manipulation;">
+															<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;color:rgb(94, 107, 130);fill:rgb(94, 107, 130);touch-action:manipulation;">Last name *</p>
+														</div><span style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;width: 100%;height:100%;touch-action:manipulation;"><input maxlength="64" autocomplete="family-name" name="guestLastName" required="" type="text" value="" style="color:rgb(36, 38, 44);padding-top:0px;padding-right:16px;padding-left:16px;padding-bottom:16px;fill:rgb(36, 38, 44);border-style:none;border-width:0px;width: 100%;margin-top:16px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);cursor:pointer;box-sizing:border-box;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;outline:rgb(36, 38, 44) none 0px;appearance:none;font-weight:400;font-size:14px;line-height:18.19px;font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-style:normal;letter-spacing:normal;word-spacing:0px;font-stretch:100%;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;touch-action:manipulation;" /></span>
+													</div>
+													<div style="color:rgb(51, 51, 51);padding-right:16px;padding-bottom:12px;padding-top:12px;fill:rgb(0, 0, 0);border-style:none;border-width:0px;white-space:nowrap;align-items:center;cursor:text;display:flex;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><button tabindex="-1" aria-label="Clear" aria-hidden="true" type="button" style="opacity: 0;color:rgb(51, 51, 51);padding:0px;fill:rgb(0, 0, 0);background:rgba(255, 255, 255, 0) none repeat scroll 0% 0% / auto padding-box border-box;border-style:none;border-width:0px;cursor:pointer;display:flex;pointer-events:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;touch-action:manipulation;"><svg role="img" aria-label="Clear" opacity="1" style="box-sizing:border-box;fill:rgb(36, 38, 44);min-width:16px;min-height:16px;max-width:16px;max-height:16px;touch-action:manipulation;">
+																<use href="#9523eea2" style="box-sizing:border-box;touch-action:manipulation;"></use>
+															</svg></button></div>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div aria-disabled="false" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;position:relative;touch-action:manipulation;">
+										<div style="color:rgb(51, 51, 51);padding-top:12px;fill:rgb(0, 0, 0);display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+											<fieldset style="color:rgb(51, 51, 51);padding-left:12px;padding:0px 0px 0px 12px;fill:rgb(0, 0, 0);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgb(0, 126, 62);border-style:solid;border-width:0.666667px;border-radius:8px;margin:0px;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);border:0.666667px solid rgb(0, 126, 62);box-sizing:border-box;inset:0px;transition:background 0.3s, border-color 0.3s;touch-action:manipulation;">
+												<legend style="box-sizing:border-box;height:25px;display:flex;-webkit-box-align:center;align-items:center;padding:0px;pointer-events:none;user-select:none;max-width:0.01px;overflow:visible;white-space:nowrap;visibility:hidden;transition:max-width 0.1s;touch-action:manipulation;"><span style="font-weight: 400; line-height: calc(14.98px); font-size: 12px; margin-top: calc(-0.98px); margin-bottom: calc(-0.98px);line-height:14.98px;font-size:12px;margin-top:-0.98px;margin-bottom:-0.98px;margin-left:4px;margin-right:4px;margin:-0.98px 4px;box-sizing:border-box;color:rgb(0, 126, 62);fill:rgb(0, 126, 62);opacity:0;visibility:visible;transition:opacity 0.3s, color 0.3s;touch-action:manipulation;">Country/region of residence *</span></legend>
+											</fieldset><label style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);width: 100%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+												<div style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);align-items:stretch;flex-direction:column;flex:1 1 0%;display:flex;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+													<div style="color:rgb(51, 51, 51);padding-top:16px;padding-left:16px;fill:rgb(0, 0, 0);border-style:none;border-width:0px;overflow:hidden;width: 100%;height:100%;display:flex;position:absolute;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;transition:opacity 0.3s;pointer-events:none;touch-action:manipulation;">
+														<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;color:rgb(0, 126, 62);fill:rgb(0, 126, 62);touch-action:manipulation;">Please select one</p>
+													</div><span style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;width: 100%;height:100%;touch-action:manipulation;"><select name="guestCountryId" style="color:rgb(36, 38, 44);padding-top:0px;padding-right:8px;padding-left:16px;padding-bottom:16px;fill:rgb(36, 38, 44);border-style:none;border-width:0px;width: 100%;margin-top:16px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);cursor:pointer;box-sizing:border-box;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;outline:rgb(36, 38, 44) none 0px;appearance:none;font-weight:400;font-size:14px;line-height:18.19px;font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-style:normal;letter-spacing:normal;word-spacing:0px;font-stretch:100%;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;touch-action:manipulation;">
+															<option value="" style="box-sizing:content-box;touch-action:manipulation;">Please select one</option>
+															<optgroup label="Most Selected Countries" style="box-sizing:content-box;touch-action:manipulation;">
+																<option value="139" style="box-sizing:content-box;touch-action:manipulation;">Australia</option>
+																<option value="191" style="box-sizing:content-box;touch-action:manipulation;">China</option>
+																<option value="192" style="box-sizing:content-box;touch-action:manipulation;">Indonesia</option>
+																<option value="3" style="box-sizing:content-box;touch-action:manipulation;">Japan</option>
+																<option value="198" style="box-sizing:content-box;touch-action:manipulation;">Malaysia</option>
+																<option value="114" style="box-sizing:content-box;touch-action:manipulation;">Singapore</option>
+																<option value="212" style="box-sizing:content-box;touch-action:manipulation;">South Korea</option>
+																<option value="106" style="box-sizing:content-box;touch-action:manipulation;">Thailand</option>
+																<option value="107" style="box-sizing:content-box;touch-action:manipulation;">United Kingdom</option>
+																<option value="181" style="box-sizing:content-box;touch-action:manipulation;">United States</option>
+															</optgroup>
+															<optgroup label="All Countries" style="box-sizing:content-box;touch-action:manipulation;">
+																<option value="288" style="box-sizing:content-box;touch-action:manipulation;">Afghanistan</option>
+																<option value="53" style="box-sizing:content-box;touch-action:manipulation;">Albania</option>
+																<option value="143" style="box-sizing:content-box;touch-action:manipulation;">Algeria</option>
+																<option value="289" style="box-sizing:content-box;touch-action:manipulation;">American Samoa</option>
+																<option value="189" style="box-sizing:content-box;touch-action:manipulation;">Andorra</option>
+																<option value="290" style="box-sizing:content-box;touch-action:manipulation;">Angola</option>
+																<option value="150" style="box-sizing:content-box;touch-action:manipulation;">Anguilla</option>
+																<option value="50" style="box-sizing:content-box;touch-action:manipulation;">Antigua &amp; Barbuda</option>
+																<option value="5" style="box-sizing:content-box;touch-action:manipulation;">Argentina</option>
+																<option value="246" style="box-sizing:content-box;touch-action:manipulation;">Armenia</option>
+																<option value="66" style="box-sizing:content-box;touch-action:manipulation;">Aruba</option>
+																<option value="139" style="box-sizing:content-box;touch-action:manipulation;">Australia</option>
+																<option value="130" style="box-sizing:content-box;touch-action:manipulation;">Austria</option>
+																<option value="135" style="box-sizing:content-box;touch-action:manipulation;">Azerbaijan</option>
+																<option value="60" style="box-sizing:content-box;touch-action:manipulation;">Bahamas</option>
+																<option value="202" style="box-sizing:content-box;touch-action:manipulation;">Bahrain</option>
+																<option value="117" style="box-sizing:content-box;touch-action:manipulation;">Bangladesh</option>
+																<option value="94" style="box-sizing:content-box;touch-action:manipulation;">Barbados</option>
+																<option value="21" style="box-sizing:content-box;touch-action:manipulation;">Belarus</option>
+																<option value="118" style="box-sizing:content-box;touch-action:manipulation;">Belgium</option>
+																<option value="88" style="box-sizing:content-box;touch-action:manipulation;">Belize</option>
+																<option value="231" style="box-sizing:content-box;touch-action:manipulation;">Benin</option>
+																<option value="6" style="box-sizing:content-box;touch-action:manipulation;">Bermuda</option>
+																<option value="291" style="box-sizing:content-box;touch-action:manipulation;">Bhutan</option>
+																<option value="15" style="box-sizing:content-box;touch-action:manipulation;">Bolivia</option>
+																<option value="344" style="box-sizing:content-box;touch-action:manipulation;">Bonaire, Sint Eustatius and Saba</option>
+																<option value="103" style="box-sizing:content-box;touch-action:manipulation;">Bosnia Herzegovina</option>
+																<option value="206" style="box-sizing:content-box;touch-action:manipulation;">Botswana</option>
+																<option value="207" style="box-sizing:content-box;touch-action:manipulation;">Brazil</option>
+																<option value="330" style="box-sizing:content-box;touch-action:manipulation;">British Indian Ocean Territory</option>
+																<option value="77" style="box-sizing:content-box;touch-action:manipulation;">British Virgin Islands</option>
+																<option value="63" style="box-sizing:content-box;touch-action:manipulation;">Brunei Darussalam</option>
+																<option value="126" style="box-sizing:content-box;touch-action:manipulation;">Bulgaria</option>
+																<option value="237" style="box-sizing:content-box;touch-action:manipulation;">Burkina Faso</option>
+																<option value="229" style="box-sizing:content-box;touch-action:manipulation;">Burundi</option>
+																<option value="163" style="box-sizing:content-box;touch-action:manipulation;">Cambodia</option>
+																<option value="36" style="box-sizing:content-box;touch-action:manipulation;">Cameroon</option>
+																<option value="100" style="box-sizing:content-box;touch-action:manipulation;">Canada</option>
+																<option value="292" style="box-sizing:content-box;touch-action:manipulation;">Cape Verde</option>
+																<option value="142" style="box-sizing:content-box;touch-action:manipulation;">Cayman Islands</option>
+																<option value="293" style="box-sizing:content-box;touch-action:manipulation;">Central African Republic</option>
+																<option value="236" style="box-sizing:content-box;touch-action:manipulation;">Chad</option>
+																<option value="69" style="box-sizing:content-box;touch-action:manipulation;">Chile</option>
+																<option value="191" style="box-sizing:content-box;touch-action:manipulation;">China</option>
+																<option value="283" style="box-sizing:content-box;touch-action:manipulation;">Christmas Island</option>
+																<option value="321" style="box-sizing:content-box;touch-action:manipulation;">Cocos (Keeling) Islands</option>
+																<option value="10" style="box-sizing:content-box;touch-action:manipulation;">Colombia</option>
+																<option value="294" style="box-sizing:content-box;touch-action:manipulation;">Comoros</option>
+																<option value="225" style="box-sizing:content-box;touch-action:manipulation;">Cook Islands</option>
+																<option value="40" style="box-sizing:content-box;touch-action:manipulation;">Costa Rica</option>
+																<option value="165" style="box-sizing:content-box;touch-action:manipulation;">Cote D'ivoire</option>
+																<option value="128" style="box-sizing:content-box;touch-action:manipulation;">Croatia</option>
+																<option value="342" style="box-sizing:content-box;touch-action:manipulation;">Curacao</option>
+																<option value="24" style="box-sizing:content-box;touch-action:manipulation;">Cyprus</option>
+																<option value="13" style="box-sizing:content-box;touch-action:manipulation;">Czech Republic</option>
+																<option value="337" style="box-sizing:content-box;touch-action:manipulation;">Democratic Republic of the&nbsp;Congo</option>
+																<option value="158" style="box-sizing:content-box;touch-action:manipulation;">Denmark</option>
+																<option value="244" style="box-sizing:content-box;touch-action:manipulation;">Djibouti</option>
+																<option value="341" style="box-sizing:content-box;touch-action:manipulation;">Dominica</option>
+																<option value="134" style="box-sizing:content-box;touch-action:manipulation;">Dominican Republic</option>
+																<option value="52" style="box-sizing:content-box;touch-action:manipulation;">Ecuador</option>
+																<option value="16" style="box-sizing:content-box;touch-action:manipulation;">Egypt</option>
+																<option value="80" style="box-sizing:content-box;touch-action:manipulation;">El Salvador</option>
+																<option value="295" style="box-sizing:content-box;touch-action:manipulation;">Equatorial Guinea</option>
+																<option value="242" style="box-sizing:content-box;touch-action:manipulation;">Eritrea</option>
+																<option value="99" style="box-sizing:content-box;touch-action:manipulation;">Estonia</option>
+																<option value="18" style="box-sizing:content-box;touch-action:manipulation;">Eswatini</option>
+																<option value="240" style="box-sizing:content-box;touch-action:manipulation;">Ethiopia</option>
+																<option value="322" style="box-sizing:content-box;touch-action:manipulation;">Falkland Islands</option>
+																<option value="200" style="box-sizing:content-box;touch-action:manipulation;">Faroe Islands</option>
+																<option value="218" style="box-sizing:content-box;touch-action:manipulation;">Federated States of Micronesia</option>
+																<option value="109" style="box-sizing:content-box;touch-action:manipulation;">Fiji</option>
+																<option value="28" style="box-sizing:content-box;touch-action:manipulation;">Finland</option>
+																<option value="153" style="box-sizing:content-box;touch-action:manipulation;">France</option>
+																<option value="113" style="box-sizing:content-box;touch-action:manipulation;">French Guiana</option>
+																<option value="14" style="box-sizing:content-box;touch-action:manipulation;">French Polynesia</option>
+																<option value="234" style="box-sizing:content-box;touch-action:manipulation;">Gabon</option>
+																<option value="286" style="box-sizing:content-box;touch-action:manipulation;">Gambia</option>
+																<option value="71" style="box-sizing:content-box;touch-action:manipulation;">Georgia</option>
+																<option value="101" style="box-sizing:content-box;touch-action:manipulation;">Germany</option>
+																<option value="151" style="box-sizing:content-box;touch-action:manipulation;">Ghana</option>
+																<option value="4" style="box-sizing:content-box;touch-action:manipulation;">Gibraltar</option>
+																<option value="197" style="box-sizing:content-box;touch-action:manipulation;">Greece</option>
+																<option value="26" style="box-sizing:content-box;touch-action:manipulation;">Greenland</option>
+																<option value="184" style="box-sizing:content-box;touch-action:manipulation;">Grenada</option>
+																<option value="89" style="box-sizing:content-box;touch-action:manipulation;">Guadeloupe</option>
+																<option value="208" style="box-sizing:content-box;touch-action:manipulation;">Guam</option>
+																<option value="41" style="box-sizing:content-box;touch-action:manipulation;">Guatemala</option>
+																<option value="406" style="box-sizing:content-box;touch-action:manipulation;">Guernsey</option>
+																<option value="58" style="box-sizing:content-box;touch-action:manipulation;">Guinea</option>
+																<option value="296" style="box-sizing:content-box;touch-action:manipulation;">Guinea-Bissau</option>
+																<option value="243" style="box-sizing:content-box;touch-action:manipulation;">Guyana</option>
+																<option value="47" style="box-sizing:content-box;touch-action:manipulation;">Haiti</option>
+																<option value="336" style="box-sizing:content-box;touch-action:manipulation;">Holy See (Vatican City)</option>
+																<option value="39" style="box-sizing:content-box;touch-action:manipulation;">Honduras</option>
+																<option value="132" style="box-sizing:content-box;touch-action:manipulation;">Hong Kong</option>
+																<option value="37" style="box-sizing:content-box;touch-action:manipulation;">Hungary</option>
+																<option value="54" style="box-sizing:content-box;touch-action:manipulation;">Iceland</option>
+																<option value="35" style="box-sizing:content-box;touch-action:manipulation;">India</option>
+																<option value="192" style="box-sizing:content-box;touch-action:manipulation;">Indonesia</option>
+																<option value="297" style="box-sizing:content-box;touch-action:manipulation;">Iraq</option>
+																<option value="188" style="box-sizing:content-box;touch-action:manipulation;">Ireland</option>
+																<option value="405" style="box-sizing:content-box;touch-action:manipulation;">Isle Of Man</option>
+																<option value="144" style="box-sizing:content-box;touch-action:manipulation;">Israel</option>
+																<option value="205" style="box-sizing:content-box;touch-action:manipulation;">Italy</option>
+																<option value="42" style="box-sizing:content-box;touch-action:manipulation;">Jamaica</option>
+																<option value="3" style="box-sizing:content-box;touch-action:manipulation;">Japan</option>
+																<option value="404" style="box-sizing:content-box;touch-action:manipulation;">Jersey</option>
+																<option value="152" style="box-sizing:content-box;touch-action:manipulation;">Jordan</option>
+																<option value="154" style="box-sizing:content-box;touch-action:manipulation;">Kazakhstan</option>
+																<option value="176" style="box-sizing:content-box;touch-action:manipulation;">Kenya</option>
+																<option value="298" style="box-sizing:content-box;touch-action:manipulation;">Kiribati</option>
+																<option value="402" style="box-sizing:content-box;touch-action:manipulation;">Kosovo</option>
+																<option value="43" style="box-sizing:content-box;touch-action:manipulation;">Kuwait</option>
+																<option value="156" style="box-sizing:content-box;touch-action:manipulation;">Kyrgyzstan</option>
+																<option value="190" style="box-sizing:content-box;touch-action:manipulation;">Laos</option>
+																<option value="145" style="box-sizing:content-box;touch-action:manipulation;">Latvia</option>
+																<option value="68" style="box-sizing:content-box;touch-action:manipulation;">Lebanon</option>
+																<option value="31" style="box-sizing:content-box;touch-action:manipulation;">Lesotho</option>
+																<option value="299" style="box-sizing:content-box;touch-action:manipulation;">Liberia</option>
+																<option value="174" style="box-sizing:content-box;touch-action:manipulation;">Libya</option>
+																<option value="187" style="box-sizing:content-box;touch-action:manipulation;">Liechtenstein</option>
+																<option value="157" style="box-sizing:content-box;touch-action:manipulation;">Lithuania</option>
+																<option value="7" style="box-sizing:content-box;touch-action:manipulation;">Luxembourg</option>
+																<option value="169" style="box-sizing:content-box;touch-action:manipulation;">Macau</option>
+																<option value="209" style="box-sizing:content-box;touch-action:manipulation;">Madagascar</option>
+																<option value="87" style="box-sizing:content-box;touch-action:manipulation;">Malawi</option>
+																<option value="198" style="box-sizing:content-box;touch-action:manipulation;">Malaysia</option>
+																<option value="34" style="box-sizing:content-box;touch-action:manipulation;">Maldives</option>
+																<option value="204" style="box-sizing:content-box;touch-action:manipulation;">Mali</option>
+																<option value="57" style="box-sizing:content-box;touch-action:manipulation;">Malta</option>
+																<option value="300" style="box-sizing:content-box;touch-action:manipulation;">Marshall Islands</option>
+																<option value="83" style="box-sizing:content-box;touch-action:manipulation;">Martinique</option>
+																<option value="22" style="box-sizing:content-box;touch-action:manipulation;">Mauritania</option>
+																<option value="9" style="box-sizing:content-box;touch-action:manipulation;">Mauritius</option>
+																<option value="301" style="box-sizing:content-box;touch-action:manipulation;">Mayotte</option>
+																<option value="86" style="box-sizing:content-box;touch-action:manipulation;">Mexico</option>
+																<option value="141" style="box-sizing:content-box;touch-action:manipulation;">Moldova</option>
+																<option value="1" style="box-sizing:content-box;touch-action:manipulation;">Monaco</option>
+																<option value="302" style="box-sizing:content-box;touch-action:manipulation;">Mongolia</option>
+																<option value="340" style="box-sizing:content-box;touch-action:manipulation;">Montenegro</option>
+																<option value="303" style="box-sizing:content-box;touch-action:manipulation;">Montserrat</option>
+																<option value="2" style="box-sizing:content-box;touch-action:manipulation;">Morocco</option>
+																<option value="235" style="box-sizing:content-box;touch-action:manipulation;">Mozambique</option>
+																<option value="203" style="box-sizing:content-box;touch-action:manipulation;">Myanmar</option>
+																<option value="85" style="box-sizing:content-box;touch-action:manipulation;">Namibia</option>
+																<option value="304" style="box-sizing:content-box;touch-action:manipulation;">Nauru</option>
+																<option value="120" style="box-sizing:content-box;touch-action:manipulation;">Nepal</option>
+																<option value="149" style="box-sizing:content-box;touch-action:manipulation;">Netherlands</option>
+																<option value="44" style="box-sizing:content-box;touch-action:manipulation;">New Caledonia</option>
+																<option value="25" style="box-sizing:content-box;touch-action:manipulation;">New Zealand</option>
+																<option value="92" style="box-sizing:content-box;touch-action:manipulation;">Nicaragua</option>
+																<option value="305" style="box-sizing:content-box;touch-action:manipulation;">Niger</option>
+																<option value="65" style="box-sizing:content-box;touch-action:manipulation;">Nigeria</option>
+																<option value="306" style="box-sizing:content-box;touch-action:manipulation;">Niue</option>
+																<option value="230" style="box-sizing:content-box;touch-action:manipulation;">Norfolk Island</option>
+																<option value="84" style="box-sizing:content-box;touch-action:manipulation;">North Macedonia</option>
+																<option value="32" style="box-sizing:content-box;touch-action:manipulation;">Northern Mariana Islands</option>
+																<option value="129" style="box-sizing:content-box;touch-action:manipulation;">Norway</option>
+																<option value="155" style="box-sizing:content-box;touch-action:manipulation;">Oman</option>
+																<option value="19" style="box-sizing:content-box;touch-action:manipulation;">Pakistan</option>
+																<option value="133" style="box-sizing:content-box;touch-action:manipulation;">Palau</option>
+																<option value="401" style="box-sizing:content-box;touch-action:manipulation;">Palestinian Territory</option>
+																<option value="175" style="box-sizing:content-box;touch-action:manipulation;">Panama</option>
+																<option value="91" style="box-sizing:content-box;touch-action:manipulation;">Papua New Guinea</option>
+																<option value="111" style="box-sizing:content-box;touch-action:manipulation;">Paraguay</option>
+																<option value="186" style="box-sizing:content-box;touch-action:manipulation;">Peru</option>
+																<option value="70" style="box-sizing:content-box;touch-action:manipulation;">Philippines</option>
+																<option value="338" style="box-sizing:content-box;touch-action:manipulation;">Pitcairn Islands</option>
+																<option value="182" style="box-sizing:content-box;touch-action:manipulation;">Poland</option>
+																<option value="213" style="box-sizing:content-box;touch-action:manipulation;">Portugal</option>
+																<option value="166" style="box-sizing:content-box;touch-action:manipulation;">Puerto Rico</option>
+																<option value="105" style="box-sizing:content-box;touch-action:manipulation;">Qatar</option>
+																<option value="285" style="box-sizing:content-box;touch-action:manipulation;">Republic of Congo</option>
+																<option value="239" style="box-sizing:content-box;touch-action:manipulation;">Reunion Island</option>
+																<option value="75" style="box-sizing:content-box;touch-action:manipulation;">Romania</option>
+																<option value="33" style="box-sizing:content-box;touch-action:manipulation;">Russia</option>
+																<option value="131" style="box-sizing:content-box;touch-action:manipulation;">Rwanda</option>
+																<option value="348" style="box-sizing:content-box;touch-action:manipulation;">Saint Barthelemy</option>
+																<option value="333" style="box-sizing:content-box;touch-action:manipulation;">Saint Helena</option>
+																<option value="8" style="box-sizing:content-box;touch-action:manipulation;">Saint Kitts And Nevis</option>
+																<option value="195" style="box-sizing:content-box;touch-action:manipulation;">Saint Lucia</option>
+																<option value="347" style="box-sizing:content-box;touch-action:manipulation;">Saint Martin (France)</option>
+																<option value="307" style="box-sizing:content-box;touch-action:manipulation;">Saint Pierre and Miquelon</option>
+																<option value="287" style="box-sizing:content-box;touch-action:manipulation;">Samoa</option>
+																<option value="241" style="box-sizing:content-box;touch-action:manipulation;">San Marino</option>
+																<option value="308" style="box-sizing:content-box;touch-action:manipulation;">Sao Tome and Principe</option>
+																<option value="74" style="box-sizing:content-box;touch-action:manipulation;">Saudi Arabia</option>
+																<option value="233" style="box-sizing:content-box;touch-action:manipulation;">Senegal</option>
+																<option value="339" style="box-sizing:content-box;touch-action:manipulation;">Serbia</option>
+																<option value="115" style="box-sizing:content-box;touch-action:manipulation;">Seychelles</option>
+																<option value="309" style="box-sizing:content-box;touch-action:manipulation;">Sierra Leone</option>
+																<option value="114" style="box-sizing:content-box;touch-action:manipulation;">Singapore</option>
+																<option value="343" style="box-sizing:content-box;touch-action:manipulation;">Sint Maarten (Netherlands)</option>
+																<option value="125" style="box-sizing:content-box;touch-action:manipulation;">Slovakia</option>
+																<option value="27" style="box-sizing:content-box;touch-action:manipulation;">Slovenia</option>
+																<option value="323" style="box-sizing:content-box;touch-action:manipulation;">Solomon Islands</option>
+																<option value="310" style="box-sizing:content-box;touch-action:manipulation;">Somalia</option>
+																<option value="62" style="box-sizing:content-box;touch-action:manipulation;">South Africa</option>
+																<option value="334" style="box-sizing:content-box;touch-action:manipulation;">South Georgia Islands</option>
+																<option value="212" style="box-sizing:content-box;touch-action:manipulation;">South Korea</option>
+																<option value="346" style="box-sizing:content-box;touch-action:manipulation;">South Sudan</option>
+																<option value="167" style="box-sizing:content-box;touch-action:manipulation;">Spain</option>
+																<option value="82" style="box-sizing:content-box;touch-action:manipulation;">Sri Lanka</option>
+																<option value="137" style="box-sizing:content-box;touch-action:manipulation;">St. Vincent &amp; Grenadines</option>
+																<option value="312" style="box-sizing:content-box;touch-action:manipulation;">Suriname</option>
+																<option value="49" style="box-sizing:content-box;touch-action:manipulation;">Sweden</option>
+																<option value="51" style="box-sizing:content-box;touch-action:manipulation;">Switzerland</option>
+																<option value="140" style="box-sizing:content-box;touch-action:manipulation;">Taiwan</option>
+																<option value="313" style="box-sizing:content-box;touch-action:manipulation;">Tajikistan</option>
+																<option value="199" style="box-sizing:content-box;touch-action:manipulation;">Tanzania</option>
+																<option value="106" style="box-sizing:content-box;touch-action:manipulation;">Thailand</option>
+																<option value="331" style="box-sizing:content-box;touch-action:manipulation;">Timor-Leste</option>
+																<option value="121" style="box-sizing:content-box;touch-action:manipulation;">Togo</option>
+																<option value="314" style="box-sizing:content-box;touch-action:manipulation;">Tokelau</option>
+																<option value="315" style="box-sizing:content-box;touch-action:manipulation;">Tonga</option>
+																<option value="95" style="box-sizing:content-box;touch-action:manipulation;">Trinidad &amp; Tobago</option>
+																<option value="56" style="box-sizing:content-box;touch-action:manipulation;">Tunisia</option>
+																<option value="45" style="box-sizing:content-box;touch-action:manipulation;">Turkey</option>
+																<option value="316" style="box-sizing:content-box;touch-action:manipulation;">Turkmenistan</option>
+																<option value="48" style="box-sizing:content-box;touch-action:manipulation;">Turks &amp; Caicos Islands</option>
+																<option value="317" style="box-sizing:content-box;touch-action:manipulation;">Tuvalu</option>
+																<option value="81" style="box-sizing:content-box;touch-action:manipulation;">U.S. Virgin Islands</option>
+																<option value="245" style="box-sizing:content-box;touch-action:manipulation;">Uganda</option>
+																<option value="79" style="box-sizing:content-box;touch-action:manipulation;">Ukraine</option>
+																<option value="64" style="box-sizing:content-box;touch-action:manipulation;">United Arab Emirates</option>
+																<option value="107" style="box-sizing:content-box;touch-action:manipulation;">United Kingdom</option>
+																<option value="181" style="box-sizing:content-box;touch-action:manipulation;">United States</option>
+																<option value="110" style="box-sizing:content-box;touch-action:manipulation;">Uruguay</option>
+																<option value="172" style="box-sizing:content-box;touch-action:manipulation;">Uzbekistan</option>
+																<option value="194" style="box-sizing:content-box;touch-action:manipulation;">Vanuatu</option>
+																<option value="146" style="box-sizing:content-box;touch-action:manipulation;">Venezuela</option>
+																<option value="38" style="box-sizing:content-box;touch-action:manipulation;">Vietnam</option>
+																<option value="318" style="box-sizing:content-box;touch-action:manipulation;">Wallis and Futuna</option>
+																<option value="284" style="box-sizing:content-box;touch-action:manipulation;">Western Sahara</option>
+																<option value="98" style="box-sizing:content-box;touch-action:manipulation;">Yemen</option>
+																<option value="171" style="box-sizing:content-box;touch-action:manipulation;">Zambia</option>
+																<option value="61" style="box-sizing:content-box;touch-action:manipulation;">Zimbabwe</option>
+															</optgroup>
+														</select></span>
+												</div>
+												<div role="presentation" style="right: 0px;color:rgb(51, 51, 51);padding-right:16px;padding-bottom:12px;padding-top:12px;fill:rgb(0, 0, 0);align-items:center;cursor: auto;height:100%;display:flex;position:absolute;pointer-events:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><svg role="img" aria-hidden="true" opacity="1" style="box-sizing:border-box;fill:rgb(36, 38, 44);min-width:16px;min-height:16px;max-width:16px;max-height:16px;touch-action:manipulation;">
+														<use href="#9711fb1d" style="box-sizing:border-box;touch-action:manipulation;"></use>
+													</svg></div>
+											</label>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+					<div style="box-sizing:border-box;padding-top:16px;padding-bottom:0px;touch-action:manipulation;">
+						<div style="box-sizing:border-box;touch-action:manipulation;">
+							<div style="box-sizing:border-box;touch-action:manipulation;">
+								<div data-component="mob-bf-special-request" style="box-sizing:border-box;touch-action:manipulation;">
+									<h3 data-testid="revamp-title-id" style="font-weight: 600; font-size: clamp(18px, 17.1795px + 0.25641vw, 20px); line-height: clamp(21px, 19.7692px + 0.384615vw, 24px);font-size:20px;line-height:24px;margin-bottom:8px;margin:0px 0px 8px;margin-top:0px;box-sizing:border-box;color:rgb(37, 44, 56);fill:rgb(37, 44, 56);touch-action:manipulation;">Special requests</h3>
+									<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(14.81px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:14.81px;margin:-1.19px 0px 14.81px;box-sizing:border-box;color:rgb(37, 44, 56);fill:rgb(37, 44, 56);touch-action:manipulation;">Select your preference(s). Subject to availability.</p>
+									<div style="color:rgb(51, 51, 51);padding:16px;fill:rgb(0, 0, 0);background:rgb(239, 244, 252) none repeat scroll 0% 0% / auto padding-box border-box;margin-top:8px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+										<fieldset style="margin:0px;border:0px none rgb(51, 51, 51);box-sizing:border-box;padding:0.14px 0px 0px;min-width:0px;touch-action:manipulation;">
+											<legend style="box-sizing:content-box;padding:0px;display:block;touch-action:manipulation;">
+												<p style="font-weight: 600; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(14.81px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:14.81px;margin:-1.19px 0px 14.81px;box-sizing:content-box;color:rgb(37, 44, 56);fill:rgb(37, 44, 56);touch-action:manipulation;">Which type of room would you prefer?</p>
+											</legend>
+											<div style="width: calc(100% + 0px);margin:0px;max-width:100%;box-sizing:border-box;display:flex;-webkit-box-flex:1;flex-grow:1;flex-wrap:wrap;touch-action:manipulation;">
+												<div style="display:flex;max-width:50%;flex-basis:50%;box-sizing:border-box;flex:2 1 50%;flex-direction:column;touch-action:manipulation;"><label data-element-name="mob-bf-non-smoking-preference" data-component="mob-bf-non-smoking-preference" style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;display:flex;margin-bottom:16px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+														<div style="width: 20px; min-width: 20px; height: 20px; min-height: 20px;min-width:20px;height:20px;min-height:20px;color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;margin-right:8px;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;user-select:none;touch-action:manipulation;">
+															<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);width: 100%;height:20px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><input aria-label="Non-smoking room" type="radio" name="smokingPreference" value="NonSmoking" style="cursor:pointer;font:300 14px / 21px BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;opacity:0;margin:0px;width: 100%;height:20px;position:absolute;top:0px;left:0px;z-index:1;touch-action:manipulation;" />
+																<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:2px;border-radius:999px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;width: 100%;height:20px;transition:background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;touch-action:manipulation;"></div>
+																<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);background:rgb(32, 103, 218) none repeat scroll 0% 0% / auto padding-box border-box;border-radius:999px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;opacity:0;position:absolute;width: 30px;height:30px;top:-5px;left:-5px;touch-action:manipulation;"></div>
+															</div>
+														</div>
+														<div style="margin-top: calc(1.5px); display: flex; flex-direction: row;display:flex;flex-direction:row;box-sizing:border-box;touch-action:manipulation;"><svg role="img" aria-hidden="true" opacity="1" style="box-sizing:border-box;margin-right:8px;min-width:20px;min-height:20px;max-width:20px;max-height:20px;touch-action:manipulation;">
+																<use href="#c8060a83" style="box-sizing:border-box;touch-action:manipulation;"></use>
+															</svg>
+															<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;touch-action:manipulation;">Non-smoking</p>
+														</div>
+													</label></div>
+												<div style="display:flex;max-width:50%;flex-basis:50%;box-sizing:border-box;flex:2 1 50%;flex-direction:column;touch-action:manipulation;"><label data-element-name="mob-bf-smoking-preference" data-component="mob-bf-smoking-preference" style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;display:flex;margin-bottom:16px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+														<div style="width: 20px; min-width: 20px; height: 20px; min-height: 20px;min-width:20px;height:20px;min-height:20px;color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;margin-right:8px;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;user-select:none;touch-action:manipulation;">
+															<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);width: 100%;height:20px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><input aria-label="Smoking room" type="radio" name="smokingPreference" value="Smoking" style="cursor:pointer;font:300 14px / 21px BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;opacity:0;margin:0px;width: 100%;height:20px;position:absolute;top:0px;left:0px;z-index:1;touch-action:manipulation;" />
+																<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:2px;border-radius:999px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;width: 100%;height:20px;transition:background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;touch-action:manipulation;"></div>
+																<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);background:rgb(32, 103, 218) none repeat scroll 0% 0% / auto padding-box border-box;border-radius:999px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;opacity:0;position:absolute;width: 30px;height:30px;top:-5px;left:-5px;touch-action:manipulation;"></div>
+															</div>
+														</div>
+														<div style="margin-top: calc(1.5px); display: flex; flex-direction: row;display:flex;flex-direction:row;box-sizing:border-box;touch-action:manipulation;"><svg role="img" aria-hidden="true" opacity="1" style="box-sizing:border-box;margin-right:8px;min-width:20px;min-height:20px;max-width:20px;max-height:20px;touch-action:manipulation;">
+																<use href="#31cbd07e" style="box-sizing:border-box;touch-action:manipulation;"></use>
+															</svg>
+															<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;touch-action:manipulation;">Smoking</p>
+														</div>
+													</label></div>
+											</div>
+										</fieldset>
+										<fieldset style="margin:0px;border:0px none rgb(51, 51, 51);box-sizing:border-box;padding:0.14px 0px 0px;min-width:0px;touch-action:manipulation;">
+											<legend style="box-sizing:content-box;padding:0px;display:block;touch-action:manipulation;">
+												<p style="font-weight: 600; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(14.81px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:14.81px;margin:-1.19px 0px 14.81px;box-sizing:content-box;color:rgb(37, 44, 56);fill:rgb(37, 44, 56);touch-action:manipulation;">Which bed setup would you prefer?</p>
+											</legend>
+											<div style="width: calc(100% + 0px);margin:0px;max-width:100%;box-sizing:border-box;display:flex;-webkit-box-flex:1;flex-grow:1;flex-wrap:wrap;touch-action:manipulation;">
+												<div style="display:flex;max-width:50%;flex-basis:50%;box-sizing:border-box;flex:2 1 50%;flex-direction:column;touch-action:manipulation;"><label data-element-name="mob-bf-king-bed-type-preference" data-component="mob-bf-king-bed-type-preference" style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;display:flex;margin-bottom:16px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+														<div style="width: 20px; min-width: 20px; height: 20px; min-height: 20px;min-width:20px;height:20px;min-height:20px;color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;margin-right:8px;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;user-select:none;touch-action:manipulation;">
+															<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);width: 100%;height:20px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><input aria-label="I'd like a large bed" type="radio" name="bedConfigPreference" value="LargeBed" style="cursor:pointer;font:300 14px / 21px BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;opacity:0;margin:0px;width: 100%;height:20px;position:absolute;top:0px;left:0px;z-index:1;touch-action:manipulation;" />
+																<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:2px;border-radius:999px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;width: 100%;height:20px;transition:background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;touch-action:manipulation;"></div>
+																<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);background:rgb(32, 103, 218) none repeat scroll 0% 0% / auto padding-box border-box;border-radius:999px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;opacity:0;position:absolute;width: 30px;height:30px;top:-5px;left:-5px;touch-action:manipulation;"></div>
+															</div>
+														</div>
+														<div style="margin-top: calc(1.5px); display: flex; flex-direction: row;display:flex;flex-direction:row;box-sizing:border-box;touch-action:manipulation;"><svg role="img" aria-hidden="true" opacity="1" style="box-sizing:border-box;margin-right:8px;min-width:20px;min-height:20px;max-width:20px;max-height:20px;touch-action:manipulation;">
+																<use href="#a3337f27" style="box-sizing:border-box;touch-action:manipulation;"></use>
+															</svg>
+															<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;touch-action:manipulation;">I'd like a large bed</p>
+														</div>
+													</label></div>
+												<div style="display:flex;max-width:50%;flex-basis:50%;box-sizing:border-box;flex:2 1 50%;flex-direction:column;touch-action:manipulation;"><label data-element-name="mob-bf-twin-bed-type-preference" data-component="mob-bf-twin-bed-type-preference" style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;display:flex;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+														<div style="width: 20px; min-width: 20px; height: 20px; min-height: 20px;min-width:20px;height:20px;min-height:20px;color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;margin-right:8px;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;user-select:none;touch-action:manipulation;">
+															<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);width: 100%;height:20px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><input aria-label="I'd like twin beds" type="radio" name="bedConfigPreference" value="TwinBed" style="cursor:pointer;font:300 14px / 21px BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;opacity:0;margin:0px;width: 100%;height:20px;position:absolute;top:0px;left:0px;z-index:1;touch-action:manipulation;" />
+																<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:2px;border-radius:999px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;width: 100%;height:20px;transition:background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;touch-action:manipulation;"></div>
+																<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);background:rgb(32, 103, 218) none repeat scroll 0% 0% / auto padding-box border-box;border-radius:999px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;opacity:0;position:absolute;width: 30px;height:30px;top:-5px;left:-5px;touch-action:manipulation;"></div>
+															</div>
+														</div>
+														<div style="margin-top: calc(1.5px); display: flex; flex-direction: row;display:flex;flex-direction:row;box-sizing:border-box;touch-action:manipulation;"><svg role="img" aria-hidden="true" opacity="1" style="box-sizing:border-box;margin-right:8px;min-width:20px;min-height:20px;max-width:20px;max-height:20px;touch-action:manipulation;">
+																<use href="#d8fc7397" style="box-sizing:border-box;touch-action:manipulation;"></use>
+															</svg>
+															<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;touch-action:manipulation;">I'd like twin beds</p>
+														</div>
+													</label></div>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+							</div>
+							<div style="box-sizing:border-box;touch-action:manipulation;">
+								<div style="color:rgb(51, 51, 51);padding-bottom:12px;padding-top:12px;fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><button aria-expanded="false" data-component="mob-bf-add-special-request-link" aria-controls="more-request-content" type="button" style="outline:rgba(0, 0, 0, 0) solid 2px;outline-offset:2px;color:rgb(51, 51, 51);text-align:start;padding:0px;fill:rgb(0, 0, 0);background:rgba(255, 255, 255, 0) none repeat scroll 0% 0% / auto padding-box border-box;border-style:none;border-width:0px;cursor:pointer;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;display:inline-flex;text-underline-offset:4px;outline-color:rgba(0, 0, 0, 0);border-radius:2px;touch-action:manipulation;"><span label="Show additional preferences" style="font-weight: 600; text-underline-offset: 4px; line-height: calc(20.33px); font-size: 16px; margin-top: calc(-1.33px); margin-bottom: calc(-1.33px);text-underline-offset:4px;line-height:20.33px;font-size:16px;margin-top:-1.33px;margin-bottom:-1.33px;text-decoration-line:none;display:flex;margin:-1.33px 0px;box-sizing:border-box;color:rgb(32, 103, 218);fill:rgb(32, 103, 218);-webkit-box-align:center;align-items:center;text-decoration:none solid rgb(32, 103, 218);touch-action:manipulation;"><svg role="img" aria-hidden="true" opacity="1" style="box-sizing:border-box;margin-right:4px;fill:rgb(32, 103, 218);min-width:16px;min-height:16px;max-width:16px;max-height:16px;touch-action:manipulation;">
+												<use href="#fe6954f7" style="box-sizing:border-box;touch-action:manipulation;"></use>
+											</svg>Show additional preferences</span></button></div>
+								<div data-component="expandable-wrapper" aria-hidden="true" style="transition: max-height 350ms; max-height: 0px;max-height:0px;color:rgb(51, 51, 51);fill:rgb(0, 0, 0);overflow:hidden;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+									<div data-component="expandable-content" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);display:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+										<div style="border:0.666667px solid rgb(221, 221, 221);padding:8px 16px;box-sizing:border-box;touch-action:manipulation;">
+											<fieldset style="margin:0px;border:0px none rgb(51, 51, 51);box-sizing:border-box;padding:0.14px 0px 0px;min-width:0px;touch-action:manipulation;">
+												<legend style="box-sizing:content-box;padding:0px;display:block;touch-action:manipulation;">
+													<p style="padding:8px 0px;margin-bottom:0px;margin-top:0px;box-sizing:content-box;touch-action:manipulation;">Book with confidence! We'll make sure your property receives your request quickly.</p>
+												</legend>
+												<div style="width: calc(100% + 0px);margin:0px;max-width:100%;box-sizing:border-box;display:flex;-webkit-box-flex:1;flex-grow:1;flex-wrap:wrap;touch-action:manipulation;">
+													<div style="display:flex;max-width:50%;flex-basis:50%;box-sizing:border-box;flex:2 1 50%;flex-direction:column;touch-action:manipulation;">
+														<div style="color:rgb(51, 51, 51);padding-bottom:4px;padding-top:4px;fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><label data-element-name="mob-bf-special-request-high-floor" data-component="mob-bf-special-request-high-floor" style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;display:flex;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+																<div style="width: 20px; min-width: 20px; height: 20px; min-height: 20px;min-width:20px;height:20px;min-height:20px;color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;margin-right:8px;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;user-select:none;touch-action:manipulation;">
+																	<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);width: 100%;height:100%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><input aria-label="I'd like a room on a high floor" type="checkbox" name="highFloor" style="cursor:pointer;font:300 14px / 21px BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;opacity:0;margin:0px;width: 100%;height:100%;position:absolute;top:0px;left:0px;z-index:1;touch-action:manipulation;" />
+																		<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:2px;border-radius:2px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;width: 100%;height:100%;display:flex;-webkit-box-pack:center;justify-content:center;-webkit-box-align:center;align-items:center;position:absolute;transition:background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;touch-action:manipulation;"></div>
+																		<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);background:rgb(32, 103, 218) none repeat scroll 0% 0% / auto padding-box border-box;border-radius:999px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;opacity:0;position:absolute;width: 30px;height:30px;top:-5px;left:-5px;touch-action:manipulation;"></div>
+																	</div>
+																</div>
+																<div style="margin-top: calc(1.5px); display: flex; flex-direction: row;display:flex;flex-direction:row;box-sizing:border-box;touch-action:manipulation;">
+																	<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;touch-action:manipulation;">I'd like a room on a high floor</p>
+																</div>
+															</label></div>
+													</div>
+													<div style="display:flex;max-width:50%;flex-basis:50%;box-sizing:border-box;flex:2 1 50%;flex-direction:column;touch-action:manipulation;">
+														<div style="color:rgb(51, 51, 51);padding-bottom:4px;padding-top:4px;fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><label data-element-name="mob-bf-special-request-quiet-room" data-component="mob-bf-special-request-quiet-room" style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;display:flex;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+																<div style="width: 20px; min-width: 20px; height: 20px; min-height: 20px;min-width:20px;height:20px;min-height:20px;color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;margin-right:8px;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;user-select:none;touch-action:manipulation;">
+																	<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);width: 100%;height:100%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><input aria-label="I’d like a quiet room" type="checkbox" name="quietRoom" style="cursor:pointer;font:300 14px / 21px BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;opacity:0;margin:0px;width: 100%;height:100%;position:absolute;top:0px;left:0px;z-index:1;touch-action:manipulation;" />
+																		<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:2px;border-radius:2px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;width: 100%;height:100%;display:flex;-webkit-box-pack:center;justify-content:center;-webkit-box-align:center;align-items:center;position:absolute;transition:background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;touch-action:manipulation;"></div>
+																		<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);background:rgb(32, 103, 218) none repeat scroll 0% 0% / auto padding-box border-box;border-radius:999px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;opacity:0;position:absolute;width: 30px;height:30px;top:-5px;left:-5px;touch-action:manipulation;"></div>
+																	</div>
+																</div>
+																<div style="margin-top: calc(1.5px); display: flex; flex-direction: row;display:flex;flex-direction:row;box-sizing:border-box;touch-action:manipulation;">
+																	<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;touch-action:manipulation;">I’d like a quiet room</p>
+																</div>
+															</label></div>
+													</div>
+													<div style="display:flex;max-width:50%;flex-basis:50%;box-sizing:border-box;flex:2 1 50%;flex-direction:column;touch-action:manipulation;">
+														<div style="color:rgb(51, 51, 51);padding-bottom:4px;padding-top:4px;fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><label data-element-name="mob-bf-special-request-baby-cot" data-component="mob-bf-special-request-baby-cot" style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;display:flex;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+																<div style="width: 20px; min-width: 20px; height: 20px; min-height: 20px;min-width:20px;height:20px;min-height:20px;color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;margin-right:8px;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;user-select:none;touch-action:manipulation;">
+																	<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);width: 100%;height:100%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><input aria-label="I’d like to have a baby cot(additional charges may apply)" type="checkbox" name="babyCot" style="cursor:pointer;font:300 14px / 21px BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;opacity:0;margin:0px;width: 100%;height:100%;position:absolute;top:0px;left:0px;z-index:1;touch-action:manipulation;" />
+																		<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:2px;border-radius:2px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;width: 100%;height:100%;display:flex;-webkit-box-pack:center;justify-content:center;-webkit-box-align:center;align-items:center;position:absolute;transition:background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;touch-action:manipulation;"></div>
+																		<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);background:rgb(32, 103, 218) none repeat scroll 0% 0% / auto padding-box border-box;border-radius:999px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;opacity:0;position:absolute;width: 30px;height:30px;top:-5px;left:-5px;touch-action:manipulation;"></div>
+																	</div>
+																</div>
+																<div style="margin-top: calc(1.5px); display: flex; flex-direction: row;display:flex;flex-direction:row;box-sizing:border-box;touch-action:manipulation;">
+																	<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;touch-action:manipulation;">I’d like to have a baby cot
+																	<div style="box-sizing:border-box;touch-action:manipulation;">(additional charges may apply)</div>
+																	</p>
+																</div>
+															</label></div>
+													</div>
+												</div>
+												<div style="border-bottom:0.666667px solid rgb(221, 221, 221);border-top:0.666667px solid rgb(221, 221, 221);padding:4px 0px;box-sizing:border-box;touch-action:manipulation;">
+													<div style="color:rgb(51, 51, 51);padding-bottom:4px;padding-top:4px;fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><label data-element-name="mob-bf-special-request-airport-transfer" data-component="mob-bf-special-request-airport-transfer" style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;display:flex;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+															<div style="width: 20px; min-width: 20px; height: 20px; min-height: 20px;min-width:20px;height:20px;min-height:20px;color:rgb(36, 38, 44);fill:rgb(36, 38, 44);cursor:pointer;margin-right:8px;position:relative;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;user-select:none;touch-action:manipulation;">
+																<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);width: 100%;height:100%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><input aria-label="I'd like an airport transfer" type="checkbox" name="airportTransfer" style="cursor:pointer;font:300 14px / 21px BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;opacity:0;margin:0px;width: 100%;height:100%;position:absolute;top:0px;left:0px;z-index:1;touch-action:manipulation;" />
+																	<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:2px;border-radius:2px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;width: 100%;height:100%;display:flex;-webkit-box-pack:center;justify-content:center;-webkit-box-align:center;align-items:center;position:absolute;transition:background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;touch-action:manipulation;"></div>
+																	<div style="color:rgb(36, 38, 44);fill:rgb(36, 38, 44);background:rgb(32, 103, 218) none repeat scroll 0% 0% / auto padding-box border-box;border-radius:999px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;opacity:0;position:absolute;width: 30px;height:30px;top:-5px;left:-5px;touch-action:manipulation;"></div>
+																</div>
+															</div>
+															<div style="margin-top: calc(1.5px); display: flex; flex-direction: row;display:flex;flex-direction:row;box-sizing:border-box;touch-action:manipulation;">
+																<p style="font-weight: 400; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;touch-action:manipulation;">I'd like an airport transfer</p>
+															</div>
+														</label></div>
+												</div>
+												<p style="padding:8px 0px;margin-bottom:0px;margin-top:0px;box-sizing:border-box;touch-action:manipulation;"><span style="box-sizing:border-box;touch-action:manipulation;">Any personal requests? Let us know in <strong style="font-weight:700;box-sizing:border-box;touch-action:manipulation;">English</strong> or <strong style="font-weight:700;box-sizing:border-box;touch-action:manipulation;">Bahasa Malaysia</strong>.</span></p>
+												<div style="margin-bottom:6px;box-sizing:border-box;touch-action:manipulation;"><textarea rows="3" name="additionalNote" maxlength="500" data-element-name="mob-bf-special-request-additional-notes" style="cursor:pointer;box-sizing:border-box;font-size:16px;width: 100%;padding:6px 12px;display:block;height: auto;-webkit-background-clip:padding-box;transition:border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;color:rgb(42, 42, 46);background-color:rgb(255, 255, 255);border:0.666667px solid rgb(175, 181, 194);border-radius:0px;touch-action:manipulation;"></textarea></div>
+											</fieldset>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section datacomponent="PayNowPayLater" data-component="PayNowPayLater" style="color:rgb(51, 51, 51);padding-bottom:0px;padding-top:0px;padding-left:0px;padding-right:0px;padding:0px;fill:rgb(0, 0, 0);background:rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;border-color:rgba(94, 107, 130, 0.32);border-style:solid;border-width:0.666667px;border-radius:16px;flex-direction:column;display:flex;margin:4px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+					<fieldset style="margin:0px;border:0px none rgb(51, 51, 51);box-sizing:border-box;padding:0.14px 0px 0px;min-width:0px;touch-action:manipulation;">
+						<legend style="box-sizing:content-box;padding:0px;display:block;touch-action:manipulation;">
+							<div style="box-sizing:content-box;padding:8px 16px 0px;touch-action:manipulation;">
+								<h5 data-testid="kite-heading-payment-option" style="box-sizing:content-box;font-size:16px;line-height:22px;font-weight:600;margin:8px 0px;touch-action:manipulation;">Choose your payment option </h5>
+							</div>
+						</legend>
+						<div style="box-sizing:border-box;padding:0px 16px 8px;touch-action:manipulation;"><label style="box-sizing:border-box;width: 100%;display:flex;position:relative;-webkit-box-align:center;align-items:center;user-select:none;cursor:pointer;touch-action:manipulation;"><input name="payNowPayLater" data-component="PayNowPayLater_PayLater" type="radio" value="2" checked="" style="cursor:pointer;font:300 14px / 21px BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;box-shadow:rgb(255, 255, 255) 0px 0px 0px 4px inset;background-color:rgb(62, 108, 234);position:relative;width: 20px;min-width:20px;height:20px;min-height:20px;border-radius:50%;appearance:none;-webkit-background-clip:padding-box;border:0.666667px solid rgb(141, 151, 170);margin:0px;touch-action:manipulation;" /><span style="box-sizing:border-box;display:flex;-webkit-box-align:center;align-items:center;margin-left:8px;font-size:14px;line-height:20px;font-weight:400;touch-action:manipulation;">
+									<p style="margin-bottom:0px;margin-top:0px;box-sizing:border-box;font-size:14px;line-height:22px;font-weight:600;touch-action:manipulation;">Pay on 21 October 2024</p>
+								</span></label>
+							<div data-component="payLaterContainer" style="color:rgb(51, 51, 51);padding-right:12px;padding-left:24px;padding-bottom:12px;padding-top:12px;fill:rgb(0, 0, 0);background:rgb(226, 242, 229) none repeat scroll 0% 0% / auto padding-box border-box;border-radius:8px;display:flex;margin-top:16px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+								<div data-component="pay-later-easy-cancel-icon-container" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);margin-right:8px;margin-left:-12px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><svg role="img" aria-hidden="true" opacity="1" data-component="pay-later-easy-cancel-icon" style="box-sizing:border-box;fill:rgb(0, 98, 47);min-width:20px;min-height:20px;max-width:20px;max-height:20px;touch-action:manipulation;">
+										<use href="#580ed7b3" style="box-sizing:border-box;touch-action:manipulation;"></use>
+									</svg></div>
+								<div data-component="cms-pay-later-container" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+									<p style="font-weight: 600; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;margin:-1.19px 0px;box-sizing:border-box;touch-action:manipulation;"><span data-component="cms-pay-later-pretext" style="color:rgb(0, 98, 47);fill:rgb(0, 98, 47);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">RISK FREE!</span> <span data-component="cms-pay-later-text" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+											<p style="font-weight: 600; line-height: calc(18.19px); font-size: 14px; margin-top: calc(-1.19px); margin-bottom: calc(-1.19px);line-height:18.19px;font-size:14px;margin-top:-1.19px;margin-bottom:-1.19px;display:inline;margin:-1.19px 0px;box-sizing:border-box;touch-action:manipulation;">Pay nothing until 21 October 2024</p>
+										</span></p>
+									<p style="margin:0px;margin-bottom:0px;margin-top:0px;box-sizing:border-box;touch-action:manipulation;"><span data-component="cms-free-cancellation-text" style="font-weight: 400; line-height: calc(14.98px); font-size: 12px; margin-top: calc(-0.98px); margin-bottom: calc(-0.98px);line-height:14.98px;font-size:12px;margin-top:-0.98px;margin-bottom:-0.98px;margin:-0.98px 0px;box-sizing:border-box;touch-action:manipulation;">Free cancellation before 22 October 2024 at 23:59 (property local time)</span></p>
+								</div>
+							</div>
+							<div style="color:rgb(51, 51, 51);padding-left:4px;padding-right:4px;fill:rgb(0, 0, 0);margin-left:24px;margin-right:24px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+								<p style="margin-bottom:0px;margin-top:0px;box-sizing:border-box;font-size:12px;line-height:18px;font-weight:300;color:rgb(112, 112, 112);touch-action:manipulation;">No payment today; <a href="/info/termsofuse.html#12" target="_blank" data-element-name="term-of-use-link" style="color:rgb(2, 131, 223);background-color:rgba(0, 0, 0, 0);text-decoration:none solid rgb(2, 131, 223);box-sizing:border-box;display:inline-flex;pointer-events:auto;outline-color:rgba(0, 0, 0, 0);border-radius:2px;padding:0px 2px;touch-action:manipulation;"><span label="Learn more" style="font-weight: 600; text-underline-offset: 4px;text-underline-offset:4px;display:flex;margin:0px;box-sizing:border-box;color:rgb(32, 103, 218);fill:rgb(32, 103, 218);-webkit-box-align:center;align-items:center;text-decoration:none solid rgb(32, 103, 218);touch-action:manipulation;">Learn more</span></a> about the effect on price.</p>
+							</div>
+						</div>
+						<div style="box-sizing:border-box;width: 100%;display:flex;text-align:center;-webkit-box-pack:center;justify-content:center;-webkit-box-align:center;align-items:center;position:relative;background-color:rgba(0, 0, 0, 0);padding:8px 0px;touch-action:manipulation;">
+							<div style="box-sizing:border-box;min-width:1px;margin:0px;width: 100%;flex:1 1 0%;border-bottom:0.666667px solid rgb(213, 217, 226);touch-action:manipulation;"></div>
+						</div>
+						<div style="box-sizing:border-box;padding:8px 16px;touch-action:manipulation;"><label style="box-sizing:border-box;width: 100%;display:flex;position:relative;-webkit-box-align:center;align-items:center;user-select:none;cursor:pointer;touch-action:manipulation;"><input name="payNowPayLater" data-component="PayNowPayLater_PayNow" type="radio" value="1" style="cursor:pointer;font:300 14px / 21px BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;box-sizing:border-box;position:relative;width: 20px;min-width:20px;height:20px;min-height:20px;border-radius:50%;appearance:none;-webkit-background-clip:padding-box;align-self:flex-start;border:0.666667px solid rgb(141, 151, 170);background-color:rgb(255, 255, 255);margin:0px;touch-action:manipulation;" /><span style="box-sizing:border-box;display:flex;-webkit-box-align:center;align-items:center;margin-left:8px;font-size:14px;line-height:20px;font-weight:400;touch-action:manipulation;">
+									<ul style="padding-left:0px;margin-bottom:0px;margin-top:0px;list-style:outside none none;box-sizing:border-box;direction:ltr;margin:0px;touch-action:manipulation;">
+										<li style="box-sizing:border-box;display:list-item;height:20px;touch-action:manipulation;"><span style="box-sizing:border-box;margin-top:8px;margin-bottom:4px;font-size:14px;line-height:20px;font-weight:600;touch-action:manipulation;">Pay now</span></li>
+										<li style="box-sizing:border-box;display:list-item;height:20px;touch-action:manipulation;"><span style="box-sizing:border-box;margin-bottom:8px;margin-top:4px;font-size:12px;line-height:16px;font-weight:300;color:rgb(112, 112, 112);touch-action:manipulation;">You can also choose to pay now with a credit card or other payment methods below.</span></li>
+									</ul>
+								</span></label>
+							<div style="box-sizing:border-box;margin:16px 24px 24px;touch-action:manipulation;">
+								<div style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);display:flex;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+									<div data-component="CreditDebitCard-available-payment-methods" style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);display:flex;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;">
+										<div style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);margin-right:8px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><img width="32px" data-element-name="mob-bf-payment-logo-unionpay-- creditcard" height="22px" alt="UnionPay - Creditcard" srcset="https://cdn6.agoda.net/images/mvc/default/ic_card_unionpay.png?s=16x 16w, https://cdn6.agoda.net/images/mvc/default/ic_card_unionpay.png?s=116x 116w, https://cdn6.agoda.net/images/mvc/default/ic_card_unionpay.png?s=375x 375w, https://cdn6.agoda.net/images/mvc/default/ic_card_unionpay.png?s=600x 600w, https://cdn6.agoda.net/images/mvc/default/ic_card_unionpay.png?s=800x 800w, https://cdn6.agoda.net/images/mvc/default/ic_card_unionpay.png?s=1024x 1024w" src="https://cdn6.agoda.net/images/mvc/default/ic_card_unionpay.png" loading="lazy" sizes="32px" style="border-style:none;font-style:italic;max-width:100%;vertical-align:middle;box-sizing:border-box;width: 32px;height:22px;touch-action:manipulation;" /></div>
+										<div style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);margin-right:8px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><img width="32px" data-element-name="mob-bf-payment-logo-touch-'n go" height="22px" alt="Touch 'n Go" srcset="https://cdn6.agoda.net/images/mvc/default/ic_touchngo_2.png?s=16x 16w, https://cdn6.agoda.net/images/mvc/default/ic_touchngo_2.png?s=116x 116w, https://cdn6.agoda.net/images/mvc/default/ic_touchngo_2.png?s=375x 375w, https://cdn6.agoda.net/images/mvc/default/ic_touchngo_2.png?s=600x 600w, https://cdn6.agoda.net/images/mvc/default/ic_touchngo_2.png?s=800x 800w, https://cdn6.agoda.net/images/mvc/default/ic_touchngo_2.png?s=1024x 1024w" src="https://cdn6.agoda.net/images/mvc/default/ic_touchngo_2.png" loading="lazy" sizes="32px" style="border-style:none;font-style:italic;max-width:100%;vertical-align:middle;box-sizing:border-box;width: 32px;height:22px;touch-action:manipulation;" /></div>
+										<div style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);margin-right:8px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><img width="32px" data-element-name="mob-bf-payment-logo-grabpay" height="22px" alt="GrabPay" srcset="https://cdn6.agoda.net/images/mvc/default/ic_grabpay_2.png?s=16x 16w, https://cdn6.agoda.net/images/mvc/default/ic_grabpay_2.png?s=116x 116w, https://cdn6.agoda.net/images/mvc/default/ic_grabpay_2.png?s=375x 375w, https://cdn6.agoda.net/images/mvc/default/ic_grabpay_2.png?s=600x 600w, https://cdn6.agoda.net/images/mvc/default/ic_grabpay_2.png?s=800x 800w, https://cdn6.agoda.net/images/mvc/default/ic_grabpay_2.png?s=1024x 1024w" src="https://cdn6.agoda.net/images/mvc/default/ic_grabpay_2.png" loading="lazy" sizes="32px" style="border-style:none;font-style:italic;max-width:100%;vertical-align:middle;box-sizing:border-box;width: 32px;height:22px;touch-action:manipulation;" /></div>
+										<div style="color:rgb(51, 51, 51);fill:rgb(0, 0, 0);margin-right:8px;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);box-sizing:border-box;touch-action:manipulation;"><img width="32px" data-element-name="mob-bf-payment-logo-boost" height="22px" alt="Boost" srcset="https://cdn6.agoda.net/images/mvc/default/ic_boost_3.png?s=16x 16w, https://cdn6.agoda.net/images/mvc/default/ic_boost_3.png?s=116x 116w, https://cdn6.agoda.net/images/mvc/default/ic_boost_3.png?s=375x 375w, https://cdn6.agoda.net/images/mvc/default/ic_boost_3.png?s=600x 600w, https://cdn6.agoda.net/images/mvc/default/ic_boost_3.png?s=800x 800w, https://cdn6.agoda.net/images/mvc/default/ic_boost_3.png?s=1024x 1024w" src="https://cdn6.agoda.net/images/mvc/default/ic_boost_3.png" loading="lazy" sizes="32px" style="border-style:none;font-style:italic;max-width:100%;vertical-align:middle;box-sizing:border-box;width: 32px;height:22px;touch-action:manipulation;" /></div>
+									</div>
+									<div data-component="online-banking-more-card-popover" style="box-sizing:border-box;display:block;position:relative;touch-action:manipulation;">
+										<div style="box-sizing:border-box;width: 32px;display:inline-block;border:0.666667px solid rgb(215, 215, 219);background-color:rgb(255, 255, 255);text-align:center;vertical-align:middle;margin-right:6px;touch-action:manipulation;"><span data-component="more-cards" style="box-sizing:border-box;font-size:14px;line-height:20px;font-weight:400;touch-action:manipulation;">+21</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</section>
+			</main>
+		</div>
+	</div>
+    <!-- ================ profile section end ================= -->
+    
+    <!-- footer -->
+    <footer class="footer" >
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                address
+                            </h3>
+                            <p class="footer_text" >  Jalan Sultan Yahya Petra, Universiti Teknologi Malaysia, 54100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
+                            <a href="https://maps.app.goo.gl/xqsGyN3Jxv4vBWeX6" class="line-button">Get Direction</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                    Reservation
+                            </h3>
+                            <p class="footer_text" >+60 10-209 4362 <br>
+                                    azibfikri27@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                    Navigation
+                            </h3>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Rooms</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Newsletter
+                            </h3>
+                            <form action="#" class="newsletter_form">
+                                <input type="text" placeholder="Enter your mail">
+                                <button type="submit" >Sign Up</button>
+                            </form>
+                            <p class="newsletter_text">Subscribe newsletter to get updates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-8 col-md-7 col-lg-9">
+                        <p class="copy_right">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Azib Fikri</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                    <div class="col-xl-4 col-md-5 col-lg-3">
+                        <div class="socail_links">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-facebook-square"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer_end -->
+        
+
+    <!-- form itself end-->
+    <form id="test-form" class="white-popup-block mfp-hide">
+        <div class="popup_box ">
+                <div class="popup_inner">
+                    <h3>Check Availability</h3>
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <input id="datepicker" placeholder="Check in date">
+                            </div>
+                            <div class="col-xl-6">
+                                <input id="datepicker2" placeholder="Check out date">
+                            </div>
+                            <div class="col-xl-6">
+                                <select class="form-select wide" id="default-select" class="">
+                                    <option data-display="Adult">1</option>
+                                    <option value="1">2</option>
+                                    <option value="2">3</option>
+                                    <option value="3">4</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-6">
+                                <select class="form-select wide" id="default-select" class="">
+                                    <option data-display="Children">1</option>
+                                    <option value="1">2</option>
+                                    <option value="2">3</option>
+                                    <option value="3">4</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-12">
+                                <select class="form-select wide" id="default-select" class="">
+                                    <option data-display="Room type">Room type</option>
+                                    <option value="1">Laxaries Rooms</option>
+                                    <option value="2">Deluxe Room</option>
+                                    <option value="3">Signature Room</option>
+                                    <option value="4">Couple Room</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-12">
+                                <button type="submit" class="boxed-btn3">Check Availability</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </form>
+<!-- form itself end -->
+    
+        <!-- JS here -->
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/scrollIt.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/nice-select.min.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/gijgo.min.js"></script>
+        <script src="js/page-cookie.js"></script>
+    
+        <!--contact js-->
+        <script src="js/contact.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/mail-script.js"></script>
+    
+        <script src="js/main.js"></script>
+        <script>
+            $('#datepicker').datepicker({
+                iconsLibrary: 'fontawesome',
+                icons: {
+                 rightIcon: '<span class="fa fa-caret-down"></span>'
+             }
+            });
+            $('#datepicker2').datepicker({
+                iconsLibrary: 'fontawesome',
+                icons: {
+                 rightIcon: '<span class="fa fa-caret-down"></span>'
+             }
+    
+            });
+        </script>
+
+
+
+    </body>
+    
+    </html>

@@ -1,0 +1,1131 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Palladium Hotel - Reservation</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/booking-form2.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body onload="setupProfile()" style="background-color:black;">
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-1 col-lg-2">
+                            <div class="logo-img">
+                                <img src="img/logo.png" alt="" width="100">
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="rooms.html">rooms</a></li>
+                                        <li><a href="facilities.html">facilities</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-2">
+                            <div class="book_room">
+                                <div class="book_btn d-none d-lg-block">
+                                    <a class="popup-with-form" href="#test-form">Book A Room</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2">
+                            <div class="main-menu">
+                                <div class="btn-group">
+                                    <button type="button" class="btn rounded-circle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-user"></i>
+                                    </button>
+                                    <div id="profile-menu" class="dropdown-menu">
+                                        <a id="profile-menu-1" href="" class="dropdown-item" type="button">View profile</a>
+                                        <a onclick="deleteCookie('user')" id="profile-menu-2" href="index.html" class="dropdown-item" type="button">Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- bradcam_area_start -->
+    <div class="bradcam_area breadcam_bg">
+        <h3 id="acc_name">Reservation</h3>
+    </div>
+
+    
+    <!-- bradcam_area_end -->
+
+    <!-- ================ profile section start ================= -->
+    <section datacomponent="GuestDetails" data-component="GuestDetails" class="style-0">
+		<div class="style-1"></div>
+		<fieldset data-testid="guest-details-fieldset" class="style-2">
+			<legend class="style-3" data-testid="guest-detail-title">Who’s the lead guest?</legend>
+			<div data-element-name="GuestField_err_firstName" class="style-4">
+				<div aria-disabled="false" class="style-5">
+					<div class="style-6">
+						<fieldset class="style-7">
+							<legend class="style-8"><span class="style-9">First name *</span></legend>
+						</fieldset><label class="style-10">
+							<div class="style-11">
+								<div class="style-12">
+									<p class="style-13">First name *</p>
+								</div><span class="style-14"><input maxlength="64" autocomplete="given-name" name="firstName" required="" type="text" class="style-15" value="" /></span>
+							</div>
+							<div class="style-16"><button tabindex="-1" aria-label="Clear" aria-hidden="true" type="button" class="style-17"><svg role="img" aria-label="Clear" opacity="1" class="style-18">
+										<use href="#9523eea2" class="style-19"></use>
+									</svg></button></div>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div data-element-name="GuestField_err_lastName" class="style-20">
+				<div aria-disabled="false" class="style-21">
+					<div class="style-22">
+						<fieldset class="style-23">
+							<legend class="style-24"><span class="style-25">Last name *</span></legend>
+						</fieldset><label class="style-26">
+							<div class="style-27">
+								<div class="style-28">
+									<p class="style-29">Last name *</p>
+								</div><span class="style-30"><input maxlength="64" autocomplete="family-name" name="lastName" required="" type="text" class="style-31" value="" /></span>
+							</div>
+							<div class="style-32"><button tabindex="-1" aria-label="Clear" aria-hidden="true" type="button" class="style-33"><svg role="img" aria-label="Clear" opacity="1" class="style-34">
+										<use href="#9523eea2" class="style-35"></use>
+									</svg></button></div>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div data-element-name="GuestField_err_email" class="style-36">
+				<div aria-disabled="false" class="style-37">
+					<div class="style-38">
+						<fieldset class="style-39">
+							<legend class="style-40"><span class="style-41">Email *</span></legend>
+						</fieldset><label class="style-42">
+							<div class="style-43">
+								<div class="style-44">
+									<p class="style-45">Email *</p>
+								</div><span class="style-46"><input maxlength="254" autocomplete="email" name="email" required="" type="email" class="style-47" value="" /></span>
+							</div>
+							<div class="style-48"><button tabindex="-1" aria-label="Clear" aria-hidden="true" type="button" class="style-49"><svg role="img" aria-label="Clear" opacity="1" class="style-50">
+										<use href="#9523eea2" class="style-51"></use>
+									</svg></button></div>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div data-component="marketing-disclaimer-component" data-element-name="booking-reminder-marketing-disclaimer-message" class="style-52">If you enter your email address and do not complete your reservation, we may send you reminders to help you resume your booking.</div>
+			<div data-element-name="GuestField_err_phoneNumber" class="style-53">
+				<div aria-disabled="false" class="style-54">
+					<div class="style-55">
+						<fieldset class="style-56">
+							<legend class="style-57"><span class="style-58">Phone number (optional)</span></legend>
+						</fieldset><label class="style-59">
+							<div class="style-60">
+								<div class="style-61">
+									<p class="style-62">Phone number (optional)</p>
+								</div><span class="style-63"><input maxlength="16" autocomplete="tel" name="phoneNumber" type="tel" class="style-64" value="" /></span>
+							</div>
+							<div class="style-65"><button tabindex="-1" aria-label="Clear" aria-hidden="true" type="button" class="style-66"><svg role="img" aria-label="Clear" opacity="1" class="style-67">
+										<use href="#9523eea2" class="style-68"></use>
+									</svg></button></div>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div aria-disabled="false" class="style-69">
+				<div class="style-70">
+					<fieldset class="style-71">
+						<legend class="style-72"><span class="style-73">Country/region of residence *</span></legend>
+					</fieldset><label class="style-74">
+						<div class="style-75">
+							<div class="style-76">
+								<p class="style-77">Please select one</p>
+							</div><span class="style-78"><select name="countryId" class="style-79">
+									<option value="" class="style-80">Please select one</option>
+									<optgroup label="Most Selected Countries" class="style-81">
+										<option value="139" class="style-82">Australia</option>
+										<option value="191" class="style-83">China</option>
+										<option value="192" class="style-84">Indonesia</option>
+										<option value="3" class="style-85">Japan</option>
+										<option value="198" class="style-86">Malaysia</option>
+										<option value="114" class="style-87">Singapore</option>
+										<option value="212" class="style-88">South Korea</option>
+										<option value="106" class="style-89">Thailand</option>
+										<option value="107" class="style-90">United Kingdom</option>
+										<option value="181" class="style-91">United States</option>
+									</optgroup>
+									<optgroup label="All Countries" class="style-92">
+										<option value="288" class="style-93">Afghanistan</option>
+										<option value="53" class="style-94">Albania</option>
+										<option value="143" class="style-95">Algeria</option>
+										<option value="289" class="style-96">American Samoa</option>
+										<option value="189" class="style-97">Andorra</option>
+										<option value="290" class="style-98">Angola</option>
+										<option value="150" class="style-99">Anguilla</option>
+										<option value="50" class="style-100">Antigua &amp; Barbuda</option>
+										<option value="5" class="style-101">Argentina</option>
+										<option value="246" class="style-102">Armenia</option>
+										<option value="66" class="style-103">Aruba</option>
+										<option value="139" class="style-104">Australia</option>
+										<option value="130" class="style-105">Austria</option>
+										<option value="135" class="style-106">Azerbaijan</option>
+										<option value="60" class="style-107">Bahamas</option>
+										<option value="202" class="style-108">Bahrain</option>
+										<option value="117" class="style-109">Bangladesh</option>
+										<option value="94" class="style-110">Barbados</option>
+										<option value="21" class="style-111">Belarus</option>
+										<option value="118" class="style-112">Belgium</option>
+										<option value="88" class="style-113">Belize</option>
+										<option value="231" class="style-114">Benin</option>
+										<option value="6" class="style-115">Bermuda</option>
+										<option value="291" class="style-116">Bhutan</option>
+										<option value="15" class="style-117">Bolivia</option>
+										<option value="344" class="style-118">Bonaire, Sint Eustatius and Saba</option>
+										<option value="103" class="style-119">Bosnia Herzegovina</option>
+										<option value="206" class="style-120">Botswana</option>
+										<option value="207" class="style-121">Brazil</option>
+										<option value="330" class="style-122">British Indian Ocean Territory</option>
+										<option value="77" class="style-123">British Virgin Islands</option>
+										<option value="63" class="style-124">Brunei Darussalam</option>
+										<option value="126" class="style-125">Bulgaria</option>
+										<option value="237" class="style-126">Burkina Faso</option>
+										<option value="229" class="style-127">Burundi</option>
+										<option value="163" class="style-128">Cambodia</option>
+										<option value="36" class="style-129">Cameroon</option>
+										<option value="100" class="style-130">Canada</option>
+										<option value="292" class="style-131">Cape Verde</option>
+										<option value="142" class="style-132">Cayman Islands</option>
+										<option value="293" class="style-133">Central African Republic</option>
+										<option value="236" class="style-134">Chad</option>
+										<option value="69" class="style-135">Chile</option>
+										<option value="191" class="style-136">China</option>
+										<option value="283" class="style-137">Christmas Island</option>
+										<option value="321" class="style-138">Cocos (Keeling) Islands</option>
+										<option value="10" class="style-139">Colombia</option>
+										<option value="294" class="style-140">Comoros</option>
+										<option value="225" class="style-141">Cook Islands</option>
+										<option value="40" class="style-142">Costa Rica</option>
+										<option value="165" class="style-143">Cote D'ivoire</option>
+										<option value="128" class="style-144">Croatia</option>
+										<option value="342" class="style-145">Curacao</option>
+										<option value="24" class="style-146">Cyprus</option>
+										<option value="13" class="style-147">Czech Republic</option>
+										<option value="337" class="style-148">Democratic Republic of the&nbsp;Congo</option>
+										<option value="158" class="style-149">Denmark</option>
+										<option value="244" class="style-150">Djibouti</option>
+										<option value="341" class="style-151">Dominica</option>
+										<option value="134" class="style-152">Dominican Republic</option>
+										<option value="52" class="style-153">Ecuador</option>
+										<option value="16" class="style-154">Egypt</option>
+										<option value="80" class="style-155">El Salvador</option>
+										<option value="295" class="style-156">Equatorial Guinea</option>
+										<option value="242" class="style-157">Eritrea</option>
+										<option value="99" class="style-158">Estonia</option>
+										<option value="18" class="style-159">Eswatini</option>
+										<option value="240" class="style-160">Ethiopia</option>
+										<option value="322" class="style-161">Falkland Islands</option>
+										<option value="200" class="style-162">Faroe Islands</option>
+										<option value="218" class="style-163">Federated States of Micronesia</option>
+										<option value="109" class="style-164">Fiji</option>
+										<option value="28" class="style-165">Finland</option>
+										<option value="153" class="style-166">France</option>
+										<option value="113" class="style-167">French Guiana</option>
+										<option value="14" class="style-168">French Polynesia</option>
+										<option value="234" class="style-169">Gabon</option>
+										<option value="286" class="style-170">Gambia</option>
+										<option value="71" class="style-171">Georgia</option>
+										<option value="101" class="style-172">Germany</option>
+										<option value="151" class="style-173">Ghana</option>
+										<option value="4" class="style-174">Gibraltar</option>
+										<option value="197" class="style-175">Greece</option>
+										<option value="26" class="style-176">Greenland</option>
+										<option value="184" class="style-177">Grenada</option>
+										<option value="89" class="style-178">Guadeloupe</option>
+										<option value="208" class="style-179">Guam</option>
+										<option value="41" class="style-180">Guatemala</option>
+										<option value="406" class="style-181">Guernsey</option>
+										<option value="58" class="style-182">Guinea</option>
+										<option value="296" class="style-183">Guinea-Bissau</option>
+										<option value="243" class="style-184">Guyana</option>
+										<option value="47" class="style-185">Haiti</option>
+										<option value="336" class="style-186">Holy See (Vatican City)</option>
+										<option value="39" class="style-187">Honduras</option>
+										<option value="132" class="style-188">Hong Kong</option>
+										<option value="37" class="style-189">Hungary</option>
+										<option value="54" class="style-190">Iceland</option>
+										<option value="35" class="style-191">India</option>
+										<option value="192" class="style-192">Indonesia</option>
+										<option value="297" class="style-193">Iraq</option>
+										<option value="188" class="style-194">Ireland</option>
+										<option value="405" class="style-195">Isle Of Man</option>
+										<option value="144" class="style-196">Israel</option>
+										<option value="205" class="style-197">Italy</option>
+										<option value="42" class="style-198">Jamaica</option>
+										<option value="3" class="style-199">Japan</option>
+										<option value="404" class="style-200">Jersey</option>
+										<option value="152" class="style-201">Jordan</option>
+										<option value="154" class="style-202">Kazakhstan</option>
+										<option value="176" class="style-203">Kenya</option>
+										<option value="298" class="style-204">Kiribati</option>
+										<option value="402" class="style-205">Kosovo</option>
+										<option value="43" class="style-206">Kuwait</option>
+										<option value="156" class="style-207">Kyrgyzstan</option>
+										<option value="190" class="style-208">Laos</option>
+										<option value="145" class="style-209">Latvia</option>
+										<option value="68" class="style-210">Lebanon</option>
+										<option value="31" class="style-211">Lesotho</option>
+										<option value="299" class="style-212">Liberia</option>
+										<option value="174" class="style-213">Libya</option>
+										<option value="187" class="style-214">Liechtenstein</option>
+										<option value="157" class="style-215">Lithuania</option>
+										<option value="7" class="style-216">Luxembourg</option>
+										<option value="169" class="style-217">Macau</option>
+										<option value="209" class="style-218">Madagascar</option>
+										<option value="87" class="style-219">Malawi</option>
+										<option value="198" class="style-220">Malaysia</option>
+										<option value="34" class="style-221">Maldives</option>
+										<option value="204" class="style-222">Mali</option>
+										<option value="57" class="style-223">Malta</option>
+										<option value="300" class="style-224">Marshall Islands</option>
+										<option value="83" class="style-225">Martinique</option>
+										<option value="22" class="style-226">Mauritania</option>
+										<option value="9" class="style-227">Mauritius</option>
+										<option value="301" class="style-228">Mayotte</option>
+										<option value="86" class="style-229">Mexico</option>
+										<option value="141" class="style-230">Moldova</option>
+										<option value="1" class="style-231">Monaco</option>
+										<option value="302" class="style-232">Mongolia</option>
+										<option value="340" class="style-233">Montenegro</option>
+										<option value="303" class="style-234">Montserrat</option>
+										<option value="2" class="style-235">Morocco</option>
+										<option value="235" class="style-236">Mozambique</option>
+										<option value="203" class="style-237">Myanmar</option>
+										<option value="85" class="style-238">Namibia</option>
+										<option value="304" class="style-239">Nauru</option>
+										<option value="120" class="style-240">Nepal</option>
+										<option value="149" class="style-241">Netherlands</option>
+										<option value="44" class="style-242">New Caledonia</option>
+										<option value="25" class="style-243">New Zealand</option>
+										<option value="92" class="style-244">Nicaragua</option>
+										<option value="305" class="style-245">Niger</option>
+										<option value="65" class="style-246">Nigeria</option>
+										<option value="306" class="style-247">Niue</option>
+										<option value="230" class="style-248">Norfolk Island</option>
+										<option value="84" class="style-249">North Macedonia</option>
+										<option value="32" class="style-250">Northern Mariana Islands</option>
+										<option value="129" class="style-251">Norway</option>
+										<option value="155" class="style-252">Oman</option>
+										<option value="19" class="style-253">Pakistan</option>
+										<option value="133" class="style-254">Palau</option>
+										<option value="401" class="style-255">Palestinian Territory</option>
+										<option value="175" class="style-256">Panama</option>
+										<option value="91" class="style-257">Papua New Guinea</option>
+										<option value="111" class="style-258">Paraguay</option>
+										<option value="186" class="style-259">Peru</option>
+										<option value="70" class="style-260">Philippines</option>
+										<option value="338" class="style-261">Pitcairn Islands</option>
+										<option value="182" class="style-262">Poland</option>
+										<option value="213" class="style-263">Portugal</option>
+										<option value="166" class="style-264">Puerto Rico</option>
+										<option value="105" class="style-265">Qatar</option>
+										<option value="285" class="style-266">Republic of Congo</option>
+										<option value="239" class="style-267">Reunion Island</option>
+										<option value="75" class="style-268">Romania</option>
+										<option value="33" class="style-269">Russia</option>
+										<option value="131" class="style-270">Rwanda</option>
+										<option value="348" class="style-271">Saint Barthelemy</option>
+										<option value="333" class="style-272">Saint Helena</option>
+										<option value="8" class="style-273">Saint Kitts And Nevis</option>
+										<option value="195" class="style-274">Saint Lucia</option>
+										<option value="347" class="style-275">Saint Martin (France)</option>
+										<option value="307" class="style-276">Saint Pierre and Miquelon</option>
+										<option value="287" class="style-277">Samoa</option>
+										<option value="241" class="style-278">San Marino</option>
+										<option value="308" class="style-279">Sao Tome and Principe</option>
+										<option value="74" class="style-280">Saudi Arabia</option>
+										<option value="233" class="style-281">Senegal</option>
+										<option value="339" class="style-282">Serbia</option>
+										<option value="115" class="style-283">Seychelles</option>
+										<option value="309" class="style-284">Sierra Leone</option>
+										<option value="114" class="style-285">Singapore</option>
+										<option value="343" class="style-286">Sint Maarten (Netherlands)</option>
+										<option value="125" class="style-287">Slovakia</option>
+										<option value="27" class="style-288">Slovenia</option>
+										<option value="323" class="style-289">Solomon Islands</option>
+										<option value="310" class="style-290">Somalia</option>
+										<option value="62" class="style-291">South Africa</option>
+										<option value="334" class="style-292">South Georgia Islands</option>
+										<option value="212" class="style-293">South Korea</option>
+										<option value="346" class="style-294">South Sudan</option>
+										<option value="167" class="style-295">Spain</option>
+										<option value="82" class="style-296">Sri Lanka</option>
+										<option value="137" class="style-297">St. Vincent &amp; Grenadines</option>
+										<option value="312" class="style-298">Suriname</option>
+										<option value="49" class="style-299">Sweden</option>
+										<option value="51" class="style-300">Switzerland</option>
+										<option value="140" class="style-301">Taiwan</option>
+										<option value="313" class="style-302">Tajikistan</option>
+										<option value="199" class="style-303">Tanzania</option>
+										<option value="106" class="style-304">Thailand</option>
+										<option value="331" class="style-305">Timor-Leste</option>
+										<option value="121" class="style-306">Togo</option>
+										<option value="314" class="style-307">Tokelau</option>
+										<option value="315" class="style-308">Tonga</option>
+										<option value="95" class="style-309">Trinidad &amp; Tobago</option>
+										<option value="56" class="style-310">Tunisia</option>
+										<option value="45" class="style-311">Turkey</option>
+										<option value="316" class="style-312">Turkmenistan</option>
+										<option value="48" class="style-313">Turks &amp; Caicos Islands</option>
+										<option value="317" class="style-314">Tuvalu</option>
+										<option value="81" class="style-315">U.S. Virgin Islands</option>
+										<option value="245" class="style-316">Uganda</option>
+										<option value="79" class="style-317">Ukraine</option>
+										<option value="64" class="style-318">United Arab Emirates</option>
+										<option value="107" class="style-319">United Kingdom</option>
+										<option value="181" class="style-320">United States</option>
+										<option value="110" class="style-321">Uruguay</option>
+										<option value="172" class="style-322">Uzbekistan</option>
+										<option value="194" class="style-323">Vanuatu</option>
+										<option value="146" class="style-324">Venezuela</option>
+										<option value="38" class="style-325">Vietnam</option>
+										<option value="318" class="style-326">Wallis and Futuna</option>
+										<option value="284" class="style-327">Western Sahara</option>
+										<option value="98" class="style-328">Yemen</option>
+										<option value="171" class="style-329">Zambia</option>
+										<option value="61" class="style-330">Zimbabwe</option>
+									</optgroup>
+								</select></span>
+						</div>
+						<div role="presentation" class="style-331"><svg role="img" aria-hidden="true" opacity="1" class="style-332">
+								<use href="#9711fb1d" class="style-333"></use>
+							</svg></div>
+					</label>
+				</div>
+			</div>
+			<div class="style-334">
+				<div class="style-335"></div>
+				<div class="style-336">
+					<div class="style-337"><label data-element-name="MYS_tax_guest_nationality" data-component="MYSTaxGuestNationality" class="style-338">
+							<div class="style-339">
+								<div class="style-340"><input type="checkbox" name="allGuestsSameNationality" class="style-341" />
+									<div class="style-342"><svg class="style-343" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#fff">
+											<path class="style-344" d="m21.453 4.487 1.094 1.026a.5.5 0 0 1 .023.707L10.412 19.188a1.25 1.25 0 0 1-1.692.122l-.104-.093-7.146-7.146a.5.5 0 0 1 0-.707l1.06-1.061a.5.5 0 0 1 .707 0l6.234 6.234L20.746 4.51a.5.5 0 0 1 .707-.023Z"></path>
+										</svg></div>
+									<div class="style-345"></div>
+								</div>
+							</div>
+							<div class="style-346">
+								<p class="style-347" data-element-name="MYS_tourism_tax_message" data-component="MyTourismTaxMessage">I confirm that all guests are nationals or permanent residents of Malaysia and qualify for <button type="button" class="style-348"><span class="style-349" label="Malaysia tourism tax">Malaysia tourism tax<svg role="img" aria-hidden="true" opacity="1" class="style-350">
+												<use href="#6d6a8f1d" class="style-351"></use>
+											</svg></span></button> exemption</p>
+							</div>
+						</label></div>
+				</div>
+				<div class="style-352"></div>
+			</div>
+		</fieldset>
+		<div data-component="expandable-wrapper" aria-hidden="true" class="style-353">
+			<div data-component="expandable-content" class="style-354">
+				<section class="style-355" data-section="BookForSomeoneElse">
+					<div class="style-356"><span class="style-357">Guest information</span></div>
+					<div role="group" aria-labelledby="book-for-someone-group-label-id" class="style-358">
+						<div data-element-name="GuestField_err_guestFirstName" class="style-359">
+							<div aria-disabled="false" class="style-360">
+								<div class="style-361">
+									<fieldset class="style-362">
+										<legend class="style-363"><span class="style-364">First name *</span></legend>
+									</fieldset><label class="style-365">
+										<div class="style-366">
+											<div class="style-367">
+												<p class="style-368">First name *</p>
+											</div><span class="style-369"><input maxlength="64" autocomplete="given-name" name="guestFirstName" required="" type="text" class="style-370" value="" /></span>
+										</div>
+										<div class="style-371"><button tabindex="-1" aria-label="Clear" aria-hidden="true" type="button" class="style-372"><svg role="img" aria-label="Clear" opacity="1" class="style-373">
+													<use href="#9523eea2" class="style-374"></use>
+												</svg></button></div>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div data-element-name="GuestField_err_guestLastName" class="style-375">
+							<div aria-disabled="false" class="style-376">
+								<div class="style-377">
+									<fieldset class="style-378">
+										<legend class="style-379"><span class="style-380">Last name *</span></legend>
+									</fieldset><label class="style-381">
+										<div class="style-382">
+											<div class="style-383">
+												<p class="style-384">Last name *</p>
+											</div><span class="style-385"><input maxlength="64" autocomplete="family-name" name="guestLastName" required="" type="text" class="style-386" value="" /></span>
+										</div>
+										<div class="style-387"><button tabindex="-1" aria-label="Clear" aria-hidden="true" type="button" class="style-388"><svg role="img" aria-label="Clear" opacity="1" class="style-389">
+													<use href="#9523eea2" class="style-390"></use>
+												</svg></button></div>
+									</label>
+								</div>
+							</div>
+						</div>
+						<div aria-disabled="false" class="style-391">
+							<div class="style-392">
+								<fieldset class="style-393">
+									<legend class="style-394"><span class="style-395">Country/region of residence *</span></legend>
+								</fieldset><label class="style-396">
+									<div class="style-397">
+										<div class="style-398">
+											<p class="style-399">Please select one</p>
+										</div><span class="style-400"><select name="guestCountryId" class="style-401">
+												<option value="" class="style-402">Please select one</option>
+												<optgroup label="Most Selected Countries" class="style-403">
+													<option value="139" class="style-404">Australia</option>
+													<option value="191" class="style-405">China</option>
+													<option value="192" class="style-406">Indonesia</option>
+													<option value="3" class="style-407">Japan</option>
+													<option value="198" class="style-408">Malaysia</option>
+													<option value="114" class="style-409">Singapore</option>
+													<option value="212" class="style-410">South Korea</option>
+													<option value="106" class="style-411">Thailand</option>
+													<option value="107" class="style-412">United Kingdom</option>
+													<option value="181" class="style-413">United States</option>
+												</optgroup>
+												<optgroup label="All Countries" class="style-414">
+													<option value="288" class="style-415">Afghanistan</option>
+													<option value="53" class="style-416">Albania</option>
+													<option value="143" class="style-417">Algeria</option>
+													<option value="289" class="style-418">American Samoa</option>
+													<option value="189" class="style-419">Andorra</option>
+													<option value="290" class="style-420">Angola</option>
+													<option value="150" class="style-421">Anguilla</option>
+													<option value="50" class="style-422">Antigua &amp; Barbuda</option>
+													<option value="5" class="style-423">Argentina</option>
+													<option value="246" class="style-424">Armenia</option>
+													<option value="66" class="style-425">Aruba</option>
+													<option value="139" class="style-426">Australia</option>
+													<option value="130" class="style-427">Austria</option>
+													<option value="135" class="style-428">Azerbaijan</option>
+													<option value="60" class="style-429">Bahamas</option>
+													<option value="202" class="style-430">Bahrain</option>
+													<option value="117" class="style-431">Bangladesh</option>
+													<option value="94" class="style-432">Barbados</option>
+													<option value="21" class="style-433">Belarus</option>
+													<option value="118" class="style-434">Belgium</option>
+													<option value="88" class="style-435">Belize</option>
+													<option value="231" class="style-436">Benin</option>
+													<option value="6" class="style-437">Bermuda</option>
+													<option value="291" class="style-438">Bhutan</option>
+													<option value="15" class="style-439">Bolivia</option>
+													<option value="344" class="style-440">Bonaire, Sint Eustatius and Saba</option>
+													<option value="103" class="style-441">Bosnia Herzegovina</option>
+													<option value="206" class="style-442">Botswana</option>
+													<option value="207" class="style-443">Brazil</option>
+													<option value="330" class="style-444">British Indian Ocean Territory</option>
+													<option value="77" class="style-445">British Virgin Islands</option>
+													<option value="63" class="style-446">Brunei Darussalam</option>
+													<option value="126" class="style-447">Bulgaria</option>
+													<option value="237" class="style-448">Burkina Faso</option>
+													<option value="229" class="style-449">Burundi</option>
+													<option value="163" class="style-450">Cambodia</option>
+													<option value="36" class="style-451">Cameroon</option>
+													<option value="100" class="style-452">Canada</option>
+													<option value="292" class="style-453">Cape Verde</option>
+													<option value="142" class="style-454">Cayman Islands</option>
+													<option value="293" class="style-455">Central African Republic</option>
+													<option value="236" class="style-456">Chad</option>
+													<option value="69" class="style-457">Chile</option>
+													<option value="191" class="style-458">China</option>
+													<option value="283" class="style-459">Christmas Island</option>
+													<option value="321" class="style-460">Cocos (Keeling) Islands</option>
+													<option value="10" class="style-461">Colombia</option>
+													<option value="294" class="style-462">Comoros</option>
+													<option value="225" class="style-463">Cook Islands</option>
+													<option value="40" class="style-464">Costa Rica</option>
+													<option value="165" class="style-465">Cote D'ivoire</option>
+													<option value="128" class="style-466">Croatia</option>
+													<option value="342" class="style-467">Curacao</option>
+													<option value="24" class="style-468">Cyprus</option>
+													<option value="13" class="style-469">Czech Republic</option>
+													<option value="337" class="style-470">Democratic Republic of the&nbsp;Congo</option>
+													<option value="158" class="style-471">Denmark</option>
+													<option value="244" class="style-472">Djibouti</option>
+													<option value="341" class="style-473">Dominica</option>
+													<option value="134" class="style-474">Dominican Republic</option>
+													<option value="52" class="style-475">Ecuador</option>
+													<option value="16" class="style-476">Egypt</option>
+													<option value="80" class="style-477">El Salvador</option>
+													<option value="295" class="style-478">Equatorial Guinea</option>
+													<option value="242" class="style-479">Eritrea</option>
+													<option value="99" class="style-480">Estonia</option>
+													<option value="18" class="style-481">Eswatini</option>
+													<option value="240" class="style-482">Ethiopia</option>
+													<option value="322" class="style-483">Falkland Islands</option>
+													<option value="200" class="style-484">Faroe Islands</option>
+													<option value="218" class="style-485">Federated States of Micronesia</option>
+													<option value="109" class="style-486">Fiji</option>
+													<option value="28" class="style-487">Finland</option>
+													<option value="153" class="style-488">France</option>
+													<option value="113" class="style-489">French Guiana</option>
+													<option value="14" class="style-490">French Polynesia</option>
+													<option value="234" class="style-491">Gabon</option>
+													<option value="286" class="style-492">Gambia</option>
+													<option value="71" class="style-493">Georgia</option>
+													<option value="101" class="style-494">Germany</option>
+													<option value="151" class="style-495">Ghana</option>
+													<option value="4" class="style-496">Gibraltar</option>
+													<option value="197" class="style-497">Greece</option>
+													<option value="26" class="style-498">Greenland</option>
+													<option value="184" class="style-499">Grenada</option>
+													<option value="89" class="style-500">Guadeloupe</option>
+													<option value="208" class="style-501">Guam</option>
+													<option value="41" class="style-502">Guatemala</option>
+													<option value="406" class="style-503">Guernsey</option>
+													<option value="58" class="style-504">Guinea</option>
+													<option value="296" class="style-505">Guinea-Bissau</option>
+													<option value="243" class="style-506">Guyana</option>
+													<option value="47" class="style-507">Haiti</option>
+													<option value="336" class="style-508">Holy See (Vatican City)</option>
+													<option value="39" class="style-509">Honduras</option>
+													<option value="132" class="style-510">Hong Kong</option>
+													<option value="37" class="style-511">Hungary</option>
+													<option value="54" class="style-512">Iceland</option>
+													<option value="35" class="style-513">India</option>
+													<option value="192" class="style-514">Indonesia</option>
+													<option value="297" class="style-515">Iraq</option>
+													<option value="188" class="style-516">Ireland</option>
+													<option value="405" class="style-517">Isle Of Man</option>
+													<option value="144" class="style-518">Israel</option>
+													<option value="205" class="style-519">Italy</option>
+													<option value="42" class="style-520">Jamaica</option>
+													<option value="3" class="style-521">Japan</option>
+													<option value="404" class="style-522">Jersey</option>
+													<option value="152" class="style-523">Jordan</option>
+													<option value="154" class="style-524">Kazakhstan</option>
+													<option value="176" class="style-525">Kenya</option>
+													<option value="298" class="style-526">Kiribati</option>
+													<option value="402" class="style-527">Kosovo</option>
+													<option value="43" class="style-528">Kuwait</option>
+													<option value="156" class="style-529">Kyrgyzstan</option>
+													<option value="190" class="style-530">Laos</option>
+													<option value="145" class="style-531">Latvia</option>
+													<option value="68" class="style-532">Lebanon</option>
+													<option value="31" class="style-533">Lesotho</option>
+													<option value="299" class="style-534">Liberia</option>
+													<option value="174" class="style-535">Libya</option>
+													<option value="187" class="style-536">Liechtenstein</option>
+													<option value="157" class="style-537">Lithuania</option>
+													<option value="7" class="style-538">Luxembourg</option>
+													<option value="169" class="style-539">Macau</option>
+													<option value="209" class="style-540">Madagascar</option>
+													<option value="87" class="style-541">Malawi</option>
+													<option value="198" class="style-542">Malaysia</option>
+													<option value="34" class="style-543">Maldives</option>
+													<option value="204" class="style-544">Mali</option>
+													<option value="57" class="style-545">Malta</option>
+													<option value="300" class="style-546">Marshall Islands</option>
+													<option value="83" class="style-547">Martinique</option>
+													<option value="22" class="style-548">Mauritania</option>
+													<option value="9" class="style-549">Mauritius</option>
+													<option value="301" class="style-550">Mayotte</option>
+													<option value="86" class="style-551">Mexico</option>
+													<option value="141" class="style-552">Moldova</option>
+													<option value="1" class="style-553">Monaco</option>
+													<option value="302" class="style-554">Mongolia</option>
+													<option value="340" class="style-555">Montenegro</option>
+													<option value="303" class="style-556">Montserrat</option>
+													<option value="2" class="style-557">Morocco</option>
+													<option value="235" class="style-558">Mozambique</option>
+													<option value="203" class="style-559">Myanmar</option>
+													<option value="85" class="style-560">Namibia</option>
+													<option value="304" class="style-561">Nauru</option>
+													<option value="120" class="style-562">Nepal</option>
+													<option value="149" class="style-563">Netherlands</option>
+													<option value="44" class="style-564">New Caledonia</option>
+													<option value="25" class="style-565">New Zealand</option>
+													<option value="92" class="style-566">Nicaragua</option>
+													<option value="305" class="style-567">Niger</option>
+													<option value="65" class="style-568">Nigeria</option>
+													<option value="306" class="style-569">Niue</option>
+													<option value="230" class="style-570">Norfolk Island</option>
+													<option value="84" class="style-571">North Macedonia</option>
+													<option value="32" class="style-572">Northern Mariana Islands</option>
+													<option value="129" class="style-573">Norway</option>
+													<option value="155" class="style-574">Oman</option>
+													<option value="19" class="style-575">Pakistan</option>
+													<option value="133" class="style-576">Palau</option>
+													<option value="401" class="style-577">Palestinian Territory</option>
+													<option value="175" class="style-578">Panama</option>
+													<option value="91" class="style-579">Papua New Guinea</option>
+													<option value="111" class="style-580">Paraguay</option>
+													<option value="186" class="style-581">Peru</option>
+													<option value="70" class="style-582">Philippines</option>
+													<option value="338" class="style-583">Pitcairn Islands</option>
+													<option value="182" class="style-584">Poland</option>
+													<option value="213" class="style-585">Portugal</option>
+													<option value="166" class="style-586">Puerto Rico</option>
+													<option value="105" class="style-587">Qatar</option>
+													<option value="285" class="style-588">Republic of Congo</option>
+													<option value="239" class="style-589">Reunion Island</option>
+													<option value="75" class="style-590">Romania</option>
+													<option value="33" class="style-591">Russia</option>
+													<option value="131" class="style-592">Rwanda</option>
+													<option value="348" class="style-593">Saint Barthelemy</option>
+													<option value="333" class="style-594">Saint Helena</option>
+													<option value="8" class="style-595">Saint Kitts And Nevis</option>
+													<option value="195" class="style-596">Saint Lucia</option>
+													<option value="347" class="style-597">Saint Martin (France)</option>
+													<option value="307" class="style-598">Saint Pierre and Miquelon</option>
+													<option value="287" class="style-599">Samoa</option>
+													<option value="241" class="style-600">San Marino</option>
+													<option value="308" class="style-601">Sao Tome and Principe</option>
+													<option value="74" class="style-602">Saudi Arabia</option>
+													<option value="233" class="style-603">Senegal</option>
+													<option value="339" class="style-604">Serbia</option>
+													<option value="115" class="style-605">Seychelles</option>
+													<option value="309" class="style-606">Sierra Leone</option>
+													<option value="114" class="style-607">Singapore</option>
+													<option value="343" class="style-608">Sint Maarten (Netherlands)</option>
+													<option value="125" class="style-609">Slovakia</option>
+													<option value="27" class="style-610">Slovenia</option>
+													<option value="323" class="style-611">Solomon Islands</option>
+													<option value="310" class="style-612">Somalia</option>
+													<option value="62" class="style-613">South Africa</option>
+													<option value="334" class="style-614">South Georgia Islands</option>
+													<option value="212" class="style-615">South Korea</option>
+													<option value="346" class="style-616">South Sudan</option>
+													<option value="167" class="style-617">Spain</option>
+													<option value="82" class="style-618">Sri Lanka</option>
+													<option value="137" class="style-619">St. Vincent &amp; Grenadines</option>
+													<option value="312" class="style-620">Suriname</option>
+													<option value="49" class="style-621">Sweden</option>
+													<option value="51" class="style-622">Switzerland</option>
+													<option value="140" class="style-623">Taiwan</option>
+													<option value="313" class="style-624">Tajikistan</option>
+													<option value="199" class="style-625">Tanzania</option>
+													<option value="106" class="style-626">Thailand</option>
+													<option value="331" class="style-627">Timor-Leste</option>
+													<option value="121" class="style-628">Togo</option>
+													<option value="314" class="style-629">Tokelau</option>
+													<option value="315" class="style-630">Tonga</option>
+													<option value="95" class="style-631">Trinidad &amp; Tobago</option>
+													<option value="56" class="style-632">Tunisia</option>
+													<option value="45" class="style-633">Turkey</option>
+													<option value="316" class="style-634">Turkmenistan</option>
+													<option value="48" class="style-635">Turks &amp; Caicos Islands</option>
+													<option value="317" class="style-636">Tuvalu</option>
+													<option value="81" class="style-637">U.S. Virgin Islands</option>
+													<option value="245" class="style-638">Uganda</option>
+													<option value="79" class="style-639">Ukraine</option>
+													<option value="64" class="style-640">United Arab Emirates</option>
+													<option value="107" class="style-641">United Kingdom</option>
+													<option value="181" class="style-642">United States</option>
+													<option value="110" class="style-643">Uruguay</option>
+													<option value="172" class="style-644">Uzbekistan</option>
+													<option value="194" class="style-645">Vanuatu</option>
+													<option value="146" class="style-646">Venezuela</option>
+													<option value="38" class="style-647">Vietnam</option>
+													<option value="318" class="style-648">Wallis and Futuna</option>
+													<option value="284" class="style-649">Western Sahara</option>
+													<option value="98" class="style-650">Yemen</option>
+													<option value="171" class="style-651">Zambia</option>
+													<option value="61" class="style-652">Zimbabwe</option>
+												</optgroup>
+											</select></span>
+									</div>
+									<div role="presentation" class="style-653"><svg role="img" aria-hidden="true" opacity="1" class="style-654">
+											<use href="#9711fb1d" class="style-655"></use>
+										</svg></div>
+								</label>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div class="style-656">
+			<div class="style-657">
+				<div class="style-658">
+					<div data-component="mob-bf-special-request" class="style-659">
+						<h3 class="style-660" data-testid="revamp-title-id">Special requests</h3>
+						<p class="style-661">Select your preference(s). Subject to availability.</p>
+						<div class="style-662">
+							<fieldset class="style-663">
+								<legend class="style-664">
+									<p class="style-665">Which type of room would you prefer?</p>
+								</legend>
+								<div class="style-666">
+									<div class="style-667"><label data-element-name="mob-bf-non-smoking-preference" data-component="mob-bf-non-smoking-preference" class="style-668">
+											<div class="style-669">
+												<div class="style-670"><input aria-label="Non-smoking room" type="radio" name="smokingPreference" class="style-671" value="NonSmoking" />
+													<div class="style-672"></div>
+													<div class="style-673"></div>
+												</div>
+											</div>
+											<div class="style-674"><svg role="img" aria-hidden="true" opacity="1" class="style-675">
+													<use href="#c8060a83" class="style-676"></use>
+												</svg>
+												<p class="style-677">Non-smoking</p>
+											</div>
+										</label></div>
+									<div class="style-678"><label data-element-name="mob-bf-smoking-preference" data-component="mob-bf-smoking-preference" class="style-679">
+											<div class="style-680">
+												<div class="style-681"><input aria-label="Smoking room" type="radio" name="smokingPreference" class="style-682" value="Smoking" />
+													<div class="style-683"></div>
+													<div class="style-684"></div>
+												</div>
+											</div>
+											<div class="style-685"><svg role="img" aria-hidden="true" opacity="1" class="style-686">
+													<use href="#31cbd07e" class="style-687"></use>
+												</svg>
+												<p class="style-688">Smoking</p>
+											</div>
+										</label></div>
+								</div>
+							</fieldset>
+							<fieldset class="style-689">
+								<legend class="style-690">
+									<p class="style-691">Which bed setup would you prefer?</p>
+								</legend>
+								<div class="style-692">
+									<div class="style-693"><label data-element-name="mob-bf-king-bed-type-preference" data-component="mob-bf-king-bed-type-preference" class="style-694">
+											<div class="style-695">
+												<div class="style-696"><input aria-label="I'd like a large bed" type="radio" name="bedConfigPreference" class="style-697" value="LargeBed" />
+													<div class="style-698"></div>
+													<div class="style-699"></div>
+												</div>
+											</div>
+											<div class="style-700"><svg role="img" aria-hidden="true" opacity="1" class="style-701">
+													<use href="#a3337f27" class="style-702"></use>
+												</svg>
+												<p class="style-703">I'd like a large bed</p>
+											</div>
+										</label></div>
+									<div class="style-704"><label data-element-name="mob-bf-twin-bed-type-preference" data-component="mob-bf-twin-bed-type-preference" class="style-705">
+											<div class="style-706">
+												<div class="style-707"><input aria-label="I'd like twin beds" type="radio" name="bedConfigPreference" class="style-708" value="TwinBed" />
+													<div class="style-709"></div>
+													<div class="style-710"></div>
+												</div>
+											</div>
+											<div class="style-711"><svg role="img" aria-hidden="true" opacity="1" class="style-712">
+													<use href="#d8fc7397" class="style-713"></use>
+												</svg>
+												<p class="style-714">I'd like twin beds</p>
+											</div>
+										</label></div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<div class="style-715">
+					<div class="style-716"><button aria-expanded="false" data-component="mob-bf-add-special-request-link" aria-controls="more-request-content" type="button" class="style-717"><span class="style-718" label="Show additional preferences"><svg role="img" aria-hidden="true" opacity="1" class="style-719">
+									<use href="#fe6954f7" class="style-720"></use>
+								</svg>Show additional preferences</span></button></div>
+					<div data-component="expandable-wrapper" aria-hidden="true" class="style-721">
+						<div data-component="expandable-content" class="style-722">
+							<div class="style-723">
+								<fieldset class="style-724">
+									<legend class="style-725">
+										<p class="style-726">Book with confidence! We'll make sure your property receives your request quickly.</p>
+									</legend>
+									<div class="style-727">
+										<div class="style-728">
+											<div class="style-729"><label data-element-name="mob-bf-special-request-high-floor" data-component="mob-bf-special-request-high-floor" class="style-730">
+													<div class="style-731">
+														<div class="style-732"><input aria-label="I'd like a room on a high floor" type="checkbox" name="highFloor" class="style-733" />
+															<div class="style-734"></div>
+															<div class="style-735"></div>
+														</div>
+													</div>
+													<div class="style-736">
+														<p class="style-737">I'd like a room on a high floor</p>
+													</div>
+												</label></div>
+										</div>
+										<div class="style-738">
+											<div class="style-739"><label data-element-name="mob-bf-special-request-quiet-room" data-component="mob-bf-special-request-quiet-room" class="style-740">
+													<div class="style-741">
+														<div class="style-742"><input aria-label="I’d like a quiet room" type="checkbox" name="quietRoom" class="style-743" />
+															<div class="style-744"></div>
+															<div class="style-745"></div>
+														</div>
+													</div>
+													<div class="style-746">
+														<p class="style-747">I’d like a quiet room</p>
+													</div>
+												</label></div>
+										</div>
+										<div class="style-748">
+											<div class="style-749"><label data-element-name="mob-bf-special-request-baby-cot" data-component="mob-bf-special-request-baby-cot" class="style-750">
+													<div class="style-751">
+														<div class="style-752"><input aria-label="I’d like to have a baby cot(additional charges may apply)" type="checkbox" name="babyCot" class="style-753" />
+															<div class="style-754"></div>
+															<div class="style-755"></div>
+														</div>
+													</div>
+													<div class="style-756">
+														<p class="style-757">I’d like to have a baby cot
+														<div class="style-758">(additional charges may apply)</div>
+														</p>
+													</div>
+												</label></div>
+										</div>
+									</div>
+									<div class="style-759">
+										<div class="style-760"><label data-element-name="mob-bf-special-request-airport-transfer" data-component="mob-bf-special-request-airport-transfer" class="style-761">
+												<div class="style-762">
+													<div class="style-763"><input aria-label="I'd like an airport transfer" type="checkbox" name="airportTransfer" class="style-764" />
+														<div class="style-765"></div>
+														<div class="style-766"></div>
+													</div>
+												</div>
+												<div class="style-767">
+													<p class="style-768">I'd like an airport transfer</p>
+												</div>
+											</label></div>
+									</div>
+									<p class="style-769"><span class="style-770">Any personal requests? Let us know in <strong class="style-771">English</strong> or <strong class="style-772">Bahasa Malaysia</strong>.</span></p>
+									<div class="style-773"><textarea class="style-774" rows="3" name="additionalNote" maxlength="500" data-element-name="mob-bf-special-request-additional-notes"></textarea></div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	  </section>
+    <!-- ================ profile section end ================= -->
+    
+    <!-- footer -->
+    <footer class="footer" >
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                address
+                            </h3>
+                            <p class="footer_text" >  Jalan Sultan Yahya Petra, Universiti Teknologi Malaysia, 54100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</p>
+                            <a href="https://maps.app.goo.gl/xqsGyN3Jxv4vBWeX6" class="line-button">Get Direction</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                    Reservation
+                            </h3>
+                            <p class="footer_text" >+60 10-209 4362 <br>
+                                    azibfikri27@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                    Navigation
+                            </h3>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Rooms</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Newsletter
+                            </h3>
+                            <form action="#" class="newsletter_form">
+                                <input type="text" placeholder="Enter your mail">
+                                <button type="submit" >Sign Up</button>
+                            </form>
+                            <p class="newsletter_text">Subscribe newsletter to get updates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-8 col-md-7 col-lg-9">
+                        <p class="copy_right">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Azib Fikri</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                    <div class="col-xl-4 col-md-5 col-lg-3">
+                        <div class="socail_links">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-facebook-square"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer_end -->
+        
+
+    <!-- form itself end-->
+    <form id="test-form" class="white-popup-block mfp-hide">
+        <div class="popup_box ">
+                <div class="popup_inner">
+                    <h3>Check Availability</h3>
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <input id="datepicker" placeholder="Check in date">
+                            </div>
+                            <div class="col-xl-6">
+                                <input id="datepicker2" placeholder="Check out date">
+                            </div>
+                            <div class="col-xl-6">
+                                <select class="form-select wide" id="default-select" class="">
+                                    <option data-display="Adult">1</option>
+                                    <option value="1">2</option>
+                                    <option value="2">3</option>
+                                    <option value="3">4</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-6">
+                                <select class="form-select wide" id="default-select" class="">
+                                    <option data-display="Children">1</option>
+                                    <option value="1">2</option>
+                                    <option value="2">3</option>
+                                    <option value="3">4</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-12">
+                                <select class="form-select wide" id="default-select" class="">
+                                    <option data-display="Room type">Room type</option>
+                                    <option value="1">Laxaries Rooms</option>
+                                    <option value="2">Deluxe Room</option>
+                                    <option value="3">Signature Room</option>
+                                    <option value="4">Couple Room</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-12">
+                                <button type="submit" class="boxed-btn3">Check Availability</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </form>
+<!-- form itself end -->
+    
+        <!-- JS here -->
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/scrollIt.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/nice-select.min.js"></script>
+        <script src="js/jquery.slicknav.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/gijgo.min.js"></script>
+        <script src="js/page-cookie.js"></script>
+    
+        <!--contact js-->
+        <script src="js/contact.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/mail-script.js"></script>
+    
+        <script src="js/main.js"></script>
+        <script>
+            $('#datepicker').datepicker({
+                iconsLibrary: 'fontawesome',
+                icons: {
+                 rightIcon: '<span class="fa fa-caret-down"></span>'
+             }
+            });
+            $('#datepicker2').datepicker({
+                iconsLibrary: 'fontawesome',
+                icons: {
+                 rightIcon: '<span class="fa fa-caret-down"></span>'
+             }
+    
+            });
+        </script>
+
+
+
+    </body>
+    
+    </html>
