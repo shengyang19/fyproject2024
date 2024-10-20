@@ -113,10 +113,8 @@ else{
 						</div>
 					</div>
 		            <div class="form-group d-md-flex">
-									<div class="w-50  text-center">
-										<a href="cust-forgotpass.php" onclick="event.preventDefault(); window.location.href='cust-forgotpass.php';">Forgot Password</a>
-									</div>
-								</div>
+						<a href="cust-forgotpass.php" onclick="event.preventDefault(); window.location.href='cust-forgotpass.php';">Forgot Password</a>
+					</div>
 		          <p class="text-center">Not a member? <a data-toggle="tab" href="cust-register.php" onclick="event.preventDefault(); window.location.href='cust-register.php';">Sign Up</a></p>
 		          <p class="text-center">Continue as guest: <a href="..">Home</a></p>
 		        </div>
