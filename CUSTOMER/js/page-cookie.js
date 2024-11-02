@@ -125,6 +125,6 @@ $('.book_now').click(function(){
     if(booking==undefined) deleteCookie("booking");
     else setCookie("booking",booking,0.5);
     return false;
-  })
+})
 
-  setupPage("user");
+setupPage("user");
