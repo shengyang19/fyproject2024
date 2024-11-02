@@ -344,3 +344,42 @@ mailChimp();
         });
 
 })(jQuery);	
+
+
+$(document).ready(function() {
+	$('.book_now').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		focus: '#name',
+
+		// When elemened is focused, some mobile browsers in some cases zoom in
+		// It looks not nice, so we disable it:
+		callbacks: {
+			beforeOpen: function() {
+				if($(window).width() < 700) {
+					this.st.focus = false;
+				} else {
+					this.st.focus = '#name';
+				}
+			}
+		}
+	});
+});
+
+$("#datepicker").change(function(){
+  // var today, datepicker;
+  // today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+  min = new Date($('#datepicker').datepicker("value"));
+  newMin = new Date(min.getFullYear(), min.getMonth(), min.getDate()+1);
+  // newMin = min.getDate()+1;
+  $('#datepicker2').datepicker("destroy");
+  $('#datepicker2').datepicker({
+    minDate: newMin,
+    iconsLibrary: 'fontawesome',
+    icons: {
+     rightIcon: '<span class="fa fa-caret-down"></span>'
+ }
+  });
+  // console.log(new Date().getDate());
+  
+});

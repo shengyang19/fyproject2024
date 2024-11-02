@@ -34,7 +34,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<body onload="setupProfile()" style="background-color:black;">
+<body style="background-color:black;">
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -120,7 +120,7 @@
 											<div class="style-43">
 												<div class="style-44">
 													<div class="style-45">
-														<h1 class="style-46">Royal Suite</h1>
+														<h1 id="title" class="style-46">Royal Suite</h1>
 													</div>
 													<div class="style-47">
 														<div class="style-48">
@@ -1196,6 +1196,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="js/plugins.js"></script>
         <script src="js/gijgo.min.js"></script>
         <script src="js/page-cookie.js"></script>
+        <script src="js/room_resrervation.js"></script>
     
         <!--contact js-->
         <script src="js/contact.js"></script>
@@ -1220,7 +1221,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     
             });
         </script>
-
+	<script>setupReservation();</script>
 
 
     </body>
