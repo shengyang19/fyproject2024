@@ -366,20 +366,52 @@ $(document).ready(function() {
 	});
 });
 
-$("#datepicker").change(function(){
-  // var today, datepicker;
-  // today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-  min = new Date($('#datepicker').datepicker("value"));
-  newMin = new Date(min.getFullYear(), min.getMonth(), min.getDate()+1);
-  // newMin = min.getDate()+1;
-  $('#datepicker2').datepicker("destroy");
-  $('#datepicker2').datepicker({
-    minDate: newMin,
+var checkindate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+var checkoutdate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1);
+// var tomorrow = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1);
+$('#datepicker').datepicker({
+    // format: 'dd/mm/yyyy',
+    minDate: checkindate,
     iconsLibrary: 'fontawesome',
     icons: {
-     rightIcon: '<span class="fa fa-caret-down"></span>'
- }
-  });
-  // console.log(new Date().getDate());
+      rightIcon: '<span class="fa fa-caret-down"></span>'
+  }
+});
+$('#datepicker2').datepicker({
+  // format: 'dd/mm/yyyy',
+  minDate: function(){return new Date(checkindate.getFullYear(), checkindate.getMonth(), checkindate.getDate()+1)},
+  iconsLibrary: 'fontawesome',
+  icons: {
+    rightIcon: '<span class="fa fa-caret-down"></span>'
+  }
+});
   
+$('#datepicker').datepicker("value",checkindate)
+$('#datepicker2').datepicker("value",checkoutdate)
+
+// let checkoutdate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1);
+$("#datepicker").change(function(){
+  checkindate = new Date($('#datepicker').val());
+  if(checkindate.getTime()>=checkoutdate.getTime())
+    checkoutdate = new Date(checkindate.getFullYear(), checkindate.getMonth(), checkindate.getDate()+1);
+  $('#datepicker2').datepicker("value",checkoutdate);
+  // var today, datepicker;
+  // today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+  // min = new Date($('#datepicker').datepicker("value"));
+  // newMin = new Date(min.getFullYear(), min.getMonth(), min.getDate()+1);
+  // $('#datepicker2').datepicker("destroy");
+  // $('#datepicker2').datepicker({
+  //   minDate: newMin,
+  //   iconsLibrary: 'fontawesome',
+  //   icons: {
+  //     rightIcon: '<span class="fa fa-caret-down"></span>'
+  //   }
+  // });
+  // if(checkoutdate<newMin) {checkoutdate=newMin;}
+  // $('#datepicker2').datepicker("value",checkoutdate);
+  // console.log(0);
+});
+
+$("#datepicker2").change(function(){
+  checkoutdate = new Date($('#datepicker2').val());
 });

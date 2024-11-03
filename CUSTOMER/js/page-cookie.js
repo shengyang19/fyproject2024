@@ -121,7 +121,6 @@ function setupEditProfile(){
 
 $('.book_now').click(function(){
     let booking = $(this).data('id');
-    console.log(booking);
     if(booking==undefined) deleteCookie("booking");
     else setCookie("booking",booking,0.5);
     return false;
