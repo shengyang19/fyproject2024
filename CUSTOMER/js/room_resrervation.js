@@ -1,5 +1,9 @@
 let rooms = [
     {
+        "title": "Club Premier Park-View Room",
+        "price": "MYR&nbsp;500"
+    },
+    {
         "title": "Premier Park-View Room",
         "price": "MYR&nbsp;500"
     },
