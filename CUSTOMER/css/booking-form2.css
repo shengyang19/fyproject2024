@@ -3562,3 +3562,91 @@
     border-color: rgb(134, 134, 134);
     padding-left: 4px;
 }
+
+.payment-methods {
+    margin: 16px 24px;
+    touch-action: manipulation;
+}
+
+.payment-methods-container {
+    display: flex;
+    color: rgb(51, 51, 51);
+}
+
+.payment-logo {
+    display: flex;
+}
+
+.logo {
+    width: 32px;
+    height: 22px;
+    margin-right: 8px;
+    border-style: none;
+    font-style: italic;
+    max-width: 100%;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.more-cards {
+    position: relative;
+}
+
+.more-cards span {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.guest-fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.guest-title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    margin: 8px 0;
+}
+
+.guest-error {
+    color: rgb(51, 51, 51);
+}
+
+.guest-label {
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0;
+}
+
+.guest-label-text {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.guest-input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 4px;
+    border: 1px solid rgba(94, 107, 130, 0.32);
+    border-radius: 8px;
+    font-size: 14px;
+    color: rgb(36, 38, 44);
+}
+
+.clear-button {
+    opacity: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.clear-icon {
+    fill: rgb(36, 38, 44);
+    width: 16px;
+    height: 16px;
+}
