@@ -366,11 +366,31 @@ $(document).ready(function() {
 	});
 });
 
+
+let booking = new Object();
+$('.book_now').click(function(){
+  var roomid = $(this).data('id');
+  if(roomid!=undefined) booking.id=roomid;
+  else booking.id = null;
+  booking.checkin=$('#datepicker').val();
+  booking.checkout=$('#datepicker2').val();
+  console.log(booking);
+  // else setCookie("booking",booking,0.5);
+  return false;
+});
+
+$('#bookRoom').click(function(){
+  if(booking.id!=null) sessionStorage.setItem("booking",JSON.stringify(booking));
+  // if(booking.id==undefined) sessionStorage.removeItem("booking");
+  else return false;
+  // else setCookie("booking",booking,0.5);
+});
+
 var checkindate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
 var checkoutdate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1);
 // var tomorrow = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1);
 $('#datepicker').datepicker({
-    // format: 'dd/mm/yyyy',
+    format: 'dd/mm/yyyy',
     minDate: checkindate,
     iconsLibrary: 'fontawesome',
     icons: {
@@ -378,7 +398,7 @@ $('#datepicker').datepicker({
   }
 });
 $('#datepicker2').datepicker({
-  // format: 'dd/mm/yyyy',
+  format: 'dd/mm/yyyy',
   minDate: function(){return new Date(checkindate.getFullYear(), checkindate.getMonth(), checkindate.getDate()+1)},
   iconsLibrary: 'fontawesome',
   icons: {
@@ -391,10 +411,12 @@ $('#datepicker2').datepicker("value",checkoutdate)
 
 // let checkoutdate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+1);
 $("#datepicker").change(function(){
-  checkindate = new Date($('#datepicker').val());
+  checkindate = new Date(convertDateFormat($('#datepicker').val()));
   if(checkindate.getTime()>=checkoutdate.getTime())
     checkoutdate = new Date(checkindate.getFullYear(), checkindate.getMonth(), checkindate.getDate()+1);
   $('#datepicker2').datepicker("value",checkoutdate);
+  booking.checkin=$('#datepicker').val();;
+  booking.checkout=$('#datepicker2').datepicker("value");
   // var today, datepicker;
   // today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
   // min = new Date($('#datepicker').datepicker("value"));
@@ -413,5 +435,16 @@ $("#datepicker").change(function(){
 });
 
 $("#datepicker2").change(function(){
-  checkoutdate = new Date($('#datepicker2').val());
+  checkoutdate = new Date(convertDateFormat($('#datepicker2').val()));
+  booking.checkout=$('#datepicker2').val();
 });
+
+function convertDateFormat(dateString) {
+  // Split the date string by the delimiter "/"
+  const parts = dateString.split("/");
+  
+  // Rearrange the parts to "DD/MM/YYYY"
+  const newDateFormat = `${parts[1]}/${parts[0]}/${parts[2]}`;
+  
+  return newDateFormat;
+}
