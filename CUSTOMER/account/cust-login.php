@@ -8,7 +8,7 @@ $email1 = $_POST['loginemail'];
 $email=strval($email1);
 $key = $_POST['loginkey'];
 
-$con = mysqli_connect('localhost','root','','phmsdb');
+$con = mysqli_connect('127.0.0.1','palladium','Azib277221','phmsdb');
 if (mysqli_connect_errno())
 {	echo "Failed to connect to MySQL: " . mysqli_connect_error();}
 

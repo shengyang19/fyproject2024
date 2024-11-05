@@ -13,7 +13,7 @@ if($otp_entered==$_SESSION["OTP"]){
     $mail=$_SESSION["Email"];
     $cred=$_SESSION["Password"];
 
-    $con = mysqli_connect('localhost','root','','phmsdb');
+    $con = mysqli_connect('127.0.0.1','palladium','Azib277221','phmsdb');
     if (mysqli_connect_errno())
     {    echo "Failed to connect to MySQL: " . mysqli_connect_error();    }
     $sql="INSERT INTO customer_account(username, phone, email, cred)VALUES ('$username', '$phone', '$mail', '$cred')";

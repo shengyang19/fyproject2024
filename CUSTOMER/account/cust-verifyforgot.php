@@ -10,7 +10,7 @@ if($otp_entered==$_SESSION["OTP"]){
     $email=$_SESSION["Email"];
     $cred=$_SESSION["Password"];
 
-    $con = mysqli_connect('localhost','root','','phmsdb');
+    $con = mysqli_connect('127.0.0.1','palladium','Azib277221','phmsdb');
     if (mysqli_connect_errno())
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
     $sql="UPDATE customer_account SET cred='$cred' WHERE email='$email'";

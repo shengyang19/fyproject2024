@@ -22,7 +22,7 @@ if(isset($_POST["confirm"])){
             //echo("<script>alert('password not matches')</script>");
         }
         else{
-            $con=mysqli_connect('localhost', 'root', '','phmsdb');
+            $con=mysqli_connect('127.0.0.1','palladium','Azib277221','phmsdb');
         
             if(!$con)
                 echo ("failed to connect to database");

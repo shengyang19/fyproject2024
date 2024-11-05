@@ -9,7 +9,7 @@ $newpassrepeat=$_POST["newpassrepeat"];
 if(strlen($newpass)>5){
 if($newpass==$newpassrepeat){
 	if($oldpass!=$newpass){
-		$con = mysqli_connect('localhost','root','','phmsdb');
+		$con = mysqli_connect('127.0.0.1','palladium','Azib277221','phmsdb');
 		if (mysqli_connect_errno())
 		{	echo "Failed to connect to MySQL: " . mysqli_connect_error();	}
 		$sql="SELECT email,cred FROM customer_account WHERE email='$email'";
