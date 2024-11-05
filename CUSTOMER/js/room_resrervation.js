@@ -102,15 +102,49 @@ function getTotalDays(date1, date2) {
 
 function setupReservation(){
     let room = JSON.parse(sessionStorage.getItem("booking"));
+    let id = room.id;
+    let isAvailable = false;
+    let roomcount = 0;
+    let availableRoom;
     if(room!=null){
+        $("#title").html(rooms[room.id].title);
         const totalDays = getTotalDays(convertDateFormat(room.checkin), convertDateFormat(room.checkout));
         const totalPrice = totalDays*rooms[room.id].pricepernight;
-        $("#title").html(rooms[room.id].title);
         $("#originalPrice").html(rooms[room.id].price);
         $("#totalPrice").html("MYR&nbsp;"+totalPrice.toString());
         $("#checkindate").html(room.checkin);
         $("#checkoutdate").html(room.checkout);
+        $.ajax({
+            // url: 'get-customer.php', // URL to the backend script
+            url: 'getBooking.php', // URL to the backend script
+            method: 'GET',
+            data: { id: id }, // Send tablename as a query parameter
+            
+            
+            // dataType: 'json', // Expect JSON response
+            success: function(response) {
+                
+                // Check for errors in the response
+                if (response.error) {
+                    console.error('Error:', response.error);
+                    return;
+                }
+                // Loop through the response and append messages
+                response.forEach(function(item) {
+                    if(item.guest_id==null){
+                        availableRoom=item.id;
+                        roomcount++;
+                        isAvailable = true;
+                    }
+                });
+            },
+            error: function() {
+                console.error('Failed to fetch messages.');
+            }
+        });
+        if (!isAvailable) { $("#availableText").html("Not available");}//disable payment button
     }
+    
 }
 
 setupReservation();

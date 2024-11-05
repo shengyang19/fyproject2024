@@ -381,6 +381,20 @@ $('.book_now').click(function(){
   return false;
 });
 
+function checkAvailability(){
+  let user = getCookie("user");
+  if(user === ""){
+    if(confirm("Please log in to check availability.")) {
+      window.location.href = "account/cust-login.php";
+      return true;}
+  }
+  else{
+      return false;
+  }
+  return true;
+}
+
+
 $('#room-select').change(function(){
   newselect=$(this).val();
   if(newselect!="Room type") booking.id=newselect;
@@ -389,6 +403,7 @@ $('#room-select').change(function(){
 });
 
 $('#bookRoom').click(function(){
+  if (checkAvailability()) return false;
   if(booking.id!=null) sessionStorage.setItem("booking",JSON.stringify(booking));
   else return false;
 });
