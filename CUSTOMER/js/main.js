@@ -370,13 +370,22 @@ $(document).ready(function() {
 let booking = new Object();
 $('.book_now').click(function(){
   var roomid = $(this).data('id');
+  selectroom=roomid.toString();
+  document.getElementById(selectroom).selected=true;
+  $('select').niceSelect('update');
   if(roomid!=undefined) booking.id=roomid;
   else booking.id = null;
   booking.checkin=$('#datepicker').val();
   booking.checkout=$('#datepicker2').val();
-  console.log(booking);
   // else setCookie("booking",booking,0.5);
   return false;
+});
+
+$('#room-select').change(function(){
+  newselect=$(this).val();
+  if(newselect!="Room type") booking.id=newselect;
+  // $('.book_now').attr('data-id',$(this).val());
+  // console.log($('.book_now').data('id'))
 });
 
 $('#bookRoom').click(function(){
