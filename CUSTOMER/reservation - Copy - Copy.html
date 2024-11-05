@@ -191,12 +191,12 @@
 										<div class="style-105">
 											<div class="style-106">
 												<div class="style-107">Check-in</div> <time class="style-108" aria-describedby="bp-checkin-date__label">
-													<span class="style-109">Fri 18 Oct 2024</span> <span class="style-110">
+													<span id="checkindate" class="style-109">Fri 18 Oct 2024</span> <span class="style-110">
 														From 15:00
 													</span> </time>
 											</div>
 											<div class="style-111">
-												<div class="style-112">Check-out</div> <time class="style-113" aria-describedby="bp-checkout-date__label">
+												<div id="checkoutdate" class="style-112">Check-out</div> <time class="style-113" aria-describedby="bp-checkout-date__label">
 													<span class="style-114">Sat 19 Oct 2024</span> <span class="style-115">
 														Until 12:00
 													</span> </time>
@@ -619,6 +619,9 @@
 							<a href="#mana-manaje" style="background-color: #2e8cc3; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; text-decoration: none; display: inline-block;">
 								Continue Payment
 							</a>
+							<a href="#mana-manaje" style="background-color: #331ee9; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; text-decoration: none; display: inline-block;">
+								Book
+							</a>
 						</div>
 						<div style="margin-top: 16px;"></div>
 					</fieldset>
@@ -786,7 +789,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="js/plugins.js"></script>
         <script src="js/gijgo.min.js"></script>
         <script src="js/page-cookie.js"></script>
-        <script src="js/room_resrervation.js"></script>
+        <script src="js/room_resrervation.js"></script> <!-- this reservation page -->
     
         <!--contact js-->
         <script src="js/contact.js"></script>
@@ -796,22 +799,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="js/mail-script.js"></script>
     
         <script src="js/main.js"></script>
-        <script>
-            $('#datepicker').datepicker({
-                iconsLibrary: 'fontawesome',
-                icons: {
-                 rightIcon: '<span class="fa fa-caret-down"></span>'
-             }
-            });
-            $('#datepicker2').datepicker({
-                iconsLibrary: 'fontawesome',
-                icons: {
-                 rightIcon: '<span class="fa fa-caret-down"></span>'
-             }
-    
-            });
-        </script>
-	<script>setupReservation();</script>
 
 
     </body>

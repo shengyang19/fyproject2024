@@ -27,7 +27,7 @@
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
-<body onload="setupPage('user')">
+<body>
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -57,11 +57,6 @@
                             </div>
                         </div>
                         <div class="col-xl-5 col-lg-2">
-                            <div class="book_room">
-                                <div class="book_btn d-none d-lg-block">
-                                    <a class="popup-with-form" href="#test-form">Book A Room</a>
-                                </div>
-                            </div>
                         </div>
                         <div class="col-xl-1 col-lg-2">
                             <div class="main-menu">
@@ -392,20 +387,30 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                     <option data-display="Children">1</option>
                                     <option value="1">2</option>
                                     <option value="2">3</option>
-                                    <option value="3">4</option>
+                                    <option value="3">4</option><option value="3">5</option>
                                 </select>
                             </div>
                             <div class="col-xl-12">
-                                <select class="form-select wide" id="default-select" class="">
-                                    <option data-display="Room type">Room type</option>
-                                    <option value="1">Laxaries Rooms</option>
-                                    <option value="2">Deluxe Room</option>
-                                    <option value="3">Signature Room</option>
-                                    <option value="4">Couple Room</option>
+                                <select class="form-select wide" id="room-select" class="">
+                                    <!-- <option data-display="Room type">Room type</option> -->
+                                    <option id="0" value=0>Club Premier Park-View Room</option>
+                                    <option id="1" value=1>Premier Park-View Room</option>
+                                    <option id="2" value=2>Pool Garden-View Room</option>
+                                    <option id="3" value=3>Park-View Room</option>
+                                    <option id="4" value=4>City-View Room</option>
+                                    <option id="5" value=5>Royal Suite</option>
+                                    <option id="6" value=6>Presidential Suite</option>
+                                    <option id="7" value=7>Ambassador Suite</option>
+                                    <option id="8" value=8>Park-View Suite</option>
+                                    <option id="9" value=9>Park-View Junior Suite</option>
+                                    <option id="10" value=10>Two-Bedroom Executive Park-View Apartment</option>
+                                    <option id="11" value=11>Two-Bedroom Premier Park-View Apartment</option>
+                                    <option id="12" value=12>Two-Bedroom Deluxe Apartment</option>
+                                    <option id="13" value=13>One-Bedroom Deluxe Apartment</option>
                                 </select>
                             </div>
                             <div class="col-xl-12">
-                                <button type="submit" class="boxed-btn3">Check Availability</button>
+                                <button id="bookRoom" href="reservation - Copy - Copy.html" class="boxed-btn3">Check Availability</button>
                             </div>
                         </div>
                     </form>
@@ -444,21 +449,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
-    <script>
-        $('#datepicker').datepicker({
-            iconsLibrary: 'fontawesome',
-            icons: {
-             rightIcon: '<span class="fa fa-caret-down"></span>'
-         }
-        });
-        $('#datepicker2').datepicker({
-            iconsLibrary: 'fontawesome',
-            icons: {
-             rightIcon: '<span class="fa fa-caret-down"></span>'
-         }
-
-        });
-    </script>
 
 
 </body>
