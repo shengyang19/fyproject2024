@@ -381,9 +381,7 @@ $('.book_now').click(function(){
 
 $('#bookRoom').click(function(){
   if(booking.id!=null) sessionStorage.setItem("booking",JSON.stringify(booking));
-  // if(booking.id==undefined) sessionStorage.removeItem("booking");
   else return false;
-  // else setCookie("booking",booking,0.5);
 });
 
 var checkindate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
@@ -417,21 +415,6 @@ $("#datepicker").change(function(){
   $('#datepicker2').datepicker("value",checkoutdate);
   booking.checkin=$('#datepicker').val();;
   booking.checkout=$('#datepicker2').datepicker("value");
-  // var today, datepicker;
-  // today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-  // min = new Date($('#datepicker').datepicker("value"));
-  // newMin = new Date(min.getFullYear(), min.getMonth(), min.getDate()+1);
-  // $('#datepicker2').datepicker("destroy");
-  // $('#datepicker2').datepicker({
-  //   minDate: newMin,
-  //   iconsLibrary: 'fontawesome',
-  //   icons: {
-  //     rightIcon: '<span class="fa fa-caret-down"></span>'
-  //   }
-  // });
-  // if(checkoutdate<newMin) {checkoutdate=newMin;}
-  // $('#datepicker2').datepicker("value",checkoutdate);
-  // console.log(0);
 });
 
 $("#datepicker2").change(function(){

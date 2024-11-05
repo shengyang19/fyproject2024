@@ -18,21 +18,11 @@ mysqli_close($con);
 if($row!=null){
 
 	//* Store user data in JSON file *
-    setcookie($cookie_name, $row['username'], time() + (86400 * 30), "/"); // 86400 = 1 day
-    setcookie("phone", $row['phone'], time() + (86400 * 30), "/"); // 86400 = 1 day
-    setcookie("email", $email, time() + (86400 * 30), "/"); // 86400 = 1 day
-	$data = [
-		"name" => $row['username'],
-		"phone" => $row['phone'],
-		"membership" => $row['membership'],
-		"birthday" => $row['birthday'],
-		"email" => $email
-	];
-	
-	$file = '../js/data.json';
-	
-	// Convert PHP array to JSON and save it to a file
-	file_put_contents($file, json_encode($data));
+    setcookie($cookie_name, $row['username'], time() + (86400 * 30 * 30), "/"); // 86400 = 1 day
+    setcookie("phone", $row['phone'], time() + (86400 * 30 * 30), "/"); // 86400 = 1 day
+    setcookie("membership", $row['membership'], time() + (86400 * 30 * 30), "/"); // 86400 = 1 day
+    setcookie("birthday", $row['birthday'], time() + (86400 * 30 * 30), "/"); // 86400 = 1 day
+    setcookie("email", $email, time() + (86400 * 30 * 30), "/"); // 86400 = 1 day
 
     header("Location: ..");
     exit;
