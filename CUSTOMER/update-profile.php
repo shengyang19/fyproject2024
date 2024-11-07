@@ -10,7 +10,7 @@ if(isset($_POST['cancel'])){
 }
 
 //update database
-$con = mysqli_connect('localhost','root','','phmsdb');
+$con = mysqli_connect('localhost', 'u838201253_palladium', 'Azib277221', 'u838201253_phmsdb');
 if (mysqli_connect_errno())
 {
 echo "Failed to connect to MySQL: " . mysqli_connect_error();

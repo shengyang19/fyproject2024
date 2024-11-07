@@ -41,8 +41,8 @@ function setupPage(cname){
         //edit profile menu
         $('#profile-menu').html(`
         <a id="profile-menu-1" href="profile.html" class="dropdown-item" type="button">Profile</a>
-        <a onclick="logout()" id="profile-menu-2" href="index.html" class="dropdown-item" type="button">Logout</a>
-        <a id="profile-menu-3" href="#" class="dropdown-item" type="button">Booking</a>`);
+        <a id="profile-menu-3" href="booking-history.html" class="dropdown-item" type="button">Booking</a>
+        <a onclick="logout()" id="profile-menu-2" href="index.html" class="dropdown-item" type="button">Logout</a>`);
     }
 }
 

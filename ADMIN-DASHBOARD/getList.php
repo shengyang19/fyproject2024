@@ -1,14 +1,9 @@
 <?php
 header('Content-Type: application/json');
 
-// Database connection parameters
-$host = 'localhost';
-$dbname = 'phmsdb';
-$user = 'root';
-$pass = '';
 
 // Create a connection
-$conn = new mysqli($host, $user, $pass, $dbname);
+$conn = new mysqli('localhost', 'u838201253_palladium', 'Azib277221', 'u838201253_phmsdb');
 
 // Check connection
 if ($conn->connect_error) {

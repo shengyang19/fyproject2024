@@ -2,22 +2,24 @@
 if(isset($_POST["confirm"])){
 //session_start();
 $email=$_COOKIE["email"];
-$savedpass="-";
+// $savedpass="-";
 $oldpass=$_POST["oldpass"];
 $newpass=$_POST["newpass"];
 $newpassrepeat=$_POST["newpassrepeat"];
 if(strlen($newpass)>5){
 if($newpass==$newpassrepeat){
 	if($oldpass!=$newpass){
-		$con = mysqli_connect('127.0.0.1','palladium','Azib277221','phmsdb');
+		$con = mysqli_connect('localhost', 'u838201253_palladium', 'Azib277221', 'u838201253_phmsdb');
 		if (mysqli_connect_errno())
 		{	echo "Failed to connect to MySQL: " . mysqli_connect_error();	}
-		$sql="SELECT email,cred FROM customer_account WHERE email='$email'";
+		$sql="SELECT email,pass FROM customer_account WHERE email='$email'";
 		$row = mysqli_fetch_array(mysqli_query($con,$sql));
 		if($row!=null){
-			$savedpass=$row['cred'];
-			if($savedpass==$oldpass){
-				$sql="UPDATE customer_account SET cred='$newpass' WHERE email='$email'";
+		    if (password_verify($oldpass, $row['pass'])){
+// 			$savedpass=$row['pass'];
+// 			if($savedpass==$oldpass){
+                $hashedPassword = password_hash($newpass, PASSWORD_DEFAULT);
+				$sql="UPDATE customer_account SET pass='$hashedPassword' WHERE email='$email'";
 				$qry = mysqli_query($con,$sql);
 				mysqli_close($con);
 				if(!$qry){

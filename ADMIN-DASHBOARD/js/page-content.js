@@ -71,73 +71,6 @@ function setupList(filename){
     l=filename;
     // setupPage();
     fetchData(filename);
-        
-    // const listname=list+".json";
-    // fetch(listname)
-    // .then(response => {
-    //     if(!response.ok) {
-    //         throw new Error('Network response was not ok');
-    //     }
-    //     return response.json();  // Parsing the JSON data
-    // })
-    // .then(data => {
-    //     // Get a reference to the table body where you want to insert rows
-    //     const tableBody = document.getElementById('cards'); // Make sure this ID matches your HTML
-
-    //     // Clear any existing rows
-    //     tableBody.innerHTML = "";
-
-    //     // Loop through the fetched data and create a table row for each entry
-    //     data.forEach(item => {
-    //         const name = item.name.toUpperCase();
-    //         const id = item.id;
-    //         const phone = item.phone;
-    //         let top;
-    //         let formaction;
-    //         if(list=="customers"){
-    //             top = item.email.toUpperCase();
-    //             formaction=`<form action="edit-customer.php" method="POST">`
-    //         }
-    //         else if(list=="staffs"){
-    //             top = item.role.toUpperCase();
-    //             formaction=`<form action="edit-staff.php" method="POST">`
-    //         }
-
-    //         const div1 = document.createElement('div');
-    //         div1.setAttribute("class","mb-3");
-            // div1.innerHTML=`<div class="card border-left-primary shadow py-2" style="max-width: 600px">
-            //                     <div class="card-body">
-            //                         <div class="row no-gutters align-items-center">
-            //                             <div class="col mr-2">
-            //                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">`+top+`</div>
-            //                                 <div>
-            //                                     <div class="h5 mb-1 font-weight-bold text-gray-800">`+name+`</div>
-            //                                 </div>
-            //                                 <div style="height: 1rem;">
-            //                                     <div class="h5 mb-1 text-gray-800">`+phone+`</div>
-            //                                 </div>
-            //                             </div>
-            //                             `+formaction+`
-            //                             <div class="col-auto d-inline">
-            //                                 <input type="hidden" name="edit" value=`+id+`>
-            //                                 <input type="submit" class="d-inline btn btn-primary btn-lg shadow-sm" value="Edit"/>
-            //                                 <button type="button" class="d-inline btn btn-danger btn-lg shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="`+id+`"><i class="fas fa-trash"></i></button>
-            //                             </div>
-            //                             </form>
-            //                             <div class="col-auto">
-            //                             </div>
-            //                         </div>
-            //                     </div>
-            //                 </div>`;
-
-    //         // Append the new row to the table body
-    //         tableBody.appendChild(div1);
-
-    //     });
-    // })
-    // .catch(error => {
-    //     console.error('Error fetching JSON data:', error);
-    // });
 }
 
 // Set the ID of the name to delete in the modal
@@ -248,10 +181,15 @@ function setupPage(){
         url: 'getUsername.php', // Replace with your API endpoint
         method: 'GET',
         success: function(response) {
+            if(response!=""){
             let item =  JSON.parse(response);
+            $('.username').html(item.username);
             document.getElementById('username').innerHTML=item.username;
             if(item.role=="admin")
-                document.getElementById('staffcontrol').removeAttribute("hidden");
+                document.getElementById('staffcontrol').removeAttribute("hidden");}
+            else{
+                // window.location.replace("/admin/account/staff-login.php");
+            }
         },
         
         error: function(jqXHR, textStatus, errorThrown) {
@@ -270,7 +208,7 @@ function setupProfile(){
             for (const key in item) {
                 item[key]=item[key]==""?"-":item[key];
             }
-            $('.username').html(item.username);
+            $('.username').html(item.username).val(item.username);
             $('#phone').html(item.phone).val(item.phone);
             $('#email').html(item.email).val(item.email);
             $('#staff_id').html(item.id);
@@ -327,18 +265,50 @@ function timer(){
     }
 }
 
-// function getCookie(cname) {
-//     let name = cname + "=";
-//     let decodedCookie = decodeURIComponent(document.cookie);
-//     let ca = decodedCookie.split(';');
-//     for(let i = 0; i <ca.length; i++) {
-//       let c = ca[i];
-//       while (c.charAt(0) == ' ') {
-//         c = c.substring(1);
-//       }
-//       if (c.indexOf(name) == 0) {
-//         return c.substring(name.length, c.length);
-//       }
-//     }
-//     return "";
-//   }
+
+function fetchBookings() {
+    // let id=this.value;
+    // let dbtable=$('.hotel-list').data('list')+'_account';
+    $.ajax({
+        // url: 'get-customer.php', // URL to the backend script
+        url: 'fetch_bookings.php', // URL to the backend script
+        method: 'GET',
+        
+        // dataType: 'json', // Expect JSON response
+        success: function(response) {   
+            const tableBody = document.getElementById("bookingTable");
+            tableBody.innerHTML="";
+            // Check for errors in the response
+            if (response.error) {
+                console.error('Error:', response.error);
+                return;
+            }
+            // Loop through the response and append messages
+            response.forEach(function(item) {
+                console.log(item.guest_id);
+                // if(item.guest_name!=null){
+                    // const row = document.createElement("tr");
+                    $('#bookingTable').append(`<tr>
+                                            <td>`+item.guest_name+`</td>
+                                            <td>`+item.room_name+`</td>
+                                            <td>`+item.start_date+`</td>
+                                            <td>`+item.end_date+`</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary shadow-sm" id="editBtn">Edit</button>
+                                            </td>
+                                            <td>
+                                                <form action="reset-room.php" id="deleteForm" method="GET" style="display: inline;">
+                                                    <input type="hidden" name="delete" id="deleteId" value="`+item.id+`">
+                                                    <input type="hidden" name="tablename" value="booking">
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>`);
+                // }
+            });
+        },
+    error: function() {
+        console.error('Failed to fetch messages.');
+    }
+});
+}

@@ -12,10 +12,10 @@ if(strlen($newpass)>5){
 if($newpass==$newpassrepeat){
 	// $newpass = json_encode($newpass);
 	$hashedPassword = password_hash($newpass, PASSWORD_BCRYPT);
-	$con = mysqli_connect('localhost','root','','phmsdb');
+	$con = mysqli_connect('localhost', 'u838201253_palladium', 'Azib277221', 'u838201253_phmsdb');
 	if (mysqli_connect_errno())
 	{	echo "Failed to connect to MySQL: " . mysqli_connect_error();	}
-	$sql="UPDATE staff_account SET cred='$newpass', pass='$hashedPassword', WHERE id='$user'";
+	$sql="UPDATE staff_account SET pass='$hashedPassword' WHERE id='$user'";
 	$qry = mysqli_query($con,$sql);
 	mysqli_close($con);
 	if(!$qry){
@@ -51,7 +51,7 @@ if($newpass==$newpassrepeat){
 					<div class="logo-img">
 						<img src="images/logo.png" alt="" width="100" height="100">
 					</div>
-					<h2 class="heading-section">Welcome to Palladium Hotel</h2>
+					<h2 class="heading-section">Palladium Hotel Management System</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">

@@ -6,44 +6,56 @@ session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-$username="";
-$phone="";
-$email="";
-if(isset($_POST["confirm"])){
-    $username=$_POST['username'];
-    $phone=$_POST['phone'];
-    $password=$_POST['signupkey'];
-    $repassword=$_POST['signuprekey'];
-    $email1=$_POST['signupemail'];
-    $email=strval($email1);
-    if(strlen($password)>5){
-        if($password!=$repassword){
-            setcookie("error","difpassword", time() + (30 * 30), "/");
-            //echo("<script>alert('password not matches')</script>");
-        }
-        else{
-            $con=mysqli_connect('127.0.0.1','palladium','Azib277221','phmsdb');
+
+$username = "";
+$phone = "";
+$email = "";
+if (isset($_POST["confirm"])) {
+    $username = $_POST['username'];
+    $phone = $_POST['phone'];
+    $password = $_POST['signupkey'];
+    $repassword = $_POST['signuprekey'];
+    $email1 = $_POST['signupemail'];
+    $email = strval($email1);
+
+    // Check if the password is long enough
+    if (strlen($password) > 5) {
+        // Check if passwords match
+        if ($password != $repassword) {
+            setcookie("error", "difpassword", time() + (30 * 30), "/");
+        } else {
+            // Connect to the database
+            $con = mysqli_connect('localhost', 'u838201253_palladium', 'Azib277221', 'u838201253_phmsdb');
         
-            if(!$con)
-                echo ("failed to connect to database");
-            $sql = "SELECT email,username, cred FROM customer_account WHERE email='$email'";
+            if (!$con) {
+                echo ("Failed to connect to the database");
+                exit;
+            }
+
+            // Check if the email already exists
+            $sql = "SELECT email, username, pass FROM customer_account WHERE email = '$email'";
             $result = $con->query($sql);
             mysqli_close($con);
-            $email_already_exist=false;
 
-            // Checking if user already exist
-            if(($result->num_rows)> 0){
-                while($row = $result->fetch_assoc()) {
-                    if($row["email"]==$email){    
-                        $email_already_exist=true;
-                        setcookie("error","default", time() + (30 * 30), "/");
+            $email_already_exist = false;
+
+            // Checking if the user already exists
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    if ($row["email"] == $email) {    
+                        $email_already_exist = true;
+                        setcookie("error", "default", time() + (30 * 30), "/");
                         break;
                     }
                 }
             }
-            if($email_already_exist==false){
-                //Send otp to entered email
-                $otp=rand(100000,999999);
+
+            if ($email_already_exist == false) {
+                // Hash the password before storing it
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+                // Send OTP to the entered email
+                $otp = rand(100000, 999999);
                 
                 require 'phpmailer/src/Exception.php';
                 require 'phpmailer/src/PHPMailer.php';
@@ -52,37 +64,42 @@ if(isset($_POST["confirm"])){
                 $mail = new PHPMailer(true);
                 
                 $mail->isSMTP();
-                $mail->Host='smtp.gmail.com';
-                $mail->SMTPAuth=true;
-                $mail->Username='mypalladiumhotel@gmail.com';
-                $mail->Password='jqabtnpxssakrlvw';
-                $mail->SMTPSecure='ssl';
-                $mail->Port=465;
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'mypalladiumhotel@gmail.com';
+                $mail->Password = 'jqabtnpxssakrlvw';
+                $mail->SMTPSecure = 'ssl';
+                $mail->Port = 465;
                 
                 $mail->setFrom('mypalladiumhotel@gmail.com');
                 $mail->addAddress($_POST['signupemail']);
                 $mail->isHTML(true);
-                $mail->Subject='Email verification code';
-                $mail->Body=$otp;
-                
-                //$mail->send();
-                if($mail->send()){
-                    $_SESSION["username"]=$username;
-                    $_SESSION["OTP"]=$otp;
-                    $_SESSION["Phone"]=$phone;
-                    $_SESSION["Email"]=$email;
-                    $_SESSION["Password"]=$password;
-                    $_SESSION["registration-going-on"]="1";
-                    header("Location:cust-verify.php");
+                $mail->Subject = 'Email verification code';
+                $mail->Body = $otp;
+
+                // Send the email and redirect
+                if ($mail->send()) {
+                    // Save session data
+                    $_SESSION["username"] = $username;
+                    $_SESSION["OTP"] = $otp;
+                    $_SESSION["Phone"] = $phone;
+                    $_SESSION["Email"] = $email;
+                    $_SESSION["Password"] = $hashed_password; // Store hashed password in session
+                    $_SESSION["registration-going-on"] = "1";
+                    header("Location: cust-verify.php");
                     exit;
+
+                } else {
+                    echo "Mail send failed.";
                 }
-                else echo("mail send failed");
             }
         }
+    } else {
+        setcookie("error", "passlength", time() + (60 * 30), "/");
     }
-    else {  setcookie("error","passlength", time() + (60 * 30), "/");}
 }
 ?>
+
 
 <head>
   	<title>Sign Up - Palladium Hotel</title>

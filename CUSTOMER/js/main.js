@@ -394,7 +394,6 @@ function checkAvailability(){
   return true;
 }
 
-
 $('#room-select').change(function(){
   newselect=$(this).val();
   if(newselect!="Room type") booking.id=newselect;
@@ -403,8 +402,13 @@ $('#room-select').change(function(){
 });
 
 $('#bookRoom').click(function(){
-  if (checkAvailability()) return false;
-  if(booking.id!=null) sessionStorage.setItem("booking",JSON.stringify(booking));
+//   if (checkAvailability()) return false;
+  if(booking.id!=null){ sessionStorage.setItem("booking",JSON.stringify(booking));// Convert the 'booking' object to a JSON string
+    const bookingJSON = JSON.stringify(booking);
+    
+    // Set a cookie with a name 'booking', value as the JSON string, and a 1-day expiration time
+    document.cookie = "booking=" + encodeURIComponent(bookingJSON) + "; path=/; max-age=" + (60 * 60 * 24) + ";";
+}
   else return false;
 });
 
@@ -454,4 +458,41 @@ function convertDateFormat(dateString) {
   const newDateFormat = `${parts[1]}/${parts[0]}/${parts[2]}`;
   
   return newDateFormat;
+}
+
+function fetchBookings() {
+    // let id=this.value;
+    // let dbtable=$('.hotel-list').data('list')+'_account';
+    $.ajax({
+        // url: 'get-customer.php', // URL to the backend script
+        url: 'fetch_bookings.php', // URL to the backend script
+        method: 'GET',
+        
+        // dataType: 'json', // Expect JSON response
+        success: function(response) {   
+            const tableBody = document.getElementById("bookingTable");
+            tableBody.innerHTML="";
+            // Check for errors in the response
+            if (response.error) {
+                console.error('Error:', response.error);
+                return;
+            }
+            // Loop through the response and append messages
+            response.forEach(function(item) {
+                if(item.guest_name!=null){
+                    // const row = document.createElement("tr");
+                    $('#bookingTable').append(`<tr>
+                            <th scope="row">1</th>
+                            <td>`+item.room_name+`</td>
+                            <td>`+item.start_date+`</td>
+                            <td>`+item.end_date+`</td>
+                            <td>Paid</td>
+                        </tr>`);
+                }
+            });
+        },
+    error: function() {
+        console.error('Failed to fetch messages.');
+    }
+});
 }

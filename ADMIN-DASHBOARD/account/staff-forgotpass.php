@@ -16,7 +16,7 @@ if(isset($_POST["confirm"])){
         //echo("<script>alert('password not matches')</script>");
     }
     else{
-        $con=mysqli_connect('localhost','root','','phmsdb');
+        $con=mysqli_connect('localhost', 'u838201253_palladium', 'Azib277221', 'u838201253_phmsdb');
         if(!$con) echo ("failed to connect to database");
     
         if(strlen($password)<6){
@@ -30,7 +30,7 @@ if(isset($_POST["confirm"])){
             // Checking if user already exist
             if($row!=null){
 				$hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-                $sql="UPDATE staff_account SET cred='$password', pass='$hashedPassword' WHERE email='$email'";
+                $sql="UPDATE staff_account SET pass='$hashedPassword' WHERE email='$email'";
                 $qry = mysqli_query($con,$sql);
                 mysqli_close($con);
                 header("Location: staff-login.php");

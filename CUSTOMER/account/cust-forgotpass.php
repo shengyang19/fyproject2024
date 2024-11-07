@@ -9,9 +9,7 @@ use PHPMailer\PHPMailer\Exception;
 $email="";
 if(isset($_POST["confirm"])){
     $debugmail=false;
-    $con=mysqli_connect('localhost',
-        'root',
-        '','phmsdb');
+    $con=mysqli_connect('localhost', 'u838201253_palladium', 'Azib277221', 'u838201253_phmsdb');
 
     if(!$con) echo ("failed to connect to database");
 

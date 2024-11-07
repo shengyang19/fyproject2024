@@ -11,12 +11,12 @@ if($otp_entered==$_SESSION["OTP"]){
     $username=$_SESSION["username"];
     $phone=$_SESSION["Phone"];
     $mail=$_SESSION["Email"];
-    $cred=$_SESSION["Password"];
+    $pass=$_SESSION["Password"];
 
-    $con = mysqli_connect('127.0.0.1','palladium','Azib277221','phmsdb');
+    $con = mysqli_connect('localhost', 'u838201253_palladium', 'Azib277221', 'u838201253_phmsdb');
     if (mysqli_connect_errno())
     {    echo "Failed to connect to MySQL: " . mysqli_connect_error();    }
-    $sql="INSERT INTO customer_account(username, phone, email, cred)VALUES ('$username', '$phone', '$mail', '$cred')";
+    $sql="INSERT INTO customer_account(username, phone, email, pass)VALUES ('$username', '$phone', '$mail', '$pass')";
     $qry = mysqli_query($con,$sql);
     mysqli_close($con);
     // echo $sql; // to display sql

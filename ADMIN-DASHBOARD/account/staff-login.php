@@ -2,14 +2,15 @@
 <html lang="en">
 	
 <?php
-if(isset($_POST["signin"])){
 session_start();
+$_SESSION['info']="";
+if(isset($_POST["signin"])){
 //$cookie_name = "user";
 $email1 = $_POST['loginemail'];
 $email=strval($email1);
 $key = $_POST['loginkey'];
 //# start - auth
-$conn = new mysqli('localhost','root','','phmsdb');
+$conn = new mysqli('localhost', 'u838201253_palladium', 'Azib277221', 'u838201253_phmsdb');
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -28,7 +29,7 @@ if ($stmt->num_rows > 0) {
 
     // Verify the entered password
     if (password_verify($key, $hashedPassword)) {
-        echo "Login successful!";
+        // echo "Login successful!";
         
         // Fetch user data
         $sql = "SELECT id, username, email, role, phone FROM staff_account WHERE email = ?";
@@ -61,11 +62,11 @@ if ($stmt->num_rows > 0) {
         $userStmt->close();
 
     } else {
-        echo "Invalid password.";
+        // echo "Invalid password.";
         setcookie("error", "default", time() + (30 * 30), "/");
     }
 } else {
-    echo "User not found.";
+    // echo "User not found.";
     setcookie("error", "default", time() + (30 * 30), "/");
 }
 
@@ -97,7 +98,7 @@ $conn->close();
 					<div class="logo-img">
 						<img src="images/logo.png" alt="" width="100" height="100">
 					</div>
-					<h2 class="heading-section">Welcome to Palladium Hotel</h2>
+					<h2 class="heading-section">Palladium Hotel Management System</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">

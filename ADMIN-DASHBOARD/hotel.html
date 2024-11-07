@@ -79,7 +79,7 @@
             </a></li>
 
             <!-- Nav Item - Staffs -->
-            <li id="staffcontrol" class="nav-item"><a class="nav-link" href="hotelstaff.html">
+            <li id="staffcontrol" class="nav-item" hidden><a class="nav-link" href="hotelstaff.html">
                     <i class="fa-solid fa-suitcase"></i>
                     <span>Staffs</span>
             </a></li>
@@ -178,7 +178,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     <div class="header text-dark py-4">
                         <div class="container-fluid">
-                            <h1 class="h3 mb-0">Welcome, Shishiro Botan</h1>
+                            <h1 class="h3 mb-0">Welcome, </h1><h1 class="username h3 mb-0"></h1>
                         </div>
                     </div>
 
@@ -231,14 +231,6 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="/fyproject2024/Palladium-Hotel/login-form-15/login-form-15/staff_changepass.php">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -273,7 +265,7 @@
                         </a>
                         </li> -->
                         <li class="col">
-                            <a class="card hr-arrow p-4 mt-4" title="room-list" href="/room-list" style="--dynamic-color: var(--theme-color2);">
+                            <a class="card hr-arrow p-4 mt-4" title="room-list" href="bookinglist.html" style="--dynamic-color: var(--theme-color2);">
                                 <i class="fa-solid fa-list mb-3" style="font-size: 30px;"></i>
                                 <h6 class="title mb-1">Booking List</h6>
                                 <p class="small text-muted mb-0 d-none d-xl-inline-flex">View booking list</p>
@@ -302,7 +294,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="col">
+                        <li class="col" hidden>
                             <a class="card hr-arrow p-4 mt-4" title="view-staff" href="hotelstaff.html" style="--dynamic-color: var(--theme-color2);">
                                 <i class="fa-solid fa-suitcase mb-3" style="font-size: 30px;"></i>
                                 <h6 class="title mb-1">Staff List</h6>

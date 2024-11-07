@@ -8,12 +8,13 @@ if(isset($_POST["verify"])){
 $otp_entered=$_POST["verification"];
 if($otp_entered==$_SESSION["OTP"]){
     $email=$_SESSION["Email"];
-    $cred=$_SESSION["Password"];
+    $pass=$_SESSION["Password"];
 
-    $con = mysqli_connect('127.0.0.1','palladium','Azib277221','phmsdb');
+    $con = mysqli_connect('localhost', 'u838201253_palladium', 'Azib277221', 'u838201253_phmsdb');
     if (mysqli_connect_errno())
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    $sql="UPDATE customer_account SET cred='$cred' WHERE email='$email'";
+    $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
+    $sql="UPDATE customer_account SET pass='$hashedPassword' WHERE email='$email'";
     $qry = mysqli_query($con,$sql);
     mysqli_close($con);
     if(!$qry){

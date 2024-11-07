@@ -15,7 +15,7 @@ if(isset($_POST["confirm"])){
     $email1=$_POST['signupemail'];
     $email=strval($email1);
     if(strlen($password)>5){
-        $con=mysqli_connect('localhost', 'root', '','phmsdb');
+        $con=mysqli_connect('localhost', 'u838201253_palladium', 'Azib277221', 'u838201253_phmsdb');
     
         if(!$con)
             echo ("failed to connect to database");
@@ -29,8 +29,8 @@ if(isset($_POST["confirm"])){
                 setcookie("error","default", time() + (30 * 30), "/");
             }
             else{
-                $cred = json_encode($password);
-                $sql="INSERT INTO staff_account(role, username, phone, email, cred)VALUES ('$role', '$username', '$phone', '$email', '$cred')";
+                $hashedPassword = password_hash($newpass, PASSWORD_BCRYPT);
+                $sql="INSERT INTO staff_account(role, username, phone, email, pass)VALUES ('$role', '$username', '$phone', '$email', '$hashedPassword')";
                 $qry = mysqli_query($con,$sql);
                 mysqli_close($con);
                 header("Location: ../hotelstaff.html");
@@ -63,7 +63,7 @@ if(isset($_POST["confirm"])){
 					<div class="logo-img">
                         <img src="images/logo.png" alt="" width="100" height="100">
 					</div>
-					<h2 class="heading-section">Welcome to Palladium Hotel</h2>
+					<h2 class="heading-section">Palladium Hotel Management System</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">

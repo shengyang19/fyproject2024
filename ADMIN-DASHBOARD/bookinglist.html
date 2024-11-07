@@ -79,7 +79,7 @@
             </a></li>
 
             <!-- Nav Item - Staffs -->
-            <li id="staffcontrol" class="nav-item"><a class="nav-link" href="hotelstaff.html">
+            <li id="staffcontrol" class="nav-item" hidden><a class="nav-link" href="hotelstaff.html">
                     <i class="fa-solid fa-suitcase"></i>
                     <span>Staffs</span>
             </a></li>
@@ -123,7 +123,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     <div class="header text-dark py-4">
                         <div class="container-fluid">
-                            <h1 class="h3 mb-0">Welcome, Shishiro Botan</h1>
+                            <h1 class="h3 mb-0">Welcome, </h1><h1 class="username h3 mb-0"></h1>
                         </div>
                     </div>
 
@@ -170,19 +170,11 @@
                                     src="img/Shishiro_Botan_Portrait.png">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                           <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="profile.html">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
-                                </a>
-                                <a class="dropdown-item" href="/fyproject2024/Palladium-Hotel/login-form-15/login-form-15/staff_changepass.php">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -217,19 +209,80 @@
                                     <thead>
                                         <tr>
                                             <th>Guest Name</th>
-                                            <th>Room</th>
+                                            <th>Room / Facilities</th>
                                             <th>Check In</th>
                                             <th>Check Out</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="feedbackTableBody">
+                                    <tbody id="bookingTable">
+                                        <tr>
+                                            <td>John Doe</td>
+                                            <td>101</td>
+                                            <td>2024-11-01</td>
+                                            <td>2024-11-05</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary shadow-sm" id="editBtn">Edit</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="`+id+`">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rina</td>
+                                            <td>402</td>
+                                            <td>2024-11-05</td>
+                                            <td>2024-11-07</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary shadow-sm" id="editBtn">Edit</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="`+id+`">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ali</td>
+                                            <td>806</td>
+                                            <td>2024-11-12</td>
+                                            <td>2024-11-13</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary shadow-sm" id="editBtn">Edit</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="`+id+`">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kanata</td>
+                                            <td>202</td>
+                                            <td>2024-11-14</td>
+                                            <td>2024-11-16</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary shadow-sm" id="editBtn">Edit</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="`+id+`">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Calliope</td>
+                                            <td>701</td>
+                                            <td>2024-11-21</td>
+                                            <td>2024-11-23</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary shadow-sm" id="editBtn">Edit</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger shadow-sm" data-toggle="modal" data-target="#confirmDelete" data-id="`+id+`">Delete</button>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
+
 
                 </div>
                 <!-- /.container-fluid -->
@@ -296,7 +349,7 @@
     <script src="js/demo/chart-pie-demo.js"></script>
     
     <script src="js/page-content.js"></script>
-    <script>setupPage();setupFeedback();</script>
+    <script>setupPage();fetchBookings()</script>
 </body>
 
 </html>

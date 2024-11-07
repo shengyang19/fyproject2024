@@ -2,37 +2,76 @@
 <html lang="en">
 
 <?php
-if(isset($_POST["signin"])){
-$cookie_name = "user";
-$email1 = $_POST['loginemail'];
-$email=strval($email1);
-$key = $_POST['loginkey'];
+if (isset($_POST["signin"])) {
+    session_start();
+    // User input
+    $cookie_name = "user";
+    $email1 = $_POST['loginemail'];
+    $email = strval($email1); // Ensure $email is a string
+    $key = $_POST['loginkey']; // The plain text password entered by the user
 
-$con = mysqli_connect('127.0.0.1','palladium','Azib277221','phmsdb');
-if (mysqli_connect_errno())
-{	echo "Failed to connect to MySQL: " . mysqli_connect_error();}
+    // MySQL database connection
+    $con = new mysqli('localhost', 'u838201253_palladium', 'Azib277221', 'u838201253_phmsdb');
+    
+    // Check connection
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }
 
-$sql="SELECT username,membership,birthday,phone,email,cred FROM customer_account WHERE email='$email' AND cred='$key'";
-$row = mysqli_fetch_array(mysqli_query($con,$sql));
-mysqli_close($con);
-if($row!=null){
+    // Prepare SQL query using prepared statements
+    $sql = "SELECT id,username, membership, birthday, phone, email, pass FROM customer_account WHERE email = ?";
+    
+    // Prepare the statement
+    if ($stmt = $con->prepare($sql)) {
+        // Bind parameters to the prepared statement
+        $stmt->bind_param("s", $email); // "s" indicates the parameter is a string
 
-	//* Store user data in JSON file *
-    setcookie($cookie_name, $row['username'], time() + (86400 * 30 * 30), "/"); // 86400 = 1 day
-    setcookie("phone", $row['phone'], time() + (86400 * 30 * 30), "/"); // 86400 = 1 day
-    setcookie("membership", $row['membership'], time() + (86400 * 30 * 30), "/"); // 86400 = 1 day
-    setcookie("birthday", $row['birthday'], time() + (86400 * 30 * 30), "/"); // 86400 = 1 day
-    setcookie("email", $email, time() + (86400 * 30 * 30), "/"); // 86400 = 1 day
+        // Execute the statement
+        $stmt->execute();
 
-    header("Location: ..");
-    exit;
-}
-else{
-	setcookie("error","default", time() + (30 * 30), "/");
-	//echo ("<script>document.body.onload(showmodal())</script>");
-}
+        // Get the result
+        $result = $stmt->get_result();
+
+        // Check if there are any matching rows
+        if ($result && $result->num_rows > 0) {
+            // Fetch the result as an associative array
+            $row = $result->fetch_array(MYSQLI_ASSOC);
+
+            // Verify the password using password_verify() function
+            if (password_verify($key, $row['pass'])) {
+                // Password is correct, store user data in cookies and redirect
+                setcookie($cookie_name, $row['username'], time() + (86400 * 30 * 30), "/");
+                setcookie("user_id", $row['id'], time() + (86400 * 30 * 30), "/");
+                setcookie("phone", $row['phone'], time() + (86400 * 30 * 30), "/");
+                setcookie("membership", $row['membership'], time() + (86400 * 30 * 30), "/");
+                setcookie("birthday", $row['birthday'], time() + (86400 * 30 * 30), "/");
+                setcookie("email", $email, time() + (86400 * 30 * 30), "/");
+
+                // Redirect to the homepage after login
+                header("Location: ..");
+                exit;
+            } else {
+                // Invalid password
+                setcookie("error", "default", time() + (30 * 30), "/");
+            }
+        } else {
+            // Handle login failure (e.g., wrong email)
+            setcookie("error", "default", time() + (86400 * 30), "/");
+            // echo "No results found or query error!";
+        }
+
+        // Close the statement
+        $stmt->close();
+    } else {
+        // If statement preparation fails, print error
+        // echo "Error preparing the query: " . $con->error;
+    }
+
+    // Close the database connection
+    $con->close();
 }
 ?>
+
 
   <head>
   	<title>Login - Palladium Hotel</title>

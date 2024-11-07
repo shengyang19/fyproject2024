@@ -85,45 +85,38 @@
         <h3>Booking History</h3>
     </div>
     <!-- bradcam_area_end -->
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Room name</th>
-            <th scope="col">Check In</th>
-            <th scope="col">Check Out</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Ambassador Suite</td>
-            <td>21 Nov 2024</td>
-            <td>24 Nov 2024</td>
-            <td>Paid</td>
-          </tr>
-        </tbody>
-      </table>
+    
     <!-- about_area_start -->
-    
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Booking History</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Room Name</th>
+                            <th scope="col">Check In</th>
+                            <th scope="col">Check out</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookingTable">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Ambassador Room</td>
+                            <td>16 Nov 2024</td>
+                            <td>20 Nov 2024</td>
+                            <td>Paid</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     <!-- about_area_end -->
-
-    <!-- about_info_area_start -->
-    
-    <!-- about_info_area_start -->
-
-    <!-- about_main_info_start -->
-    
-    <!-- about_main_info_end -->
-
-    <!-- forQuery_start -->
-    
-    <!-- forQuery_end-->
-
-    <!-- instragram_area_start -->
-    
-    <!-- instragram_area_end -->
     
     <!-- footer -->
     <footer class="footer">
@@ -302,7 +295,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/mail-script.js"></script>
 
     <script src="js/main.js"></script>
-
+    <script>fetchBookings()</script>
 
 </body>
 
