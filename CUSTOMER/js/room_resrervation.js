@@ -131,16 +131,35 @@ function getTotalDays(date1, date2) {
 
 
 function setupReservation(){
-    let room = JSON.parse(sessionStorage.getItem("booking"));
+    let room = JSON.parse(getCookie('booking'));
     if(room!=null){
         const totalDays = getTotalDays(convertDateFormat(room.checkin), convertDateFormat(room.checkout));
-        const totalPrice = totalDays*rooms[room.id].pricepernight;
-        $("#title").html(rooms[room.id].title);
-        $("#originalPrice").html(rooms[room.id].price);
+        const totalPrice = totalDays*rooms[room.roomtype].pricepernight;
+        $("#title").html(rooms[room.roomtype].title);
+        $("#originalPrice").html(rooms[room.roomtype].price);
         $("#totalPrice").html("MYR&nbsp;"+totalPrice.toString());
         $("#checkindate").html(room.checkin);
         $("#checkoutdate").html(room.checkout);
+        checkAvailableRoom();
     }
+}
+function checkAvailableRoom() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        var roomcount=0;
+        var id=-1;
+        var response = JSON.parse(this.responseText);
+        response.forEach(item => {
+            if(item.guest_id==null){
+                if(id<0){ id=item.id; setCookie('room_id',item.id,1); }
+                roomcount++;
+                document.getElementById('paypalbtn').removeAttribute('disabled');
+            }
+        });
+        document.getElementById('availableText').innerHTML="Room Availability : "+roomcount.toString();
+    }
+    xhttp.open("GET", "getRoomList.php", true);
+    xhttp.send();
 }
 
 setupReservation();

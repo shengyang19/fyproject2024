@@ -13,7 +13,9 @@ if ($conn->connect_error) {
 
 // Get the filename parameter
 // $tablename = isset($_GET['tablename']) ? $_GET['tablename'] : '';
-$id = isset($_GET['id']) ? strval($_GET['id']) : '';
+// $id = isset($_GET['id']) ? strval($_GET['id']) : '';
+$booking = json_decode($_COOKIE['booking'],true);
+$roomtype = $booking['roomtype'];
 
 // Prepare the SQL statement based on the filename
 // Ensure to sanitize and validate the table name to prevent SQL injection
@@ -23,16 +25,18 @@ $id = isset($_GET['id']) ? strval($_GET['id']) : '';
 //     exit;
 // }
 // $stmt = $conn->prepare("SELECT id FROM hotel_rooms"); // Select all columns from the specified table
-if($id!=""){
-    $stmt = $conn->prepare("SELECT * FROM hotel_rooms WHERE room_id=$id"); // Select column from the specified table
+$res="";
+if($roomtype!=""){
+    $stmt = $conn->prepare("SELECT * FROM hotel_rooms WHERE room_id=$roomtype"); // Select column from the specified table
     $stmt->execute();
     $result = $stmt->get_result();
     $data = $result->fetch_all(MYSQLI_ASSOC);
     $stmt->close();
-    echo json_encode($data);
+    $res = json_encode($data);
 }
+$conn->close();
 
-echo ("");
+echo $res;
 
 // Get the result
 
@@ -41,5 +45,4 @@ echo ("");
 // Return the results as a JSON array
 
 // Close the statement and connection
-$conn->close();
 ?>

@@ -369,15 +369,14 @@ $(document).ready(function() {
 
 let booking = new Object();
 $('.book_now').click(function(){
-  var roomid = $(this).data('id');
-  selectroom=roomid.toString();
+  var roomtype = $(this).data('id');
+  selectroom=roomtype.toString();
   document.getElementById(selectroom).selected=true;
   $('select').niceSelect('update');
-  if(roomid!=undefined) booking.id=roomid;
-  else booking.id = null;
+  if(roomtype!=undefined) booking.roomtype=roomtype;
+  else booking.roomtype = null;
   booking.checkin=$('#datepicker').val();
   booking.checkout=$('#datepicker2').val();
-  // else setCookie("booking",booking,0.5);
   return false;
 });
 
@@ -396,19 +395,19 @@ function checkAvailability(){
 
 $('#room-select').change(function(){
   newselect=$(this).val();
-  if(newselect!="Room type") booking.id=newselect;
+  if(newselect!="Room type") booking.roomtype=newselect;
   // $('.book_now').attr('data-id',$(this).val());
   // console.log($('.book_now').data('id'))
 });
 
 $('#bookRoom').click(function(){
-//   if (checkAvailability()) return false;
-  if(booking.id!=null){ sessionStorage.setItem("booking",JSON.stringify(booking));// Convert the 'booking' object to a JSON string
+  if (checkAvailability()) return false;
+  if(booking.roomtype!=null){
     const bookingJSON = JSON.stringify(booking);
-    
     // Set a cookie with a name 'booking', value as the JSON string, and a 1-day expiration time
-    document.cookie = "booking=" + encodeURIComponent(bookingJSON) + "; path=/; max-age=" + (60 * 60 * 24) + ";";
-}
+    // document.cookie = "booking=" + bookingJSON + "; path=/; max-age=" + (60 * 60 * 24) + ";";
+    setCookie("booking",bookingJSON,1)
+  }
   else return false;
 });
 
@@ -478,17 +477,19 @@ function fetchBookings() {
                 return;
             }
             // Loop through the response and append messages
+            var count = 0;
             response.forEach(function(item) {
-                if(item.guest_name!=null){
-                    // const row = document.createElement("tr");
-                    $('#bookingTable').append(`<tr>
-                            <th scope="row">1</th>
-                            <td>`+item.room_name+`</td>
-                            <td>`+item.start_date+`</td>
-                            <td>`+item.end_date+`</td>
-                            <td>Paid</td>
-                        </tr>`);
-                }
+              if(item.guest_name!=null){
+                count++;
+                // const row = document.createElement("tr");
+                $('#bookingTable').append(`<tr>
+                        <th scope="row">`+count.toString()+`</th>
+                        <td>`+item.room_name+`</td>
+                        <td>`+item.start_date+`</td>
+                        <td>`+item.end_date+`</td>
+                        <td>Paid</td>
+                    </tr>`);
+              }
             });
         },
     error: function() {

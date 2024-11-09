@@ -68,7 +68,6 @@ function validateForm() {
 }
 function displayModal(){
   const errormessage=getCookie("error");
-  console.log(getCookie("error"));
   if(errormessage=="default"){
     $('.my-modal').modal('toggle');
     document.cookie = "error=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";

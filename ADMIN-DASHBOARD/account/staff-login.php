@@ -3,7 +3,7 @@
 	
 <?php
 session_start();
-$_SESSION['info']="";
+// session$_SESSION['info']="";
 if(isset($_POST["signin"])){
 //$cookie_name = "user";
 $email1 = $_POST['loginemail'];
@@ -40,7 +40,7 @@ if ($stmt->num_rows > 0) {
         
         if ($result->num_rows > 0) {
 			$row = $result->fetch_assoc();
-            $_SESSION["user"] = $row['id']; // for role & edit profile
+            // $_SESSION["user"] = $row['id']; // for role & edit profile
 			
             // Store user data in JSON format for profile view
             $data = [
@@ -75,6 +75,7 @@ $conn->close();
 //# end - auth
 
 }
+session_destroy();
 
 
 ?>

@@ -1,4 +1,4 @@
 <?php
 session_start();
-echo $_SESSION['info'];
+echo isset($_SESSION['info']) ? $_SESSION['info'] : '';
 ?>

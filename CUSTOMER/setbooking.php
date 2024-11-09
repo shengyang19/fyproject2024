@@ -14,19 +14,18 @@ if ($conn->connect_error) {
 }
 
 // Debugging: Check if cookies are set
-var_dump($_COOKIE['user_id'], $_COOKIE['user'], $_COOKIE['booking_room']);
+var_dump($_COOKIE['user_id'], $_COOKIE['user'], $_COOKIE['room_id']);
 $booking = json_decode($_COOKIE['booking'], true);
 var_dump($booking);  // Check if booking cookie is valid
 
 // Get cookie values
 $user_id = $_COOKIE['user_id'];
-$room_id = $_COOKIE['booking_room'];
+$room_id = $_COOKIE['room_id'];
 $ci = $booking['checkin'];
 $co = $booking['checkout'];
 
 // Use prepared statement for inserting data
-$sql_insert = "INSERT INTO booking_history (guest_id, room_id, start_date, end_date) 
-               VALUES (?, ?, ?, ?)";
+$sql_insert = "INSERT INTO booking_history (guest_id, room_id, start_date, end_date) VALUES (?, ?, ?, ?)";
 $stmt_insert = $conn->prepare($sql_insert);
 if ($stmt_insert === false) {
     die('Error preparing the insert query: ' . $conn->error);
@@ -55,7 +54,7 @@ if ($stmt_update === false) {
 }
 
 // Bind parameters to the query
-$stmt_update->bind_param("isssi", $_COOKIE['user_id'], $_COOKIE['user'], $booking['checkin'], $booking['checkout'], $_COOKIE['booking_room']);
+$stmt_update->bind_param("isssi", $user_id, $_COOKIE['user'], $ci, $co, $room_id);
 
 // Execute the query
 if ($stmt_update->execute()) {

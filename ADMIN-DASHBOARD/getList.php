@@ -30,6 +30,8 @@ $stmt->execute();
 
 // Get the result
 $result = $stmt->get_result();
+$stmt->close();
+$conn->close();
 
 // Fetch all results
 $data = $result->fetch_all(MYSQLI_ASSOC);
@@ -38,6 +40,4 @@ $data = $result->fetch_all(MYSQLI_ASSOC);
 echo json_encode($data);
 
 // Close the statement and connection
-$stmt->close();
-$conn->close();
 ?>

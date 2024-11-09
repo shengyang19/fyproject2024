@@ -4,7 +4,8 @@
 <?php
 session_start();
 if(isset($_POST["confirm"])){
-$user=$_SESSION["user"];
+$user=$_SESSION["info"];
+$id = json_decode($user)->id;
 $newpass=$_POST["newpass"];
 $newpassrepeat=$_POST["newpassrepeat"];
 
@@ -15,7 +16,7 @@ if($newpass==$newpassrepeat){
 	$con = mysqli_connect('localhost', 'u838201253_palladium', 'Azib277221', 'u838201253_phmsdb');
 	if (mysqli_connect_errno())
 	{	echo "Failed to connect to MySQL: " . mysqli_connect_error();	}
-	$sql="UPDATE staff_account SET pass='$hashedPassword' WHERE id='$user'";
+	$sql="UPDATE staff_account SET pass='$hashedPassword' WHERE id='$id'";
 	$qry = mysqli_query($con,$sql);
 	mysqli_close($con);
 	if(!$qry){

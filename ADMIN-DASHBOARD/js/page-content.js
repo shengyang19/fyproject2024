@@ -182,18 +182,19 @@ function setupPage(){
         method: 'GET',
         success: function(response) {
             if(response!=""){
-            let item =  JSON.parse(response);
-            $('.username').html(item.username);
-            document.getElementById('username').innerHTML=item.username;
-            if(item.role=="admin")
-                document.getElementById('staffcontrol').removeAttribute("hidden");}
+                let item =  JSON.parse(response);
+                $('.username').html(item.username);
+                document.getElementById('username').innerHTML=item.username;
+                if(item.role=="admin")
+                    document.getElementById('staffcontrol').removeAttribute("hidden");
+            }
             else{
-                // window.location.replace("/admin/account/staff-login.php");
+                window.location.replace("account/staff-login.php");
             }
         },
         
         error: function(jqXHR, textStatus, errorThrown) {
-            document.getElementById('username').innerHTML="";
+            // document.getElementById('username').innerHTML="";
         }
     });
 }
@@ -266,7 +267,7 @@ function timer(){
 }
 
 
-function fetchBookings() {
+function setupBooking() {
     // let id=this.value;
     // let dbtable=$('.hotel-list').data('list')+'_account';
     $.ajax({
@@ -285,30 +286,70 @@ function fetchBookings() {
             }
             // Loop through the response and append messages
             response.forEach(function(item) {
-                console.log(item.guest_id);
-                // if(item.guest_name!=null){
-                    // const row = document.createElement("tr");
-                    $('#bookingTable').append(`<tr>
-                                            <td>`+item.guest_name+`</td>
-                                            <td>`+item.room_name+`</td>
-                                            <td>`+item.start_date+`</td>
-                                            <td>`+item.end_date+`</td>
-                                            <td>
-                                                <button type="button" class="btn btn-primary shadow-sm" id="editBtn">Edit</button>
-                                            </td>
-                                            <td>
-                                                <form action="reset-room.php" id="deleteForm" method="GET" style="display: inline;">
-                                                    <input type="hidden" name="delete" id="deleteId" value="`+item.id+`">
-                                                    <input type="hidden" name="tablename" value="booking">
-                                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>`);
-                // }
+                let id=item.id;
+                $('#bookingTable').append(`<tr>
+                                        <td>`+item.guest_name+`</td>
+                                        <td>`+item.room_name+`</td>
+                                        <td><input class="di`+id+` border-0" id="ci`+id+`" type="date" value="`+convertDateFormatInput(item.start_date)+`" readonly></input></td>
+                                        <td><input class="di`+id+` border-0" id="co`+id+`" type="date" value="`+convertDateFormatInput(item.end_date)+`" readonly></input></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary shadow-sm editBtn" value=`+id+`>Edit</button>
+                                        </td>
+                                        <td>
+                                            <form action="reset-room.php" method="GET" style="display: inline;">
+                                                <input type="hidden" name="delete" value="`+id+`">
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>`);
             });
         },
     error: function() {
         console.error('Failed to fetch messages.');
     }
 });
+}
+
+$('#bookingTable').on('click','.editBtn',function(){
+    var booking_id=$(this).val();
+    if($(this).html()=="Edit"){
+        $(this).html("Save").removeClass("btn-primary").addClass("btn-success");
+        $(".di"+booking_id).removeAttr("readonly").removeClass("border-0").addClass("border");
+    }
+    else{
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            }
+        };
+        xhttp.open("POST", "editBooking.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(
+            "booking_id="+booking_id+"&checkin="+convertDateFormat($("#ci"+booking_id).val())+"&checkout="+convertDateFormat($("#co"+booking_id).val())
+        );
+
+        $(this).html("Edit").removeClass("btn-success").addClass("btn-primary");
+        $(".di"+booking_id).attr("readonly",true).removeClass("border").addClass("border-0");
+    }
+});
+
+
+function convertDateFormatInput(dateString) {
+    // Split the date string by the delimiter "/"
+    const parts = dateString.split("/");
+    
+    // Rearrange the parts to "DD/MM/YYYY"
+    const newDateFormat = `${parts[2]}-${parts[1]}-${parts[0]}`;
+    
+    return newDateFormat;
+}
+
+function convertDateFormat(dateString) {
+    // Split the date string by the delimiter "/"
+    const parts = dateString.split("-");
+    
+    // Rearrange the parts to "DD/MM/YYYY"
+    const newDateFormat = `${parts[2]}/${parts[1]}/${parts[0]}`;
+    
+    return newDateFormat;
 }

@@ -3,7 +3,7 @@
 
 <?php
 if (isset($_POST["signin"])) {
-    session_start();
+    // session_start();
     // User input
     $cookie_name = "user";
     $email1 = $_POST['loginemail'];
