@@ -1,6 +1,7 @@
 <?php
 session_start();
-$user=$_SESSION["user"];
+$user=$_SESSION["info"];
+$id = json_decode($user)->id;
 //Process Input
 $name=$_POST["nameInput"];
 $phone=$_POST['phoneInput'];
@@ -10,12 +11,12 @@ if (mysqli_connect_errno())
 {
 echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$sql="SELECT email,id,role FROM staff_account WHERE id='$user'";
+$sql="SELECT email, role FROM staff_account WHERE id='$id'";
 $row = mysqli_fetch_array(mysqli_query($con,$sql));
 if($row!=null){
-    $sql="UPDATE staff_account SET username='$name',phone='$phone' WHERE id='$user'";
+    $sql="UPDATE staff_account SET username='$name',phone='$phone' WHERE id='$id'";
     $data = [
-		"staff_id" => $row['staff_id'],
+		"id" => $id,
 		"username" => $name,
 		"email" => $row['email'],
 		"phone" => $phone,
