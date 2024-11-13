@@ -16,7 +16,7 @@ Download the Windows Installer from [XAMPP Official Website](https://www.apachef
 
 Make sure you have downloaded the latest version of XAMPP. It includes PHP.
 
-(https://github.com/shengyang19/fyproject2024/blob/main/INSTALLER/IMG/install-xampp.png?raw=true）
+![install-xampp](https://github.com/shengyang19/fyproject2024/blob/main/INSTALLER/IMG/install-xampp.png?raw=true)
 
 ## Run Locally
 
