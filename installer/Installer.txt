@@ -1,5 +1,0 @@
-Installer File consist:
-- xampp-windows-x64-8.2.12-0-VS16-installer
-
-Installer File in Google Drive:
-https://drive.google.com/drive/folders/1R6yR2r1xnVPqilNPB6_uMW_97nQivnNd
