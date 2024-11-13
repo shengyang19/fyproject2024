@@ -58,7 +58,7 @@ You're done!. You are now hosting your website locally.
 [Github](https://github.com/shengyang19/fyproject2024)
 
 # Link of the Website
-[PHMS](https://palladiumhotel.site/)
+[Palladium Hotel Website](https://palladiumhotel.site/)
 
 # List Of Username and Password
 
